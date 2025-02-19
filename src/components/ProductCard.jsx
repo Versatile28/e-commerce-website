@@ -6,7 +6,7 @@ import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 
 export default function ProductCard({
    badgeText = '',
-   imageSrc = '/images/1.1.webp',
+   imageSrc = 'images/1.1.webp',
    title = 'White Tee',
    price = 40.0,
    rating = 3.5,

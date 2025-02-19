@@ -3,9 +3,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import { useState } from 'react';
 
 const images = [
-   { id: 0, src: "/images/home-1-plain.webp", alt: "First slide" },
-   { id: 1, src: "/images/home-2-plain.webp", alt: "Second slide" },
-   { id: 2, src: "/images/home-3-plain.webp", alt: "Third slide" },
+   { id: 0, src: "images/home-1-plain.webp", alt: "First slide" },
+   { id: 1, src: "images/home-2-plain.webp", alt: "Second slide" },
+   { id: 2, src: "images/home-3-plain.webp", alt: "Third slide" },
 ];
 
 export default function HeroCarousel() {

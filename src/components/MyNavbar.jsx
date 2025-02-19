@@ -216,7 +216,7 @@ export default function MyNavbar() {
                            <div className="col padd-0">
                               <img
 
-                                 src="/images/shop.webp"
+                                 src="images/shop.webp"
                                  alt="Model"
                                  style={{ maxWidth: '100%', height: "100%"}}
                               />
