@@ -91,17 +91,18 @@ export default function App() {
 
    return (
       <Container style={{paddingBottom:"2rem"}}>
-         <Row className='mb-5'>
-            <div className='d-flex justify-content-between align-items-center'>
-               <div className='d-flex gap-2'>
+         <Row className='mb-2'>
+            <Row className='d-flex justify-content-between align-items-center'>
+               <Col md={8} sm={12} className='d-flex gap-2 product-collapse mb-3'>
                   <a href='/' className='product-links' style={{color:"black"}}>All Products</a>
                   <a href='/' className='product-links'>Clothing</a>
                   <a href='/' className='product-links'>Bags</a>
                   <a href='/' className='product-links'>Shoes</a>
                   <a href='/' className='product-links'>Accessories</a>
-               </div>
-               <a href='/' className='product-link-a'>ALL PRODUCTS</a>
-            </div>
+               </Col>
+               <Col md={4} sm={12} className='d-flex justify-content-end product-collapse mb-3'><a href='/' className='product-link-a'>ALL PRODUCTS</a>
+               </Col>
+            </Row>
          </Row>
          <Row className="mt-4">
             {products.map((item, idx) => (
