@@ -40,6 +40,7 @@ export default function MyNavbar() {
             <Navbar.Brand href="/">Varkala</Navbar.Brand>
             <Navbar.Collapse id="basic-navbar-nav">
                <Nav className="me-auto">
+                  {/* Home */}
                   <div className="d-flex flex-column justify-content-center align-items-center">
                      <div
                         className="d-flex justify-content-center align-items-center"
@@ -58,14 +59,13 @@ export default function MyNavbar() {
                         <MdExpandMore style={{ cursor: 'pointer' }} />
                      </div>
                      <div
-                        className={`drop ${
+                        className={`drop-home ${
                            activeDropdown === 'home' ? 'show' : ''
                         } ${closingDropdown === 'home' ? 'hide' : ''}`}
                         style={{
                            boxShadow: '0 0 10px rgb(205, 205, 205)',
                            position: 'absolute',
                            top: '5rem',
-                           transform:"translateX(70px)"
                         }}
                      >
                         <div
@@ -129,6 +129,7 @@ export default function MyNavbar() {
                         </div>
                      </div>
                   </div>
+                  {/* Shop */}
                   <div className="d-flex flex-column justify-content-center align-items-center">
                      <div
                         className="d-flex justify-content-center align-items-center"
@@ -146,7 +147,7 @@ export default function MyNavbar() {
                      </div>
 
                      <div
-                        className={`drop ${
+                        className={`drop-shop ${
                            activeDropdown === 'shopPages' ? 'show' : ''
                         } ${closingDropdown === 'shopPages' ? 'hide' : ''}`}
                         style={{
@@ -154,12 +155,10 @@ export default function MyNavbar() {
                            position: 'absolute',
                            top: '5rem',
                            backgroundColor: 'white',
-                           width: '60rem',
-                           transform: "translateX(450px)"
                         }}
                      >
                         <div className="row m-0">
-                           <div className="col d-flex flex-column my-5 ms-5">
+                           <div className="col d-flex flex-column my-5 ms-4">
                               <h5 className="mb-4">Shop pages</h5>
                               <a href="/" className="mb-4 option">
                                  Full width
@@ -224,10 +223,78 @@ export default function MyNavbar() {
                         </div>
                      </div>
                   </div>
-                  <NavDropdown title="Product Cards" id="basic-nav-dropdown">
-                     <NavDropdown.Item href="#">German</NavDropdown.Item>
-                     <NavDropdown.Item href="#">French</NavDropdown.Item>
-                  </NavDropdown>
+                  {/* Product Cards */}
+                  <div className="d-flex flex-column justify-content-center align-items-center">
+                     <div
+                        className="d-flex justify-content-center align-items-center"
+                        onClick={() => toggleDropdown('product')}
+                     >
+                        <button
+                           style={{
+                              border: 'none',
+                              backgroundColor: 'rgba(33, 33, 33, 0)',
+                           }}
+                        >
+                           Product Card
+                        </button>
+                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                     </div>
+
+                     <div
+                        className={`drop-product ${
+                           activeDropdown === 'product' ? 'show' : ''
+                        } ${closingDropdown === 'product' ? 'hide' : ''}`}
+                        style={{
+                           boxShadow: '0 0 10px rgb(205, 205, 205)',
+                           position: 'absolute',
+                           top: '5rem',
+                           backgroundColor: 'white',
+                        }}
+                     >
+                        <div className="row m-0">
+                           <div className="col d-flex flex-column my-5 ms-5">
+                              <h5 className="mb-4">Shop Card</h5>
+                              <a href="/" className="mb-4 option">
+                                 Default
+                              </a>
+                              <a href="/" className="mb-4 option">
+                              Product Card 1
+                              </a>
+                              <a href="/" className="mb-4 option">
+                              Product Card 2
+                              </a>
+                              <a href="/" className="mb-4 option">
+                              Product Card 3
+                              </a>
+                           </div>
+
+                           <div className="col d-flex flex-column my-5">
+                              <h5 className="mb-4"> </h5>
+                              <a href="/" className="mb-4 option">
+                              Product Card 4
+                              </a>
+                              <a href="/" className="mb-4 option">
+                              Product Card 5
+                              </a>
+                              <a href="/" className="mb-4 option">
+                              Product Card 6
+                              </a>
+                              <a href="/" className="mb-4 option">
+                              Product Card 7
+                              </a>
+                           </div>
+
+                           <div className="col padd-0">
+                              <img
+
+                                 src="images/2.1.webp"
+                                 alt="Model"
+                                 style={{ maxWidth: '100%', height: "100%"}}
+                              />
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                   <NavDropdown title="Icons" id="basic-nav-dropdown">
                      <NavDropdown.Item href="#">German</NavDropdown.Item>
                      <NavDropdown.Item href="#">French</NavDropdown.Item>

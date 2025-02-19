@@ -62,26 +62,70 @@ table {
 
 /* NavBar */
 
-.drop {
+.drop-home {
    position: absolute;
    top: 100%;
    width: 13.1rem;
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px);
+   transform: translateY(20px) translateX(70px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
-.drop.show {
+.drop-home.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(0);
+   transform: translateY(0) translateX(70px);
 }
 
-.drop.hide {
+.drop-home.hide {
    opacity: 0;
    visibility: hidden;
    transform: translateY(20px) translateX(70px);
+}
+
+.drop-shop {
+   position: absolute;
+   top: 100%;
+   width: 55rem;
+   opacity: 0;
+   visibility: hidden;
+   transform: translateY(20px) translateX(400px);
+   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.drop-shop.show {
+   opacity: 1;
+   visibility: visible;
+   transform: translateY(0) translateX(400px);
+}
+
+.drop-shop.hide {
+   opacity: 0;
+   visibility: hidden;
+   transform: translateY(20px) translateX(400px);
+}
+
+.drop-product {
+   position: absolute;
+   top: 100%;
+   width: 35rem;
+   opacity: 0;
+   visibility: hidden;
+   transform: translateY(20px) translateX(210px);
+   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.drop-product.show {
+   opacity: 1;
+   visibility: visible;
+   transform: translateY(0) translateX(210px);
+}
+
+.drop-product.hide {
+   opacity: 0;
+   visibility: hidden;
+   transform: translateY(20px) translateX(210px);
 }
 
 
