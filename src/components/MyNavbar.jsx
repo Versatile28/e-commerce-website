@@ -11,6 +11,7 @@ import {
    Offcanvas,
 } from 'react-bootstrap';
 import { MdExpandMore } from 'react-icons/md';
+import { GiTrousers } from 'react-icons/gi';
 
 export default function MyNavbar() {
    const [show, setShow] = useState(false);
@@ -37,7 +38,7 @@ export default function MyNavbar() {
    return (
       <Navbar expand="lg">
          <Container>
-            <Navbar.Brand href="/">Varkala</Navbar.Brand>
+            <Navbar.Brand href="#">Varkala</Navbar.Brand>
             <Navbar.Collapse id="basic-navbar-nav">
                <Nav className="me-auto">
                   {/* Home */}
@@ -59,9 +60,8 @@ export default function MyNavbar() {
                         <MdExpandMore style={{ cursor: 'pointer' }} />
                      </div>
                      <div
-                        className={`drop-home ${
-                           activeDropdown === 'home' ? 'show' : ''
-                        } ${closingDropdown === 'home' ? 'hide' : ''}`}
+                        className={`drop-home ${activeDropdown === 'home' ? 'show' : ''
+                           } ${closingDropdown === 'home' ? 'hide' : ''}`}
                         style={{
                            boxShadow: '0 0 10px rgb(205, 205, 205)',
                            position: 'absolute',
@@ -78,19 +78,19 @@ export default function MyNavbar() {
                         >
                            <a
                               href="/"
-                              className="option home-color w-100 py-1 m-1"
+                              className="option option-color w-100 py-1 m-1"
                            >
                               Home 1 - Fashion
                            </a>
                            <a
                               href="/"
-                              className="option home-color w-100 py-1 m-1"
+                              className="option option-color w-100 py-1 m-1"
                            >
                               Home 2 - Fashion
                            </a>
                            <a
                               href="/"
-                              className="option home-color w-100 d-flex justify-content-start align-items-center m-1"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                            >
                               Home 3 - Design
                               <div
@@ -109,7 +109,7 @@ export default function MyNavbar() {
                            </a>
                            <a
                               href="/"
-                              className="option home-color w-100 d-flex justify-content-start align-items-center m-1"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                            >
                               Home 4 - Design
                               <div
@@ -147,9 +147,8 @@ export default function MyNavbar() {
                      </div>
 
                      <div
-                        className={`drop-shop ${
-                           activeDropdown === 'shopPages' ? 'show' : ''
-                        } ${closingDropdown === 'shopPages' ? 'hide' : ''}`}
+                        className={`drop-shop ${activeDropdown === 'shopPages' ? 'show' : ''
+                           } ${closingDropdown === 'shopPages' ? 'hide' : ''}`}
                         style={{
                            boxShadow: '0 0 10px rgb(205, 205, 205)',
                            position: 'absolute',
@@ -160,24 +159,24 @@ export default function MyNavbar() {
                         <div className="row m-0">
                            <div className="col d-flex flex-column my-5 ms-4">
                               <h5 className="mb-4">Shop pages</h5>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Full width
                               </a>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Full width with category menu
                               </a>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Full width with big products
                               </a>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Fixed width
                               </a>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Fixed width &amp; sidebar
                               </a>
                               <a
                                  href="/"
-                                 className="mb-4 d-flex align-items-center option"
+                                 className="mb-4 d-flex align-items-center option option-color"
                               >
                                  Fixed width &amp; masonry layout
                                  <span
@@ -194,30 +193,29 @@ export default function MyNavbar() {
                                     New
                                  </span>
                               </a>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Subcategories
                               </a>
                            </div>
 
                            <div className="col d-flex flex-column my-5">
                               <h5 className="mb-4">Product pages</h5>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Product with sticky info
                               </a>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Product with background
                               </a>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Product standard
                               </a>
                            </div>
 
                            <div className="col padd-0">
                               <img
-
                                  src="images/shop.webp"
                                  alt="Model"
-                                 style={{ maxWidth: '100%', height: "100%"}}
+                                 style={{ maxWidth: '100%', height: '100%' }}
                               />
                            </div>
                         </div>
@@ -241,9 +239,8 @@ export default function MyNavbar() {
                      </div>
 
                      <div
-                        className={`drop-product ${
-                           activeDropdown === 'product' ? 'show' : ''
-                        } ${closingDropdown === 'product' ? 'hide' : ''}`}
+                        className={`drop-product ${activeDropdown === 'product' ? 'show' : ''
+                           } ${closingDropdown === 'product' ? 'hide' : ''}`}
                         style={{
                            boxShadow: '0 0 10px rgb(205, 205, 205)',
                            position: 'absolute',
@@ -252,61 +249,938 @@ export default function MyNavbar() {
                         }}
                      >
                         <div className="row m-0">
-                           <div className="col d-flex flex-column my-5 ms-5">
+                           <div className="col d-flex flex-column my-5 ms-4">
                               <h5 className="mb-4">Shop Card</h5>
-                              <a href="/" className="mb-4 option">
+                              <a href="/" className="mb-4 option option-color">
                                  Default
                               </a>
-                              <a href="/" className="mb-4 option">
-                              Product Card 1
+                              <a href="/" className="mb-4 option option-color">
+                                 Product Card 1
                               </a>
-                              <a href="/" className="mb-4 option">
-                              Product Card 2
+                              <a href="/" className="mb-4 option option-color">
+                                 Product Card 2
                               </a>
-                              <a href="/" className="mb-4 option">
-                              Product Card 3
+                              <a href="/" className="mb-4 option option-color">
+                                 Product Card 3
                               </a>
                            </div>
 
                            <div className="col d-flex flex-column my-5">
                               <h5 className="mb-4"> </h5>
-                              <a href="/" className="mb-4 option">
-                              Product Card 4
+                              <a href="/" className="mb-4 option option-color">
+                                 Product Card 4
                               </a>
-                              <a href="/" className="mb-4 option">
-                              Product Card 5
+                              <a href="/" className="mb-4 option option-color">
+                                 Product Card 5
                               </a>
-                              <a href="/" className="mb-4 option">
-                              Product Card 6
+                              <a href="/" className="mb-4 option option-color">
+                                 Product Card 6
                               </a>
-                              <a href="/" className="mb-4 option">
-                              Product Card 7
+                              <a href="/" className="mb-4 option option-color">
+                                 Product Card 7
                               </a>
                            </div>
 
                            <div className="col padd-0">
                               <img
-
                                  src="images/2.1.webp"
                                  alt="Model"
-                                 style={{ maxWidth: '100%', height: "100%"}}
+                                 style={{ maxWidth: '100%', height: '100%' }}
                               />
                            </div>
                         </div>
                      </div>
                   </div>
-                  <NavDropdown title="Icons" id="basic-nav-dropdown">
-                     <NavDropdown.Item href="#">German</NavDropdown.Item>
-                     <NavDropdown.Item href="#">French</NavDropdown.Item>
-                  </NavDropdown>
-                  <NavDropdown title="Pages" id="basic-nav-dropdown">
-                     <NavDropdown.Item href="#">German</NavDropdown.Item>
-                     <NavDropdown.Item href="#">French</NavDropdown.Item>
-                  </NavDropdown>
-                  <NavDropdown title="Docs" id="basic-nav-dropdown">
-                     <NavDropdown.Item href="#">German</NavDropdown.Item>
-                     <NavDropdown.Item href="#">French</NavDropdown.Item>
-                  </NavDropdown>
+                  {/* Icons */}
+                  <div className="d-flex flex-column justify-content-center align-items-center">
+                     {/* Trigger button */}
+                     <div
+                        className="d-flex justify-content-center align-items-center"
+                        onClick={() => toggleDropdown('icons')}
+                     >
+                        <button
+                           style={{
+                              border: 'none',
+                              backgroundColor: 'rgba(33, 33, 33, 0)',
+                           }}
+                        >
+                           Icons
+                        </button>
+                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                     </div>
+
+                     {/* The dropdown container */}
+                     <div
+                        className={`drop-icons ${activeDropdown === 'icons' ? 'show' : ''
+                           } ${closingDropdown === 'icons' ? 'hide' : ''}`}
+                        style={{
+                           boxShadow: '0 0 10px rgb(205, 205, 205)',
+                           position: 'absolute',
+                           top: '5rem',
+                           backgroundColor: 'white',
+                        }}
+                     >
+                        {/* 2 rows of 6 icons each */}
+                        <div className="col-12 pt-4 px-3">
+                           <div className="row m-0 mt-4 mb-5">
+                              {/* 1) Trousers */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 2) Jackets */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 3) T-Shirts */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 4) Shirts */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 5) Pullovers */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 6) Scarfs */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+                           </div>
+
+                           <div className="row m-0 mb-5">
+                              {/* 7) Shorts */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 8) Underwear */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 9) Watches */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 10) Bags */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 11) Caps */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+
+                              {/* 12) Accessories */}
+                              <a
+                                 className="col-2 d-flex flex-column align-items-center icon-select"
+                                 href="/"
+                              >
+                                 <GiTrousers
+                                    alt="Trousers"
+                                    style={{
+                                       color: 'black',
+                                       width: '50px',
+                                       height: '60px',
+                                       marginBottom: '5px',
+                                    }}
+                                 />
+                                 <span className="mb-3">Trousers</span>
+                              </a>
+                           </div>
+                        </div>
+                        <div
+                           className="d-flex justify-content-center align-items-center pt-4 pb-4 px-5"
+                           style={{
+                              backgroundColor: '#BCAC76',
+                              fontSize: '.9rem',
+                              fontWeight: '600',
+                           }}
+                        >
+                           <p>
+                              Don't miss our biggest sales this year. Use the
+                              code 'SUMMER35' at checkout until Jun. 15!
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+                  {/* Pages */}
+                  <div className="d-flex flex-column justify-content-center align-items-center">
+                     {/* Trigger button (e.g., 'Shop') */}
+                     <div
+                        className="d-flex justify-content-center align-items-center"
+                        onClick={() => toggleDropdown('pages')}
+                     >
+                        <button
+                           style={{
+                              border: 'none',
+                              backgroundColor: 'rgba(33, 33, 33, 0)',
+                           }}
+                        >
+                           Pages
+                        </button>
+                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                     </div>
+
+                     {/* Dropdown container */}
+                     <div
+                        className={`drop-pages ${activeDropdown === 'pages' ? 'show' : ''
+                           } ${closingDropdown === 'pages' ? 'hide' : ''}`}
+                        style={{
+                           boxShadow: '0 0 10px rgb(205, 205, 205)',
+                           position: 'absolute',
+                           top: '5rem',
+                           backgroundColor: 'white',
+                           padding: '2rem 2rem',
+                        }}
+                     >
+                        {/* Four columns in a row */}
+                        <div className="row m-0" style={{ gap: '2rem' }}>
+                           {/* Column 1 */}
+                           <div
+                           className="d-flex flex-column px-3"
+                           style={{
+                              width: '16rem',
+                              opacity: '1',
+                              backgroundColor: 'white',
+                           }}
+                        >
+
+                        <img src="images\pages-img-1.webp" style={{width:"100%",height:"11.25"}} alt="" />
+                        <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Homepage</h3>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Home 1 - Fashion
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Home 2 - Fashion
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Home 3 - Design
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Home 4 - Design
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Category</h3>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Full width
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Full width with category menu
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Full width with big products
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Fixed width
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Fixed width &amp; sidebar
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                                 Fixed width &amp; masonry layout
+                                 <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Subcategories
+                           </a>
+                           </div>
+
+                           {/* Column 2 */}
+                           <div
+                           className="d-flex flex-column px-3"
+                           style={{
+                              width: '16rem',
+                              opacity: '1',
+                              backgroundColor: 'white',
+                           }}
+                        >
+
+                        <img src="images\pages-img-2.webp" style={{width:"100%",height:"11.25"}} alt="" />
+                        <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>order Process</h3>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Shopping cart
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Checkout - Five steps
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Checkout - Single page
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Checkout - confirm
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Product</h3>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Product with sticky info
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Product with sticky info
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Product standard
+                           </a>
+                           </div>
+
+                           {/* Column 3 */}
+                           <div
+                           className="d-flex flex-column px-3"
+                           style={{
+                              width: '16rem',
+                              opacity: '1',
+                              backgroundColor: 'white',
+                           }}
+                        >
+
+                        <img src="images\pages-img-3.webp" style={{width:"100%",height:"11.25"}} alt="" />
+                        <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Blog</h3>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Blog
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Blog - Masonry
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Post
+                           </a>
+                           <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Page</h3>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              About - Company
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              About v2 - Person
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              F.A.Q.
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Contact
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Privacy policy
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           </div>
+
+                           {/* Column 4 */}
+                           <div
+                           className="d-flex flex-column px-3"
+                           style={{
+                              width: '16rem',
+                              opacity: '1',
+                              backgroundColor: 'white',
+                           }}
+                        >
+
+                        <img src="images\pages-img-4.webp" style={{width:"100%",height:"11.25"}} alt="" />
+                        <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Customer</h3>
+                        <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Login/signup
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Orders
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Order detail 
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Order tracking
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Addresses
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Profile
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Wishlist
+                              <div
+                                 className="p-1"
+                                 style={{
+                                    fontSize: '.8rem',
+                                    fontWeight: '600',
+                                    color: '#BCAC76',
+                                    backgroundColor: '#F8F4E6',
+                                    borderRadius: '20%',
+                                    marginLeft: '4px',
+                                 }}
+                              >
+                                 New
+                              </div>
+                           </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  {/* Docs */}
+                  <div className="d-flex flex-column justify-content-center align-items-center">
+                     <div
+                        className="d-flex justify-content-center align-items-center"
+                        onClick={() => {
+                           toggleDropdown('docs');
+                        }}
+                     >
+                        <button
+                           style={{
+                              border: 'none',
+                              backgroundColor: 'rgba(33, 33, 33, 0)',
+                           }}
+                        >
+                           Docs
+                        </button>
+                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                     </div>
+                     <div
+                        className={`drop-docs ${activeDropdown === 'docs' ? 'show' : ''
+                           } ${closingDropdown === 'docs' ? 'hide' : ''}`}
+                        style={{
+                           boxShadow: '0 0 10px rgb(205, 205, 205)',
+                           position: 'absolute',
+                           top: '5rem',
+                        }}
+                     >
+                           <div
+                           className="d-flex flex-column"
+                           style={{
+                              width: '10rem',
+                              opacity: '1',
+                              backgroundColor: 'white',
+                           }}
+                        >
+                           <h3 className="mt-4 py-1 m-1 px-3" style={{fontWeight:"bolder"}}>Documentation</h3>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1 px-3"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Introduction
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1 px-3"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Directory structure
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1 px-3"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Next.js
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1 px-3"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Customizing CSS
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1 px-3"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Demo Data
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1 px-3"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Credits
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1 px-3"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Changelog
+                           </a>
+                           <hr />
+                           <h3 className="py-1 m-1 px-3" style={{fontWeight:"bolder"}}>Components</h3>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1 px-3"
+                              style={{fontSize:".8rem"}}
+                           >
+                              Bootstrap
+                           </a>
+                           <a
+                              href="/"
+                              className="option option-color w-100 py-1 m-1 px-3 "
+                              style={{fontSize:".8rem"}}
+                           >
+                              Theme
+                           </a>
+                        </div>
+                     </div>
+                  </div>
                </Nav>
                <Form className="d-flex me-5">
                   <Form.Control
