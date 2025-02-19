@@ -2,12 +2,12 @@ import React, { useState, useMemo } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const brandLogos = [
-   { id: 1, src: '/images/brand/brand-1.svg', alt: 'Brand 1' },
-   { id: 2, src: '/images/brand/brand-2.svg', alt: 'Brand 2' },
-   { id: 3, src: '/images/brand/brand-3.svg', alt: 'Brand 3' },
-   { id: 4, src: '/images/brand/brand-4.svg', alt: 'Brand 4' },
-   { id: 5, src: '/images/brand/brand-5.svg', alt: 'Brand 5' },
-   { id: 6, src: '/images/brand/brand-6.svg', alt: 'Brand 6' },
+   { id: 1, src: '/images/brand-1.svg', alt: 'Brand 1' },
+   { id: 2, src: '/images/brand-2.svg', alt: 'Brand 2' },
+   { id: 3, src: '/images/brand-3.svg', alt: 'Brand 3' },
+   { id: 4, src: '/images/brand-4.svg', alt: 'Brand 4' },
+   { id: 5, src: '/images/brand-5.svg', alt: 'Brand 5' },
+   { id: 6, src: '/images/brand-6.svg', alt: 'Brand 6' },
 ];
 
 export default function BrandSection() {
