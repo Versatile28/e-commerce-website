@@ -23,7 +23,7 @@ export default function HeaderBar() {
                 <Navbar style={{display:"flex", justifyContent:"center"}}>
                         Free in-store delivery
                 </Navbar>
-                <Navbar id="basic-navbar-nav">
+                <Navbar className="headerbar-options" id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown title="English" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#">German</NavDropdown.Item>

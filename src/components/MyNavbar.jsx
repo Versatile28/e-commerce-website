@@ -4,7 +4,7 @@ import {
    Navbar,
    Nav,
    Container,
-   NavDropdown,
+   Collapse,
    Form,
    Button,
    NavLink,
@@ -12,9 +12,11 @@ import {
 } from 'react-bootstrap';
 import { MdExpandMore } from 'react-icons/md';
 import { GiTrousers } from 'react-icons/gi';
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 export default function MyNavbar() {
    const [show, setShow] = useState(false);
+   const [open, setOpen] = useState(false);
 
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
@@ -39,7 +41,7 @@ export default function MyNavbar() {
       <Navbar expand="lg">
          <Container>
             <Navbar.Brand href="#">Varkala</Navbar.Brand>
-            <Navbar.Collapse className='collapse-opacity'>
+            <Navbar.Collapse className="collapse-opacity">
                <Nav className="me-auto">
                   {/* Home */}
                   <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
@@ -579,500 +581,547 @@ export default function MyNavbar() {
                         <div className="row m-0" style={{ gap: '2rem' }}>
                            {/* Column 1 */}
                            <div
-                           className="d-flex flex-column px-3"
-                           style={{
-                              width: '16rem',
-                              opacity: '1',
-                              backgroundColor: 'white',
-                           }}
-                        >
-
-                        <img src="images\pages-img-1.webp" style={{width:"100%",height:"11.25"}} alt="" />
-                        <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Homepage</h3>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
+                              className="d-flex flex-column px-3"
+                              style={{
+                                 width: '16rem',
+                                 opacity: '1',
+                                 backgroundColor: 'white',
+                              }}
                            >
-                              Home 1 - Fashion
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Home 2 - Fashion
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Home 3 - Design
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                              <img
+                                 src="images\pages-img-1.webp"
+                                 style={{ width: '100%', height: '11.25' }}
+                                 alt=""
+                              />
+                              <h3
+                                 className="mt-4 py-1 m-1"
+                                 style={{ fontWeight: 'bolder' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Home 4 - Design
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Homepage
+                              </h3>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Category</h3>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Full width
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Full width with category menu
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Full width with big products
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Fixed width
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Fixed width &amp; sidebar
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
+                                 Home 1 - Fashion
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Home 2 - Fashion
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Home 3 - Design
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Home 4 - Design
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <h3
+                                 className="mt-4 py-1 m-1"
+                                 style={{ fontWeight: 'bolder' }}
+                              >
+                                 Category
+                              </h3>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Full width
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Full width with category menu
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Full width with big products
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Fixed width
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Fixed width &amp; sidebar
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
                                  Fixed width &amp; masonry layout
                                  <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Subcategories
-                           </a>
+                                 Subcategories
+                              </a>
                            </div>
 
                            {/* Column 2 */}
                            <div
-                           className="d-flex flex-column px-3"
-                           style={{
-                              width: '16rem',
-                              opacity: '1',
-                              backgroundColor: 'white',
-                           }}
-                        >
-
-                        <img src="images\pages-img-2.webp" style={{width:"100%",height:"11.25"}} alt="" />
-                        <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>order Process</h3>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
+                              className="d-flex flex-column px-3"
+                              style={{
+                                 width: '16rem',
+                                 opacity: '1',
+                                 backgroundColor: 'white',
+                              }}
                            >
-                              Shopping cart
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Checkout - Five steps
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                              <img
+                                 src="images\pages-img-2.webp"
+                                 style={{ width: '100%', height: '11.25' }}
+                                 alt=""
+                              />
+                              <h3
+                                 className="mt-4 py-1 m-1"
+                                 style={{ fontWeight: 'bolder' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Checkout - Single page
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Checkout - confirm
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 order Process
+                              </h3>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Product</h3>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Product with sticky info
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Product with sticky info
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Product standard
-                           </a>
+                                 Shopping cart
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Checkout - Five steps
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Checkout - Single page
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Checkout - confirm
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <h3
+                                 className="mt-4 py-1 m-1"
+                                 style={{ fontWeight: 'bolder' }}
+                              >
+                                 Product
+                              </h3>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Product with sticky info
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Product with sticky info
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Product standard
+                              </a>
                            </div>
 
                            {/* Column 3 */}
                            <div
-                           className="d-flex flex-column px-3"
-                           style={{
-                              width: '16rem',
-                              opacity: '1',
-                              backgroundColor: 'white',
-                           }}
-                        >
-
-                        <img src="images\pages-img-3.webp" style={{width:"100%",height:"11.25"}} alt="" />
-                        <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Blog</h3>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
+                              className="d-flex flex-column px-3"
+                              style={{
+                                 width: '16rem',
+                                 opacity: '1',
+                                 backgroundColor: 'white',
+                              }}
                            >
-                              Blog
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Blog - Masonry
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Post
-                           </a>
-                           <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Page</h3>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              About - Company
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                              <img
+                                 src="images\pages-img-3.webp"
+                                 style={{ width: '100%', height: '11.25' }}
+                                 alt=""
+                              />
+                              <h3
+                                 className="mt-4 py-1 m-1"
+                                 style={{ fontWeight: 'bolder' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              About v2 - Person
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Blog
+                              </h3>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              F.A.Q.
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Blog
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 py-1 m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Contact
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Privacy policy
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Blog - Masonry
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
+                                 Post
+                              </a>
+                              <h3
+                                 className="mt-4 py-1 m-1"
+                                 style={{ fontWeight: 'bolder' }}
+                              >
+                                 Page
+                              </h3>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 About - Company
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 About v2 - Person
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 F.A.Q.
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 py-1 m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Contact
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Privacy policy
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
                            </div>
 
                            {/* Column 4 */}
                            <div
-                           className="d-flex flex-column px-3"
-                           style={{
-                              width: '16rem',
-                              opacity: '1',
-                              backgroundColor: 'white',
-                           }}
-                        >
-
-                        <img src="images\pages-img-4.webp" style={{width:"100%",height:"11.25"}} alt="" />
-                        <h3 className="mt-4 py-1 m-1" style={{fontWeight:"bolder"}}>Customer</h3>
-                        <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
+                              className="d-flex flex-column px-3"
+                              style={{
+                                 width: '16rem',
+                                 opacity: '1',
+                                 backgroundColor: 'white',
+                              }}
                            >
-                              Login/signup
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                              <img
+                                 src="images\pages-img-4.webp"
+                                 style={{ width: '100%', height: '11.25' }}
+                                 alt=""
+                              />
+                              <h3
+                                 className="mt-4 py-1 m-1"
+                                 style={{ fontWeight: 'bolder' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Orders
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Customer
+                              </h3>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Order detail 
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Login/signup
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Order tracking
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Orders
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Addresses
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Order detail
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Profile
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Order tracking
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
-                           <a
-                              href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                              style={{fontSize:".8rem"}}
-                           >
-                              Wishlist
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
+                                 Addresses
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
                               >
-                                 New
-                              </div>
-                           </a>
+                                 Profile
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
+                              <a
+                                 href="/"
+                                 className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                                 style={{ fontSize: '.8rem' }}
+                              >
+                                 Wishlist
+                                 <div
+                                    className="p-1"
+                                    style={{
+                                       fontSize: '.8rem',
+                                       fontWeight: '600',
+                                       color: '#BCAC76',
+                                       backgroundColor: '#F8F4E6',
+                                       borderRadius: '20%',
+                                       marginLeft: '4px',
+                                    }}
+                                 >
+                                    New
+                                 </div>
+                              </a>
                            </div>
                         </div>
                      </div>
@@ -1104,7 +1153,7 @@ export default function MyNavbar() {
                            top: '5rem',
                         }}
                      >
-                           <div
+                        <div
                            className="d-flex flex-column"
                            style={{
                               width: '10rem',
@@ -1112,69 +1161,79 @@ export default function MyNavbar() {
                               backgroundColor: 'white',
                            }}
                         >
-                           <h3 className="mt-4 py-1 m-1 px-3" style={{fontWeight:"bolder"}}>Documentation</h3>
+                           <h3
+                              className="mt-4 py-1 m-1 px-3"
+                              style={{ fontWeight: 'bolder' }}
+                           >
+                              Documentation
+                           </h3>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{fontSize:".8rem"}}
+                              style={{ fontSize: '.8rem' }}
                            >
                               Introduction
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{fontSize:".8rem"}}
+                              style={{ fontSize: '.8rem' }}
                            >
                               Directory structure
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{fontSize:".8rem"}}
+                              style={{ fontSize: '.8rem' }}
                            >
                               Next.js
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{fontSize:".8rem"}}
+                              style={{ fontSize: '.8rem' }}
                            >
                               Customizing CSS
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{fontSize:".8rem"}}
+                              style={{ fontSize: '.8rem' }}
                            >
                               Demo Data
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{fontSize:".8rem"}}
+                              style={{ fontSize: '.8rem' }}
                            >
                               Credits
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{fontSize:".8rem"}}
+                              style={{ fontSize: '.8rem' }}
                            >
                               Changelog
                            </a>
                            <hr />
-                           <h3 className="py-1 m-1 px-3" style={{fontWeight:"bolder"}}>Components</h3>
+                           <h3
+                              className="py-1 m-1 px-3"
+                              style={{ fontWeight: 'bolder' }}
+                           >
+                              Components
+                           </h3>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{fontSize:".8rem"}}
+                              style={{ fontSize: '.8rem' }}
                            >
                               Bootstrap
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3 "
-                              style={{fontSize:".8rem"}}
+                              style={{ fontSize: '.8rem' }}
                            >
                               Theme
                            </a>
@@ -1278,9 +1337,9 @@ export default function MyNavbar() {
                </Button>
             </Nav>
             <Navbar.Toggle
-               className='collapse-btn'
+               className="collapse-btn"
                aria-controls="basic-navbar-nav"
-               style={{ border: 'none'}}
+               style={{ border: 'none' }}
             >
                <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1322,10 +1381,26 @@ export default function MyNavbar() {
                   <Offcanvas.Title className="pb-3">Link</Offcanvas.Title>
                   <Offcanvas.Title className="pb-3">Disabled</Offcanvas.Title>
                   <Offcanvas.Title className="pb-3">
-                     <NavDropdown title="Dropdown Link" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#">German</NavDropdown.Item>
-                        <NavDropdown.Item href="#">French</NavDropdown.Item>
-                     </NavDropdown>
+                     <div>
+                        <p
+                           onClick={() => setOpen(!open)}
+                           className=""
+                           style={{
+                              cursor: 'pointer',
+                              display: 'inline-block',
+                           }}
+                        >
+                           Dropdown link <span>{open ? <IoIosArrowUp />:<IoIosArrowDown />}</span>
+                        </p>
+
+                        <Collapse in={open}>
+                           <div className="pb-3">
+                              <p className="option option-color pb-3 pt-3">Action</p>
+                              <p className="option option-color pb-3">Another action</p>
+                              <p className="option option-color pb-3">Something else here</p>
+                           </div>
+                        </Collapse>
+                     </div>
                   </Offcanvas.Title>
                   <Offcanvas.Title>
                      <Navbar>
