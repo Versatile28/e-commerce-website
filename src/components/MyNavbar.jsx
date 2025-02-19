@@ -39,12 +39,12 @@ export default function MyNavbar() {
       <Navbar expand="lg">
          <Container>
             <Navbar.Brand href="#">Varkala</Navbar.Brand>
-            <Navbar.Collapse id="basic-navbar-nav">
+            <Navbar.Collapse className='collapse-opacity'>
                <Nav className="me-auto">
                   {/* Home */}
-                  <div className="d-flex flex-column justify-content-center align-items-center">
+                  <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
                      <div
-                        className="d-flex justify-content-center align-items-center"
+                        className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => {
                            toggleDropdown('home');
                         }}
@@ -130,9 +130,9 @@ export default function MyNavbar() {
                      </div>
                   </div>
                   {/* Shop */}
-                  <div className="d-flex flex-column justify-content-center align-items-center">
+                  <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
                      <div
-                        className="d-flex justify-content-center align-items-center"
+                        className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => toggleDropdown('shopPages')}
                      >
                         <button
@@ -222,9 +222,9 @@ export default function MyNavbar() {
                      </div>
                   </div>
                   {/* Product Cards */}
-                  <div className="d-flex flex-column justify-content-center align-items-center">
+                  <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
                      <div
-                        className="d-flex justify-content-center align-items-center"
+                        className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => toggleDropdown('product')}
                      >
                         <button
@@ -292,10 +292,10 @@ export default function MyNavbar() {
                      </div>
                   </div>
                   {/* Icons */}
-                  <div className="d-flex flex-column justify-content-center align-items-center">
+                  <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
                      {/* Trigger button */}
                      <div
-                        className="d-flex justify-content-center align-items-center"
+                        className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => toggleDropdown('icons')}
                      >
                         <button
@@ -546,10 +546,10 @@ export default function MyNavbar() {
                      </div>
                   </div>
                   {/* Pages */}
-                  <div className="d-flex flex-column justify-content-center align-items-center">
-                     {/* Trigger button (e.g., 'Shop') */}
+                  <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
+                     {/* Trigger button*/}
                      <div
-                        className="d-flex justify-content-center align-items-center"
+                        className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => toggleDropdown('pages')}
                      >
                         <button
@@ -1078,9 +1078,9 @@ export default function MyNavbar() {
                      </div>
                   </div>
                   {/* Docs */}
-                  <div className="d-flex flex-column justify-content-center align-items-center">
+                  <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
                      <div
-                        className="d-flex justify-content-center align-items-center"
+                        className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => {
                            toggleDropdown('docs');
                         }}
@@ -1182,7 +1182,7 @@ export default function MyNavbar() {
                      </div>
                   </div>
                </Nav>
-               <Form className="d-flex me-5">
+               <Form className="d-flex me-5 collapse-search">
                   <Form.Control
                      type="search"
                      placeholder="Search"
@@ -1209,7 +1209,7 @@ export default function MyNavbar() {
                   flexDirection: 'row',
                }}
             >
-               <NavLink className="px-2">
+               <NavLink className="px-2 collapse-icons">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      stroke-width="1"
@@ -1224,7 +1224,7 @@ export default function MyNavbar() {
                      />
                   </svg>
                </NavLink>
-               <NavLink className="px-2">
+               <NavLink className="px-2 collapse-icons">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      width="25"
@@ -1242,7 +1242,7 @@ export default function MyNavbar() {
                      />
                   </svg>
                </NavLink>
-               <NavLink className="px-2">
+               <NavLink className="px-2 collapse-icons">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      width="25"
@@ -1278,8 +1278,9 @@ export default function MyNavbar() {
                </Button>
             </Nav>
             <Navbar.Toggle
+               className='collapse-btn'
                aria-controls="basic-navbar-nav"
-               style={{ border: 'none' }}
+               style={{ border: 'none'}}
             >
                <svg
                   xmlns="http://www.w3.org/2000/svg"

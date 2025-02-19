@@ -801,4 +801,37 @@ table {
     display: flex;
   }
  }
+
+ @media(max-width: 992px){
+   .collapse-icons{
+      display: none;
+   }
+   .collapse-menu{
+      margin-bottom: 1rem !important;
+      margin-top: .5rem !important;
+   }
+   .collapse-menu-items{
+      display: flex !important;
+      justify-content: space-between !important;
+      width: 100%;
+   }
+   .collapse-opacity{
+      opacity: 1;
+      z-index: 1000;
+      background-color: #fff;
+      margin: 2px !important;
+   }
+   .collapse-search{
+      display: flex !important;
+      justify-content: center !important;
+      width: 100% !important;
+      margin-bottom: 1rem !important;
+      padding: 0 1rem;
+   }
+   .collapse-btn{
+      position: relative !important;
+      top: 0 !important;
+      right: 0 !important;
+   }
+  }
  
