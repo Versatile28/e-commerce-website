@@ -42,7 +42,7 @@ export default function HeroCarousel() {
             </Carousel.Item>
             <Carousel.Item interval={5000}>
                <div className='slide-container third-slide carousel-image'>
-                  <div className='slide-caption d-none d-sm-flex'></div>
+                  <div className='slide-caption d-none d-md-flex'></div>
                   <div className='slide-caption w-xs' style={{ alignItems: "start" }}>
                      <h3 className='slide-highlight mb-4' style={{ color: "#BCAC76" }}>SNEAKERS</h3>
                      <h1 className='slide-title mb-5'>For every <br />occassion</h1>

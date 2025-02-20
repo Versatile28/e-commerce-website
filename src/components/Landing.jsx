@@ -13,12 +13,12 @@ import ProductSection from './ProductSection'
 
 export default function Landing() {
   return (
-    <div>
-        <div style={{position:"absolute",width:'100vw', zIndex:"1"}}>
+    <div style={{position:"relative"}}>
+        <div style={{position:"absolute",width:'100%', zIndex:"1"}}>
         <HeaderBar/>
         <MyNavbar/>
         </div>
-        <div style={{position:"relative"}}>
+        <div style={{position:"relative",width:"100%"}}>
         <HeroCarousel/>
         </div>
         <CatagorySection/>

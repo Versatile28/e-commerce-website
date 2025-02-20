@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Questrial&display=swap');
 
 :root{
-   --bs-font-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--bs-body-font-family: "Questrial", sans-serif;
+   --bs-font-monospace: "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;--bs-body-font-family: "Questrial", sans-serif;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -293,7 +293,7 @@ table {
 
 .slide-title{
   font-family: var(--bs-font-monospace);
-  color: black;
+  color: #212529;
   letter-spacing: .05rem;
   font-size: 4.5rem;
   text-align: start;
