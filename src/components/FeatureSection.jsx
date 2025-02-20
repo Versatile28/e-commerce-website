@@ -7,7 +7,7 @@ export default function FeatureSection() {
          <Container>
             <Row className="g-4">
                {/* 1. Free shipping & return */}
-               <Col md={3} sm={6} className="text-center feature-block">
+               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24"
@@ -48,7 +48,7 @@ export default function FeatureSection() {
                </Col>
 
                {/* 2. Money back guarantee */}
-               <Col md={3} sm={6} className="text-center feature-block">
+               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24"
@@ -84,7 +84,7 @@ export default function FeatureSection() {
                </Col>
 
                {/* 3. Best prices */}
-               <Col md={3} sm={6} className="text-center feature-block">
+               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24"
@@ -120,7 +120,7 @@ export default function FeatureSection() {
                </Col>
 
                {/* 4. Phone support */}
-               <Col md={3} sm={6} className="text-center feature-block">
+               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
                      viewBox="0 0 24 24"
