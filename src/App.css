@@ -78,6 +78,10 @@ table {
 
 /* NavBar */
 
+.top-5{
+   top: 5rem !important;
+}
+
 .drop-home {
    position: absolute;
    top: 100%;
@@ -164,6 +168,13 @@ table {
    opacity: 0;
    visibility: hidden;
    transform: translateY(20px) translateX(310px);
+}
+
+.icon-style{
+   color: black;
+   width: 50px;
+   height: 60px;
+   margin-bottom: 5px;
 }
 
 .drop-pages {

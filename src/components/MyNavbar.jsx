@@ -11,8 +11,10 @@ import {
    Offcanvas,
 } from 'react-bootstrap';
 import { MdExpandMore } from 'react-icons/md';
-import { GiTrousers } from 'react-icons/gi';
+import { GiTrousers, GiShorts, GiUnderwearShorts, GiWatch, GiBowTie } from 'react-icons/gi';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { TbJacket } from "react-icons/tb";
+import { PiTShirtLight, PiShirtFolded, PiHoodieLight, PiSuitcaseSimple, PiBaseballCap } from "react-icons/pi";
 
 export default function MyNavbar() {
    const [show, setShow] = useState(false);
@@ -52,23 +54,15 @@ export default function MyNavbar() {
                         }}
                      >
                         <button
-                           style={{
-                              border: 'none',
-                              backgroundColor: 'rgba(33, 33, 33, 0)',
-                           }}
+                           class="border-0 bg-transparent"
                         >
                            Home
                         </button>
                         <MdExpandMore style={{ cursor: 'pointer' }} />
                      </div>
                      <div
-                        className={`drop-home ${activeDropdown === 'home' ? 'show' : ''
+                        className={`drop-home shadow position-absolute top-5 ${activeDropdown === 'home' ? 'show' : ''
                            } ${closingDropdown === 'home' ? 'hide' : ''}`}
-                        style={{
-                           boxShadow: '0 0 10px rgb(205, 205, 205)',
-                           position: 'absolute',
-                           top: '5rem',
-                        }}
                      >
                         <div
                            className="d-flex flex-column justify-content-center align-items-center p-4"
@@ -313,14 +307,9 @@ export default function MyNavbar() {
 
                      {/* The dropdown container */}
                      <div
-                        className={`drop-icons ${activeDropdown === 'icons' ? 'show' : ''
+                        className={`drop-icons shadow bg-white position-absolute top-5 ${activeDropdown === 'icons' ? 'show' : ''
                            } ${closingDropdown === 'icons' ? 'hide' : ''}`}
-                        style={{
-                           boxShadow: '0 0 10px rgb(205, 205, 205)',
-                           position: 'absolute',
-                           top: '5rem',
-                           backgroundColor: 'white',
-                        }}
+
                      >
                         {/* 2 rows of 6 icons each */}
                         <div className="col-12 pt-4 px-3">
@@ -332,12 +321,7 @@ export default function MyNavbar() {
                               >
                                  <GiTrousers
                                     alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                    className='icon-style'
                                  />
                                  <span className="mb-3">Trousers</span>
                               </a>
@@ -347,16 +331,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <TbJacket
+                                    alt="Jackets"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">ackets</span>
                               </a>
 
                               {/* 3) T-Shirts */}
@@ -364,16 +343,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <PiTShirtLight
+                                    alt="T-Shirts"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">T-Shirts</span>
                               </a>
 
                               {/* 4) Shirts */}
@@ -381,16 +355,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <PiShirtFolded
+                                    alt="Shirts"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">Shirts</span>
                               </a>
 
                               {/* 5) Pullovers */}
@@ -398,16 +367,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <PiHoodieLight
+                                    alt="Pullovers"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">Pullovers</span>
                               </a>
 
                               {/* 6) Scarfs */}
@@ -416,15 +380,10 @@ export default function MyNavbar() {
                                  href="/"
                               >
                                  <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                    alt="Scarfs"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">Scarfs</span>
                               </a>
                            </div>
 
@@ -434,16 +393,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <GiShorts
+                                    alt="Shorts"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">Shorts</span>
                               </a>
 
                               {/* 8) Underwear */}
@@ -451,16 +405,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <GiUnderwearShorts
+                                    alt="Underwear"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">Underwear</span>
                               </a>
 
                               {/* 9) Watches */}
@@ -468,16 +417,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <GiWatch
+                                    alt="Watches"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">Watches</span>
                               </a>
 
                               {/* 10) Bags */}
@@ -485,16 +429,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <PiSuitcaseSimple
+                                    alt="Bags"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">Bags</span>
                               </a>
 
                               {/* 11) Caps */}
@@ -502,16 +441,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <PiBaseballCap
+                                    alt="Caps"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">Caps</span>
                               </a>
 
                               {/* 12) Accessories */}
@@ -519,16 +453,11 @@ export default function MyNavbar() {
                                  className="col-2 d-flex flex-column align-items-center icon-select"
                                  href="/"
                               >
-                                 <GiTrousers
-                                    alt="Trousers"
-                                    style={{
-                                       color: 'black',
-                                       width: '50px',
-                                       height: '60px',
-                                       marginBottom: '5px',
-                                    }}
+                                 <GiBowTie
+                                    alt="Accessories"
+                                    className='icon-style'
                                  />
-                                 <span className="mb-3">Trousers</span>
+                                 <span className="mb-3">Accessories</span>
                               </a>
                            </div>
                         </div>
@@ -567,15 +496,8 @@ export default function MyNavbar() {
 
                      {/* Dropdown container */}
                      <div
-                        className={`drop-pages ${activeDropdown === 'pages' ? 'show' : ''
+                        className={`drop-pages shadow bg-white position-absolute top-5 p-2 ${activeDropdown === 'pages' ? 'show' : ''
                            } ${closingDropdown === 'pages' ? 'hide' : ''}`}
-                        style={{
-                           boxShadow: '0 0 10px rgb(205, 205, 205)',
-                           position: 'absolute',
-                           top: '5rem',
-                           backgroundColor: 'white',
-                           padding: '2rem 2rem',
-                        }}
                      >
                         {/* Four columns in a row */}
                         <div className="row m-0" style={{ gap: '2rem' }}>
@@ -1145,13 +1067,8 @@ export default function MyNavbar() {
                         <MdExpandMore style={{ cursor: 'pointer' }} />
                      </div>
                      <div
-                        className={`drop-docs ${activeDropdown === 'docs' ? 'show' : ''
+                        className={`drop-docs shadow position-absolute top-5 ${activeDropdown === 'docs' ? 'show' : ''
                            } ${closingDropdown === 'docs' ? 'hide' : ''}`}
-                        style={{
-                           boxShadow: '0 0 10px rgb(205, 205, 205)',
-                           position: 'absolute',
-                           top: '5rem',
-                        }}
                      >
                         <div
                            className="d-flex flex-column"
@@ -1337,9 +1254,8 @@ export default function MyNavbar() {
                </Button>
             </Nav>
             <Navbar.Toggle
-               className="collapse-btn"
+               className="collapse-btn border-0"
                aria-controls="basic-navbar-nav"
-               style={{ border: 'none' }}
             >
                <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1390,7 +1306,7 @@ export default function MyNavbar() {
                               display: 'inline-block',
                            }}
                         >
-                           Dropdown link <span>{open ? <IoIosArrowUp />:<IoIosArrowDown />}</span>
+                           Dropdown link <span>{open ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
                         </p>
 
                         <Collapse in={open}>
