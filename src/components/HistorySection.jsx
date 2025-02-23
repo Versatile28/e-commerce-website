@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 export default function HistorySection(){
   return (
-    <section className="history-section">
+    <section className="history-section mt-5">
       <Container>
         <Row className="justify-content-center w-xs">
           <Col md={12}>

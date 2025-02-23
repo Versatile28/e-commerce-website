@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Questrial&display=swap');
+@import url('https://db.onlinewebfonts.com/c/3a0686ce5acec7b228f4580a02d0be41?family=VremenaGrotesk');
 
 :root{
-   --bs-font-monospace: "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;--bs-body-font-family: "Questrial", sans-serif;
+   --bs-font-monospace: "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;--bs-body-font-family: 'VremenaGrotesk', sans-serif;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -227,7 +228,7 @@ table {
 .option{
    text-decoration: none;
    color:#999999;
-   font-weight: 600;
+   font-weight: 500;
 }
 
 .option-color:hover{
@@ -237,7 +238,7 @@ table {
 .icon-select{
    text-decoration: none;
    color: black;
-   font-weight: 600;
+   font-weight: 500;
 }
 
 .icon-select:hover{
@@ -313,7 +314,7 @@ table {
 .slide-desc{
   font-size: 1rem;
   color: rgb(134,142,153);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.6;
   text-align: start;
 }
@@ -326,7 +327,7 @@ table {
   letter-spacing: .2rem;
   color: white;
   background-color: black;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .slide-btn:hover{
@@ -414,16 +415,16 @@ table {
  }
  
  .new-arrivals-section h2 {
-   font-weight: bold;
-   font-size: 4rem;
+   font-weight: 500;
+   font-size: 3.8rem;
    padding-top: 7rem;
  }
  
  .new-arrivals-section p {
    line-height: 1.6;
-   font-size: 1.3rem;
+   font-size: 1.25rem;
    color:#777777da;
-   font-weight: 500;
+   font-weight:500;
  }
 
 
@@ -432,7 +433,7 @@ table {
  .product-links{
    color: #868E96;
    font-size: 1rem;
-   font-weight: 600;
+   font-weight: 500;
    text-decoration: none;
  }
 
@@ -443,7 +444,7 @@ table {
  .product-link-a{
    font-family: var(--bs-font-monospace);
    letter-spacing: .2rem;
-   font-weight: 600;
+   font-weight: 500;
    font-size: 1rem;
    text-decoration: none;
    color: #BCAC76;
@@ -473,7 +474,7 @@ table {
    color: #fff;
    padding: 5px 10px;
    font-size: 0.85rem;
-   font-weight: 700;
+   font-weight: 500;
    border-radius: 4px;
    z-index: 2;
  }
@@ -541,9 +542,10 @@ table {
 
  .card-title{
    font-family: var(--bs-body-font-family);
-   font-size: .85rem;
-   font-weight: 900;
+   font-size: 1rem;
+   font-weight: 600;
    text-decoration: none;
+   letter-spacing: .5px;
  }
 
  .card-title:hover{
@@ -572,8 +574,9 @@ table {
    background-image: url("../public/images/deal-plain.webp");
    background-repeat: no-repeat;
    background-size:cover;
-   background-position: center;
-   height: 37.5rem;
+   background-position:center right;
+   min-height: 37.5rem;
+   max-height: 45rem;
    width: 100%;
    margin-top: 5rem;
  }
@@ -585,14 +588,15 @@ table {
  .deal-section p{
    font-family: var(--bs-font-monospace);
    letter-spacing: .25rem;
-   font-weight:900;
+   font-weight:500;
    font-size: large;
  }
  
  .deal-title {
    font-size: 2.75rem;
-   font-weight: 900;
+   font-weight: 700;
    margin-bottom: 2rem;
+   letter-spacing: .5px;
  }
 
  .deal-section .deal-price{
@@ -628,13 +632,13 @@ table {
  .countdown-item h3 {
    font-size: 2rem;
    margin-bottom: 1rem;
-   font-weight: 900;
+   font-weight: 500;
  }
  
  .countdown-item span {
    display: block;
    font-size: 1rem;
-   font-weight: 700;
+   font-weight: 500;
    color: #888;
    letter-spacing: .04rem;
  }
@@ -665,7 +669,7 @@ table {
  
  .section-title {
    font-size: 1.5rem;
-   font-weight: 900;
+   font-weight: 500;
    color: #BCAC76;
    letter-spacing: .25rem;
    text-transform: uppercase;
@@ -758,22 +762,47 @@ table {
  .footer-text {
    font-size: 1rem;
    color: rgb(134,142,153);
-   font-weight: 600;
+   font-weight: 500;
    line-height: 1.6;
  }
  
  .email-input {
    margin-top: 10px;
+   border-bottom: 1px #CED4DA solid;
+   transition: 1s ease;
+ }
+
+ .email-input:hover{
+   border-bottom: 1px black solid;
+   transition: 1s ease;
  }
  
  .email-input .form-control {
    border: none;
+   font-weight: 500;
+   border: none;
+   border-radius: 0;
+   background-color: rgb(240, 235, 223,0);
+   outline: none;
+ }
+
+ .email-input .form-control::placeholder{
+   font-family: var(--bs-body-font-family);
  }
  
  .email-input button{
    background-color: rgb(0,0,0,0);
    border: none;
    cursor: pointer;
+ }
+
+ .email-input .email-icon{
+   height: 1.5rem;
+   width: 1.5rem;
+ }
+
+ .email-input .email-icon path{
+   stroke-width: 1px;
  }
  
  .footer-list {
@@ -784,7 +813,7 @@ table {
  .footer-list li {
    font-size: .875rem;
    color: rgb(134,142,153);
-   font-weight: 600;
+   font-weight: 500;
    margin-bottom: 1rem;
    cursor: pointer;
    transition: color 0.3s;
@@ -811,6 +840,28 @@ table {
  .footer-bottom span:hover {
   text-decoration: underline;
  }
+
+ .accordion-button{
+   border-radius: 0 !important;
+   background-color: white !important;
+   box-shadow: none !important;
+   padding: var(--bs-accordion-btn-padding-y) 0;
+ }
+
+ .accordion-body{
+   padding: var(--bs-accordion-btn-padding-y) 0;
+ }
+
+ .accordion-item{
+   border: none !important;
+ }
+
+ .footer-title-a{
+   font-size: 1.1rem !important;
+   font-weight: 500 !important;
+   font-family: var(--bs-body-font-family);
+   -webkit-text-stroke: .5px black;
+ }
  
  .text-muted {
    color: #bbb !important;
@@ -827,6 +878,13 @@ table {
   .d-xs-flex{
     display: flex;
   }
+  .bg-section {
+   background-size: 200%;
+   background-position: center right;
+   background-repeat: no-repeat;
+   background-size:cover;
+   background-position:center;
+ }
  }
 
  @media(max-width: 768px){
