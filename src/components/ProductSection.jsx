@@ -100,7 +100,7 @@ export default function App() {
                   <a href='/' className='product-links'>Shoes</a>
                   <a href='/' className='product-links'>Accessories</a>
                </Col>
-               <Col md={4} sm={12} className='d-flex justify-content-end product-collapse mb-3 p-0'><a href='/' className='product-link-a'>ALL PRODUCTS</a>
+               <Col md={4} sm={12} xs={12} className='d-flex justify-content-md-end product-collapse mb-3 p-0'><a href='/' className='product-link-a'>ALL PRODUCTS</a>
                </Col>
             </Row>
          </Row>

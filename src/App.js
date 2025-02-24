@@ -1,8 +1,8 @@
 import React from 'react'
 import { useEffect } from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import Landing from './components/Landing';
 import './App.css'
+import Homepage from './pages/Homepage';
 
 export default function App() {
 
@@ -19,7 +19,7 @@ export default function App() {
     <div>
       <BrowserRouter basename='/e-commerce-website'>
         <Routes>
-          <Route path="/" element={<Landing/>}/>
+          <Route path="/" element={<Homepage/>}/>
         </Routes>
       </BrowserRouter>
     </div>

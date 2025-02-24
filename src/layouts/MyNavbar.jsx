@@ -11,10 +11,22 @@ import {
    Offcanvas,
 } from 'react-bootstrap';
 import { MdExpandMore } from 'react-icons/md';
-import { GiTrousers, GiShorts, GiUnderwearShorts, GiWatch, GiBowTie } from 'react-icons/gi';
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { TbJacket } from "react-icons/tb";
-import { PiTShirtLight, PiShirtFolded, PiHoodieLight, PiSuitcaseSimple, PiBaseballCap } from "react-icons/pi";
+import {
+   GiTrousers,
+   GiShorts,
+   GiUnderwearShorts,
+   GiWatch,
+   GiBowTie,
+} from 'react-icons/gi';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { TbJacket } from 'react-icons/tb';
+import {
+   PiTShirtLight,
+   PiShirtFolded,
+   PiHoodieLight,
+   PiSuitcaseSimple,
+   PiBaseballCap,
+} from 'react-icons/pi';
 
 export default function MyNavbar() {
    const [show, setShow] = useState(false);
@@ -53,25 +65,17 @@ export default function MyNavbar() {
                            toggleDropdown('home');
                         }}
                      >
-                        <button
-                           class="border-0 bg-transparent"
-                        >
+                        <button class="border-0 bg-transparent menu-option text-black">
                            Home
                         </button>
-                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                        <MdExpandMore className="cursor-pointer" />
                      </div>
                      <div
-                        className={`drop-home shadow position-absolute top-5 ${activeDropdown === 'home' ? 'show' : ''
-                           } ${closingDropdown === 'home' ? 'hide' : ''}`}
+                        className={`drop-home bg-white shadow position-absolute top-5 ${
+                           activeDropdown === 'home' ? 'show' : ''
+                        } ${closingDropdown === 'home' ? 'hide' : ''}`}
                      >
-                        <div
-                           className="d-flex flex-column justify-content-center align-items-center p-4"
-                           style={{
-                              width: '13.1rem',
-                              opacity: '1',
-                              backgroundColor: 'white',
-                           }}
-                        >
+                        <div className="d-flex flex-column justify-content-center align-items-center py-2 px-4">
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1"
@@ -86,41 +90,17 @@ export default function MyNavbar() {
                            </a>
                            <a
                               href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center py-1 m-1"
                            >
                               Home 3 - Design
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
-                              >
-                                 New
-                              </div>
+                              <div className="new-btn">New</div>
                            </a>
                            <a
                               href="/"
-                              className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
+                              className="option option-color w-100 d-flex justify-content-start align-items-center py-1 m-1"
                            >
                               Home 4 - Design
-                              <div
-                                 className="p-1"
-                                 style={{
-                                    fontSize: '.8rem',
-                                    fontWeight: '600',
-                                    color: '#BCAC76',
-                                    backgroundColor: '#F8F4E6',
-                                    borderRadius: '20%',
-                                    marginLeft: '4px',
-                                 }}
-                              >
-                                 New
-                              </div>
+                              <div className="new-btn">New</div>
                            </a>
                         </div>
                      </div>
@@ -131,30 +111,22 @@ export default function MyNavbar() {
                         className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => toggleDropdown('shopPages')}
                      >
-                        <button
-                           style={{
-                              border: 'none',
-                              backgroundColor: 'rgba(33, 33, 33, 0)',
-                           }}
-                        >
+                        <button class="border-0 bg-transparent menu-option">
                            Shop
                         </button>
-                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                        <MdExpandMore className="cursor-pointer" />
                      </div>
 
                      <div
-                        className={`drop-shop ${activeDropdown === 'shopPages' ? 'show' : ''
-                           } ${closingDropdown === 'shopPages' ? 'hide' : ''}`}
-                        style={{
-                           boxShadow: '0 0 10px rgb(205, 205, 205)',
-                           position: 'absolute',
-                           top: '5rem',
-                           backgroundColor: 'white',
-                        }}
+                        className={`drop-shop bg-white shadow position-absolute top-5 ${
+                           activeDropdown === 'shopPages' ? 'show' : ''
+                        } ${closingDropdown === 'shopPages' ? 'hide' : ''}`}
                      >
                         <div className="row m-0">
                            <div className="col d-flex flex-column my-5 ms-4">
-                              <h5 className="mb-4">Shop pages</h5>
+                              <h5 className="mb-4 drop-down-title">
+                                 Shop pages
+                              </h5>
                               <a href="/" className="mb-4 option option-color">
                                  Full width
                               </a>
@@ -175,19 +147,7 @@ export default function MyNavbar() {
                                  className="mb-4 d-flex align-items-center option option-color"
                               >
                                  Fixed width &amp; masonry layout
-                                 <span
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: 600,
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                       padding: '0.2rem 0.5rem',
-                                    }}
-                                 >
-                                    New
-                                 </span>
+                                 <span className="new-btn">New</span>
                               </a>
                               <a href="/" className="mb-4 option option-color">
                                  Subcategories
@@ -195,7 +155,9 @@ export default function MyNavbar() {
                            </div>
 
                            <div className="col d-flex flex-column my-5">
-                              <h5 className="mb-4">Product pages</h5>
+                              <h5 className="mb-4 drop-down-title">
+                                 Product pages
+                              </h5>
                               <a href="/" className="mb-4 option option-color">
                                  Product with sticky info
                               </a>
@@ -211,7 +173,7 @@ export default function MyNavbar() {
                               <img
                                  src="images/shop.webp"
                                  alt="Model"
-                                 style={{ maxWidth: '100%', height: '100%' }}
+                                 class="img-fluid h-100"
                               />
                            </div>
                         </div>
@@ -223,56 +185,48 @@ export default function MyNavbar() {
                         className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => toggleDropdown('product')}
                      >
-                        <button
-                           style={{
-                              border: 'none',
-                              backgroundColor: 'rgba(33, 33, 33, 0)',
-                           }}
-                        >
+                        <button class="border-0 bg-transparent menu-option">
                            Product Card
                         </button>
-                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                        <MdExpandMore className="cursor-pointer" />
                      </div>
 
                      <div
-                        className={`drop-product ${activeDropdown === 'product' ? 'show' : ''
-                           } ${closingDropdown === 'product' ? 'hide' : ''}`}
-                        style={{
-                           boxShadow: '0 0 10px rgb(205, 205, 205)',
-                           position: 'absolute',
-                           top: '5rem',
-                           backgroundColor: 'white',
-                        }}
+                        className={`drop-product bg-white shadow position-absolute top-5 ${
+                           activeDropdown === 'product' ? 'show' : ''
+                        } ${closingDropdown === 'product' ? 'hide' : ''}`}
                      >
                         <div className="row m-0">
                            <div className="col d-flex flex-column my-5 ms-4">
-                              <h5 className="mb-4">Shop Card</h5>
-                              <a href="/" className="mb-4 option option-color">
+                              <h5 className="mb-3 drop-down-title">
+                                 Shop Card
+                              </h5>
+                              <a href="/" className="mb-3 option option-color">
                                  Default
                               </a>
-                              <a href="/" className="mb-4 option option-color">
+                              <a href="/" className="mb-3 option option-color">
                                  Product Card 1
                               </a>
-                              <a href="/" className="mb-4 option option-color">
+                              <a href="/" className="mb-3 option option-color">
                                  Product Card 2
                               </a>
-                              <a href="/" className="mb-4 option option-color">
+                              <a href="/" className="mb-3 option option-color">
                                  Product Card 3
                               </a>
                            </div>
 
                            <div className="col d-flex flex-column my-5">
-                              <h5 className="mb-4"> </h5>
-                              <a href="/" className="mb-4 option option-color">
+                              <h5 className="mb-4 p-1"> </h5>
+                              <a href="/" className="mb-3 option option-color">
                                  Product Card 4
                               </a>
-                              <a href="/" className="mb-4 option option-color">
+                              <a href="/" className="mb-3 option option-color">
                                  Product Card 5
                               </a>
-                              <a href="/" className="mb-4 option option-color">
+                              <a href="/" className="mb-3 option option-color">
                                  Product Card 6
                               </a>
-                              <a href="/" className="mb-4 option option-color">
+                              <a href="/" className="mb-3 option option-color">
                                  Product Card 7
                               </a>
                            </div>
@@ -281,7 +235,7 @@ export default function MyNavbar() {
                               <img
                                  src="images/2.1.webp"
                                  alt="Model"
-                                 style={{ maxWidth: '100%', height: '100%' }}
+                                 class="img-fluid h-100"
                               />
                            </div>
                         </div>
@@ -294,22 +248,17 @@ export default function MyNavbar() {
                         className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => toggleDropdown('icons')}
                      >
-                        <button
-                           style={{
-                              border: 'none',
-                              backgroundColor: 'rgba(33, 33, 33, 0)',
-                           }}
-                        >
+                        <button class="border-0 bg-transparent menu-option">
                            Icons
                         </button>
-                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                        <MdExpandMore className="cursor-pointer" />
                      </div>
 
                      {/* The dropdown container */}
                      <div
-                        className={`drop-icons shadow bg-white position-absolute top-5 ${activeDropdown === 'icons' ? 'show' : ''
-                           } ${closingDropdown === 'icons' ? 'hide' : ''}`}
-
+                        className={`drop-icons shadow bg-white position-absolute top-5 ${
+                           activeDropdown === 'icons' ? 'show' : ''
+                        } ${closingDropdown === 'icons' ? 'hide' : ''}`}
                      >
                         {/* 2 rows of 6 icons each */}
                         <div className="col-12 pt-4 px-3">
@@ -321,7 +270,7 @@ export default function MyNavbar() {
                               >
                                  <GiTrousers
                                     alt="Trousers"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Trousers</span>
                               </a>
@@ -333,7 +282,7 @@ export default function MyNavbar() {
                               >
                                  <TbJacket
                                     alt="Jackets"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">ackets</span>
                               </a>
@@ -345,7 +294,7 @@ export default function MyNavbar() {
                               >
                                  <PiTShirtLight
                                     alt="T-Shirts"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">T-Shirts</span>
                               </a>
@@ -357,7 +306,7 @@ export default function MyNavbar() {
                               >
                                  <PiShirtFolded
                                     alt="Shirts"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Shirts</span>
                               </a>
@@ -369,7 +318,7 @@ export default function MyNavbar() {
                               >
                                  <PiHoodieLight
                                     alt="Pullovers"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Pullovers</span>
                               </a>
@@ -381,7 +330,7 @@ export default function MyNavbar() {
                               >
                                  <GiTrousers
                                     alt="Scarfs"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Scarfs</span>
                               </a>
@@ -395,7 +344,7 @@ export default function MyNavbar() {
                               >
                                  <GiShorts
                                     alt="Shorts"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Shorts</span>
                               </a>
@@ -407,7 +356,7 @@ export default function MyNavbar() {
                               >
                                  <GiUnderwearShorts
                                     alt="Underwear"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Underwear</span>
                               </a>
@@ -419,7 +368,7 @@ export default function MyNavbar() {
                               >
                                  <GiWatch
                                     alt="Watches"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Watches</span>
                               </a>
@@ -431,7 +380,7 @@ export default function MyNavbar() {
                               >
                                  <PiSuitcaseSimple
                                     alt="Bags"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Bags</span>
                               </a>
@@ -443,7 +392,7 @@ export default function MyNavbar() {
                               >
                                  <PiBaseballCap
                                     alt="Caps"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Caps</span>
                               </a>
@@ -455,20 +404,13 @@ export default function MyNavbar() {
                               >
                                  <GiBowTie
                                     alt="Accessories"
-                                    className='icon-style'
+                                    className="icon-style"
                                  />
                                  <span className="mb-3">Accessories</span>
                               </a>
                            </div>
                         </div>
-                        <div
-                           className="d-flex justify-content-center align-items-center pt-4 pb-4 px-5"
-                           style={{
-                              backgroundColor: '#BCAC76',
-                              fontSize: '.9rem',
-                              fontWeight: '600',
-                           }}
-                        >
+                        <div className="icons-bottom d-flex justify-content-center align-items-center pt-4 pb-1 px-5">
                            <p>
                               Don't miss our biggest sales this year. Use the
                               code 'SUMMER35' at checkout until Jun. 15!
@@ -483,566 +425,266 @@ export default function MyNavbar() {
                         className="d-flex justify-content-center align-items-center collapse-menu-items"
                         onClick={() => toggleDropdown('pages')}
                      >
-                        <button
-                           style={{
-                              border: 'none',
-                              backgroundColor: 'rgba(33, 33, 33, 0)',
-                           }}
-                        >
+                        <button class="border-0 bg-transparent menu-option">
                            Pages
                         </button>
-                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                        <MdExpandMore className="cursor-pointer" />
                      </div>
 
                      {/* Dropdown container */}
                      <div
-                        className={`drop-pages shadow bg-white position-absolute top-5 p-2 ${activeDropdown === 'pages' ? 'show' : ''
-                           } ${closingDropdown === 'pages' ? 'hide' : ''}`}
+                        className={`drop-pages shadow bg-white position-absolute top-5 p-2 ${
+                           activeDropdown === 'pages' ? 'show' : ''
+                        } ${closingDropdown === 'pages' ? 'hide' : ''}`}
                      >
                         {/* Four columns in a row */}
-                        <div className="row m-0" style={{ gap: '2rem' }}>
+                        <div className="row m-0 mb-5">
                            {/* Column 1 */}
-                           <div
-                              className="d-flex flex-column px-3"
-                              style={{
-                                 width: '16rem',
-                                 opacity: '1',
-                                 backgroundColor: 'white',
-                              }}
-                           >
-                              <img
-                                 src="images\pages-img-1.webp"
-                                 style={{ width: '100%', height: '11.25' }}
-                                 alt=""
-                              />
-                              <h3
-                                 className="mt-4 py-1 m-1"
-                                 style={{ fontWeight: 'bolder' }}
-                              >
+                           <div className="d-flex col col-3 flex-column px-3">
+                              <img src="images\pages-img-1.webp" alt="" />
+                              <h5 className="mt-4 py-1 m-1 fw-bold">
                                  Homepage
-                              </h3>
+                              </h5>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Home 1 - Fashion
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Home 2 - Fashion
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Home 3 - Design
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Home 4 - Design
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
-                              <h3
-                                 className="mt-4 py-1 m-1"
-                                 style={{ fontWeight: 'bolder' }}
-                              >
+                              <h5 className="mt-4 py-1 m-1 fw-bold">
                                  Category
-                              </h3>
+                              </h5>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Full width
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Full width with category menu
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Full width with big products
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Fixed width
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Fixed width &amp; sidebar
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Fixed width &amp; masonry layout
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Subcategories
                               </a>
                            </div>
 
                            {/* Column 2 */}
-                           <div
-                              className="d-flex flex-column px-3"
-                              style={{
-                                 width: '16rem',
-                                 opacity: '1',
-                                 backgroundColor: 'white',
-                              }}
-                           >
-                              <img
-                                 src="images\pages-img-2.webp"
-                                 style={{ width: '100%', height: '11.25' }}
-                                 alt=""
-                              />
-                              <h3
-                                 className="mt-4 py-1 m-1"
-                                 style={{ fontWeight: 'bolder' }}
-                              >
-                                 order Process
-                              </h3>
+                           <div className="d-flex col col-3 flex-column px-3">
+                              <img src="images\pages-img-2.webp" alt="" />
+                              <h5 className="mt-4 py-1 m-1 fw-bold">
+                                 Order Process
+                              </h5>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Shopping cart
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Checkout - Five steps
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Checkout - Single page
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Checkout - confirm
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
-                              <h3
-                                 className="mt-4 py-1 m-1"
-                                 style={{ fontWeight: 'bolder' }}
-                              >
-                                 Product
-                              </h3>
+                              <h5 className="mt-4 py-1 m-1 fw-bold">Product</h5>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Product with sticky info
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Product with sticky info
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Product standard
                               </a>
                            </div>
 
                            {/* Column 3 */}
-                           <div
-                              className="d-flex flex-column px-3"
-                              style={{
-                                 width: '16rem',
-                                 opacity: '1',
-                                 backgroundColor: 'white',
-                              }}
-                           >
-                              <img
-                                 src="images\pages-img-3.webp"
-                                 style={{ width: '100%', height: '11.25' }}
-                                 alt=""
-                              />
-                              <h3
-                                 className="mt-4 py-1 m-1"
-                                 style={{ fontWeight: 'bolder' }}
-                              >
-                                 Blog
-                              </h3>
+                           <div className="d-flex col col-3 flex-column px-3">
+                              <img src="images\pages-img-3.webp" alt="" />
+                              <h5 className="mt-4 py-1 m-1 fw-bold">Blog</h5>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Blog
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Blog - Masonry
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Post
                               </a>
-                              <h3
-                                 className="mt-4 py-1 m-1"
-                                 style={{ fontWeight: 'bolder' }}
-                              >
-                                 Page
-                              </h3>
+                              <h5 className="mt-4 py-1 m-1 fw-bold">Page</h5>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  About - Company
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  About v2 - Person
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  F.A.Q.
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 py-1 m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Contact
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Privacy policy
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                            </div>
 
                            {/* Column 4 */}
-                           <div
-                              className="d-flex flex-column px-3"
-                              style={{
-                                 width: '16rem',
-                                 opacity: '1',
-                                 backgroundColor: 'white',
-                              }}
-                           >
-                              <img
-                                 src="images\pages-img-4.webp"
-                                 style={{ width: '100%', height: '11.25' }}
-                                 alt=""
-                              />
-                              <h3
-                                 className="mt-4 py-1 m-1"
-                                 style={{ fontWeight: 'bolder' }}
-                              >
+                           <div className="d-flex col col-3 flex-column px-3">
+                              <img src="images\pages-img-4.webp" alt="" />
+                              <h5 className="mt-4 py-1 m-1 fw-bold">
                                  Customer
-                              </h3>
+                              </h5>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Login/signup
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Orders
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Order detail
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Order tracking
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Addresses
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Profile
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                               <a
                                  href="/"
                                  className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
-                                 style={{ fontSize: '.8rem' }}
                               >
                                  Wishlist
-                                 <div
-                                    className="p-1"
-                                    style={{
-                                       fontSize: '.8rem',
-                                       fontWeight: '600',
-                                       color: '#BCAC76',
-                                       backgroundColor: '#F8F4E6',
-                                       borderRadius: '20%',
-                                       marginLeft: '4px',
-                                    }}
-                                 >
-                                    New
-                                 </div>
+                                 <div className="new-btn">New</div>
                               </a>
                            </div>
                         </div>
@@ -1056,101 +698,75 @@ export default function MyNavbar() {
                            toggleDropdown('docs');
                         }}
                      >
-                        <button
-                           style={{
-                              border: 'none',
-                              backgroundColor: 'rgba(33, 33, 33, 0)',
-                           }}
-                        >
+                        <button class="border-0 bg-transparent menu-option">
                            Docs
                         </button>
-                        <MdExpandMore style={{ cursor: 'pointer' }} />
+                        <MdExpandMore className="cursor-pointer" />
                      </div>
                      <div
-                        className={`drop-docs shadow position-absolute top-5 ${activeDropdown === 'docs' ? 'show' : ''
-                           } ${closingDropdown === 'docs' ? 'hide' : ''}`}
+                        className={`drop-docs bg-white shadow position-absolute top-5 ${
+                           activeDropdown === 'docs' ? 'show' : ''
+                        } ${closingDropdown === 'docs' ? 'hide' : ''}`}
                      >
-                        <div
-                           className="d-flex flex-column"
-                           style={{
-                              width: '10rem',
-                              opacity: '1',
-                              backgroundColor: 'white',
-                           }}
-                        >
-                           <h3
-                              className="mt-4 py-1 m-1 px-3"
-                              style={{ fontWeight: 'bolder' }}
-                           >
+                        <div className="d-flex flex-column">
+                           <h5 className="mt-4 py-1 m-1 px-3 drop-down-title">
                               Documentation
-                           </h3>
+                           </h5>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{ fontSize: '.8rem' }}
                            >
                               Introduction
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{ fontSize: '.8rem' }}
                            >
                               Directory structure
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{ fontSize: '.8rem' }}
                            >
                               Next.js
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{ fontSize: '.8rem' }}
                            >
                               Customizing CSS
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{ fontSize: '.8rem' }}
                            >
                               Demo Data
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{ fontSize: '.8rem' }}
                            >
                               Credits
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{ fontSize: '.8rem' }}
                            >
-                              Changelog
+                              Change log
                            </a>
                            <hr />
-                           <h3
-                              className="py-1 m-1 px-3"
-                              style={{ fontWeight: 'bolder' }}
-                           >
+                           <h5 className="py-1 m-1 px-3 drop-down-title">
                               Components
-                           </h3>
+                           </h5>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3"
-                              style={{ fontSize: '.8rem' }}
                            >
                               Bootstrap
                            </a>
                            <a
                               href="/"
                               className="option option-color w-100 py-1 m-1 px-3 "
-                              style={{ fontSize: '.8rem' }}
                            >
                               Theme
                            </a>
@@ -1162,29 +778,13 @@ export default function MyNavbar() {
                   <Form.Control
                      type="search"
                      placeholder="Search"
-                     className="me-auto"
+                     className="me-auto menu-search-item"
                      aria-label="Search"
-                     style={{
-                        fontWeight: '500',
-                        border: 'none',
-                        borderRadius: '0',
-                        borderBottom: '1px black solid',
-                        backgroundColor: 'rgb(240, 235, 223,0)',
-                        outline: 'none',
-                     }}
                   />
                </Form>
             </Navbar.Collapse>
 
-            <Nav
-               className="me-auto d-none d-md-flex"
-               style={{
-                  width: 'auto',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-               }}
-            >
+            <Nav className="me-auto d-none d-md-flex w-auto d-flex justify-content-center flex-row">
                <NavLink className="px-2 collapse-icons">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
@@ -1232,9 +832,8 @@ export default function MyNavbar() {
                   </svg>
                </NavLink>
                <Button
-                  className="d-none d-lg-block"
+                  className="d-none d-lg-block bg-transparent border-0"
                   onClick={handleShow}
-                  style={{ backgroundColor: 'rgba(0,0,0,0)', border: 'none' }}
                >
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
@@ -1274,23 +873,15 @@ export default function MyNavbar() {
                </svg>
             </Navbar.Toggle>
             <Offcanvas
-               className="overflow-auto d-none d-md-flex"
+               className="overflow-auto d-none d-md-flex d-flex justify-content-start align-items-center w-40"
                show={show}
                onHide={handleClose}
                placement="end"
                name="end"
-               style={{
-                  width: '31rem',
-                  display: 'flex',
-                  justifyContent: 'start',
-                  alignItems: 'center',
-               }}
             >
-               <div style={{ padding: '0 3rem', width: '100%' }}>
+               <div className="w-100 px-5">
                   <Offcanvas.Header closeButton></Offcanvas.Header>
-                  <Offcanvas.Title
-                     style={{ fontWeight: '700', paddingBottom: '3rem' }}
-                  >
+                  <Offcanvas.Title className="fw-bold pb-5">
                      Varkala
                   </Offcanvas.Title>
                   <Offcanvas.Title className="pb-3">Home</Offcanvas.Title>
@@ -1300,20 +891,25 @@ export default function MyNavbar() {
                      <div>
                         <p
                            onClick={() => setOpen(!open)}
-                           className=""
-                           style={{
-                              cursor: 'pointer',
-                              display: 'inline-block',
-                           }}
+                           className="d-inline-block cursor-pointer"
                         >
-                           Dropdown link <span>{open ? <IoIosArrowUp /> : <IoIosArrowDown />}</span>
+                           Dropdown link{' '}
+                           <span>
+                              {open ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                           </span>
                         </p>
 
                         <Collapse in={open}>
                            <div className="pb-3">
-                              <p className="option option-color pb-3 pt-3">Action</p>
-                              <p className="option option-color pb-3">Another action</p>
-                              <p className="option option-color pb-3">Something else here</p>
+                              <p className="option option-color pb-3 pt-3">
+                                 Action
+                              </p>
+                              <p className="option option-color pb-3">
+                                 Another action
+                              </p>
+                              <p className="option option-color pb-3">
+                                 Something else here
+                              </p>
                            </div>
                         </Collapse>
                      </div>
@@ -1346,7 +942,7 @@ export default function MyNavbar() {
                               />
                            </svg>
                         </Navbar.Brand>
-                        <Navbar href="#home">
+                        <Navbar href="#home" className="phone-number">
                            <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="25"

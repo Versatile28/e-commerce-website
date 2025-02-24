@@ -45,7 +45,7 @@ export default function CountdownSection () {
               </span>
               <span className="deal-price fs-5 fw-bold">$79.00</span>
             </div>
-            <Badge bg="danger" className="deal-badge mb-4">
+            <Badge bg="danger" className="deal-badge p-3 mb-4">
               $50 off
             </Badge>
 
