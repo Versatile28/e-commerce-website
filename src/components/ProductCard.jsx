@@ -43,18 +43,20 @@ export default function ProductCard({
                   </span>
                )}
 
+               <a className='product-link' href="/e-commerce-website">
                <Card.Img
                   variant="top"
                   src={imageSrc}
                   alt={title}
                   className="product-image"
                />
+               </a>
 
                <div className={`hover-overlay ${hovered ? 'show' : ''}`}>
                   <div className="overlay-content">
-                     <p className='product-cart' style={{ fontSize: ".9rem", fontWeight: "600" }}>
+                     <a href='/e-commerce-website' className='product-cart'>
                         Add to cart
-                     </p>
+                     </a>
                      <div>
                         <AiOutlineHeart className="icon" />
                         <IoExpand className="icon" />
@@ -64,7 +66,7 @@ export default function ProductCard({
             </Card>
 
             <div>
-               <a href='/' className='card-title mt-3'>{title}</a>
+               <a href='/e-commerce-website' className='card-title mt-3'>{title}</a>
                <div className='d-flex justify-content-between mt-2'>
                   <p className="text-muted product-price">${price.toFixed(2)}</p>
                   <div className={`star-rating ${hovered ? 'show' : ''}`}>

@@ -61,6 +61,11 @@ table {
   margin: 0px
 }
 
+/* .row>*{
+   padding-left: 0;
+   padding-right: 0;
+} */
+
 /* Header bar */
 
 .headerbar-options .dropdown-menu {
@@ -536,9 +541,23 @@ table {
    cursor: pointer;
  }
 
+.product-link{
+   text-decoration: none;
+   height: 17.5rem;
+   color: black;
+}
+
+ .product-cart{
+   font-size: .9rem;
+   font-weight: 500;
+   color: black;
+   text-decoration: none;
+ }
+
  .product-cart:hover{
    text-decoration: underline;
  }
+
 
  .card-title{
    font-family: var(--bs-body-font-family);
