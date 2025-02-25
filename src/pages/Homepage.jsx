@@ -14,12 +14,12 @@ import '../App.css';
 
 export default function Homepage() {
   return (
-    <div style={{position:"relative"}}>
-        <div style={{position:"absolute",width:'100%', zIndex:"1"}}>
+    <div className='position-relative'>
+        <div className="position-absolute w-100 navigation-bars">
         <HeaderBar/>
         <MyNavbar/>
         </div>
-        <div style={{position:"relative",width:"100%"}}>
+        <div className='position-relative w-100'>
         <HeroCarousel/>
         </div>
         <CatagorySection/>

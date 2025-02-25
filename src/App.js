@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css'
 import Homepage from './pages/Homepage';
+import ProductDetails from './pages/ProductDetails';
 
 export default function App() {
 
@@ -20,6 +21,7 @@ export default function App() {
       <BrowserRouter basename='/e-commerce-website'>
         <Routes>
           <Route path="/" element={<Homepage/>}/>
+          <Route path='/category-full/product' element={<ProductDetails/>}/>
         </Routes>
       </BrowserRouter>
     </div>

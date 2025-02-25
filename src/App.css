@@ -78,6 +78,19 @@ table {
    padding-right: 0;
 } */
 
+
+/* ========================================= Pages ============================================== */
+
+/* Homepage */
+
+.navigation-bars{
+   z-index: 1;
+}
+
+
+
+/* ================================== Components & Layouts ====================================== */
+
 /* Header bar */
 
 .headerbar-container{
@@ -113,19 +126,6 @@ table {
 }
 
 /* NavBar */
-
-
-/* .navbar-s-collapse .collapsing {
-   height: auto !important;
-   transition: height 0.35s ease-out !important;
- }
- 
- .navbar-s-collapse .collapse.no-transition {
-   transition: none !important;
-   display: none !important;
-   height: 0 !important;
-   overflow: hidden;
- } */
  
  
 .show-item{
@@ -1042,6 +1042,7 @@ table {
  .text-muted {
    color: #bbb !important;
  }
+ 
 
  @media(max-width: 575px){
   .w-xs{
