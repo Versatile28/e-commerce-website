@@ -3,8 +3,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 export default function CatagorySection() {
   return (
-<div style={{backgroundColor:"#F8F9FA"}}>
-<Container className="w-xs" style={{padding:"5rem 1rem"}}>
+<div className='category-section'>
+<Container className="w-xs category-container">
    <Row>
      <Col xs={12} sm={6} className="mb-3 mb-sm-0">
        <div className="image-container">

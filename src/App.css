@@ -69,6 +69,10 @@ table {
    font-family: var(--bs-font-monospace) !important;
 }
 
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+   --bs-gutter-x: 0rem;
+}
+
 /* .row>*{
    padding-left: 0;
    padding-right: 0;
@@ -76,8 +80,26 @@ table {
 
 /* Header bar */
 
+.headerbar-container{
+   max-width: 100vw !important;
+   padding-right: 3rem !important;
+   padding-left: 3rem !important;
+}
+
+.headerbar-box{
+   height: 1.2rem;
+}
+
+.headerbar-container .ph-no{
+   font-family: var(--bs-font-monospace) !important;
+}
+
+.title-head{
+   font-size: .9rem;
+}
+
 .headerbar-options .dropdown-menu {
-   padding: 1rem;
+   font-size: .9rem !important;
    border: none;
    border-radius: 0;
    box-shadow: 0 0 10px rgb(205, 205, 205);
@@ -85,15 +107,37 @@ table {
 }
 
 .headerbar-options .dropdown-item{
-   margin:.5rem 0;
+   font-size: .9rem !important;
    background-color: #fff;
    color: #999999;
 }
 
 /* NavBar */
 
+.mynavbar-container{
+   max-width: 100vw !important;
+   padding-right: 3rem !important;
+   padding-left: 3rem !important;
+}
+
 .top-5{
    top: 5rem !important;
+}
+
+.mynavbar-icon{
+   height: 1.4rem;
+   width: 1.5rem;
+}
+
+.mynavbar-icon-h{
+   height: 1.7rem;
+   width: 1.5rem;
+}
+
+.nav-link{
+   font-size: .9rem !important;
+   padding-top: 0 !important;
+   padding-bottom: 0 !important;
 }
 
 .drop-home {
@@ -433,6 +477,14 @@ table {
 
 /* Catagory Section */
 
+.category-section{
+   background-color: #F8F9FA;
+}
+
+.category-container{
+   padding: 5rem 1rem;
+}
+
 .image-container {
    position: relative;
    overflow: hidden;
@@ -492,8 +544,20 @@ table {
    font-weight:500;
  }
 
+ .newarrivals-container{
+   max-width: 100vw !important;
+   padding-right: 3rem !important;
+   padding-left: 3rem !important;
+}
+
 
  /* Product Section */
+
+ .product-section-container{
+   max-width: 100vw !important;
+   padding-right: 3rem !important;
+   padding-left: 3rem !important;
+}
 
  .product-links{
    color: #868E96;
@@ -513,7 +577,6 @@ table {
    font-size: 1rem;
    text-decoration: none;
    color: #BCAC76;
-
  }
 
  .product-link-a:hover{
@@ -529,7 +592,11 @@ table {
  }
 
  .card{
+   border: none;
    border-radius: 0 !important;
+   --bs-card-border-width: 0 !important;
+   --bs-card-border-color: none !important;
+   --bs-card-border-radius: 0 !important;
  }
  
  .badge-label {

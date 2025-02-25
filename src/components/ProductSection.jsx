@@ -90,7 +90,7 @@ export default function App() {
    ];
 
    return (
-      <Container className='pb-3 \'>
+      <Container className='pb-3 product-section-container'>
          <Row className='mb-2 d-flex justify-content-center'>
             <Row className='d-flex justify-content-between align-items-center'>
                <Col md={8} sm={12} xs={12} className='d-flex flex-wrap gap-2 product-collapse mb-3 p-0'>
@@ -100,7 +100,7 @@ export default function App() {
                   <a href='/' className='product-links'>Shoes</a>
                   <a href='/' className='product-links'>Accessories</a>
                </Col>
-               <Col md={4} sm={12} xs={12} className='d-flex justify-content-md-end product-collapse mb-3 p-0'><a href='/' className='product-link-a'>ALL PRODUCTS</a>
+               <Col md={4} sm={12} xs={12} className='d-flex justify-content-md-end product-collapse mb-3 p-0'><a href='/e-commerce-website' className='product-link-a'>ALL PRODUCTS</a>
                </Col>
             </Row>
          </Row>

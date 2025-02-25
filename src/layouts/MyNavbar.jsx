@@ -26,7 +26,10 @@ import {
    PiHoodieLight,
    PiSuitcaseSimple,
    PiBaseballCap,
+   PiShoppingBagOpen
 } from 'react-icons/pi';
+import { SlUser } from "react-icons/sl";
+import { GoHeart } from "react-icons/go";
 
 export default function MyNavbar() {
    const [show, setShow] = useState(false);
@@ -52,8 +55,8 @@ export default function MyNavbar() {
    };
 
    return (
-      <Navbar expand="lg">
-         <Container>
+      <Navbar expand="lg" className='py-4'>
+         <Container className='mynavbar-container'>
             <Navbar.Brand href="#">Varkala</Navbar.Brand>
             <Navbar.Collapse className="collapse-opacity">
                <Nav className="me-auto">
@@ -784,52 +787,16 @@ export default function MyNavbar() {
                </Form>
             </Navbar.Collapse>
 
-            <Nav className="me-auto d-none d-md-flex w-auto d-flex justify-content-center flex-row">
+            <Nav className="me-auto d-none d-md-flex w-auto d-flex justify-content-center align-items-center flex-row">
                <NavLink className="px-2 collapse-icons">
-                  <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     stroke-width="1"
-                     width="25"
-                     height="25"
-                     viewBox="0 0 512 512"
-                  >
-                     <path
-                        path
-                        fill="currentColor"
-                        d="m411.6 343.656l-72.823-47.334l27.455-50.334A80.23 80.23 0 0 0 376 207.681V128a112 112 0 0 0-224 0v79.681a80.236 80.236 0 0 0 9.768 38.308l27.455 50.333l-72.823 47.334A79.725 79.725 0 0 0 80 410.732V496h368v-85.268a79.727 79.727 0 0 0-36.4-67.076ZM416 464H112v-53.268a47.836 47.836 0 0 1 21.841-40.246l97.66-63.479l-41.64-76.341A48.146 48.146 0 0 1 184 207.681V128a80 80 0 0 1 160 0v79.681a48.146 48.146 0 0 1-5.861 22.985L296.5 307.007l97.662 63.479A47.836 47.836 0 0 1 416 410.732Z"
-                     />
-                  </svg>
+                  <SlUser className='mynavbar-icon'/>
                </NavLink>
                <NavLink className="px-2 collapse-icons">
-                  <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="25"
-                     height="25"
-                     viewBox="0 0 40 35"
-                  >
-                     <path
-                        path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
-                        d="M27 0a9.97 9.97 0 0 0-6.704 2.595A9.97 9.97 0 0 0 18.5 4.749a10 10 0 0 0-1.796-2.155A9.974 9.974 0 0 0 10 0C4.486 0 0 4.486 0 10c0 3.722 1.158 6.66 3.871 9.825c3.942 4.6 13.919 11.62 14.342 11.917a.496.496 0 0 0 .574 0c.423-.297 10.4-7.317 14.343-11.917C35.842 16.66 37 13.722 37 10c0-5.514-4.486-10-10-10zm5.371 19.175C28.876 23.251 20.191 29.516 18.5 30.72c-1.691-1.204-10.376-7.469-13.87-11.545C2.085 16.206 1 13.462 1 10c0-4.963 4.038-9 9-9c2.227 0 4.37.829 6.032 2.335a9 9 0 0 1 2.02 2.664c.17.34.726.34.896 0a8.984 8.984 0 0 1 2.02-2.663A8.968 8.968 0 0 1 27 1c4.962 0 9 4.037 9 9c0 3.462-1.085 6.206-3.629 9.175z"
-                     />
-                  </svg>
+                  <GoHeart className='mynavbar-icon-h'/>
                </NavLink>
                <NavLink className="px-2 collapse-icons">
-                  <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="25"
-                     height="25"
-                     viewBox="0 0 1024 1024"
-                  >
-                     <path
-                        fill="currentColor"
-                        d="M864 158.704H672.815V97.328c0-52.944-43.056-96-96-96H449.183c-52.944 0-96 43.056-96 96v61.376H159.999c-35.344 0-64 28.656-64 64v735.968c0 35.344 28.656 64 64 64h704c35.344 0 64-28.656 64-64V222.704c0-35.344-28.656-64-64-64H864zM417.184 97.328c0-17.664 14.336-32 32-32h127.632c17.664 0 32 14.336 32 32v61.376H417.184V97.328zM864 958.672H160V222.704h193.184v65.84s-.848 31.967 31.809 31.967c36 0 32.192-31.967 32.192-31.967v-65.84h191.632v65.84s-2.128 32.128 31.872 32.128c32 0 32.128-32.128 32.128-32.128v-65.84h191.184v735.968z"
-                     />
-                  </svg>
+                  <PiShoppingBagOpen
+                  className='mynavbar-icon-h'/>
                </NavLink>
                <Button
                   className="d-none d-lg-block bg-transparent border-0"
