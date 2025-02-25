@@ -19,6 +19,7 @@ export default function MyNavbar() {
    const [show, setShow] = useState(false);
    const [open, setOpen] = useState(false);
    const [showFirst, setShowFirst] = useState(true);
+   const [delayedClass, setDelayedClass] = useState("show-item");
 
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
@@ -30,134 +31,63 @@ export default function MyNavbar() {
       return () => window.removeEventListener('resize', handleResize);
    }, []);
 
-   // const [isOpen, setIsOpen] = useState(false);
-   // const [forceClose, setForceClose] = useState(false);
- 
-   // const handleToggle = () => {
-   //   if (isOpen) {
-   //     setForceClose(true);
-   //     setTimeout(() => setForceClose(false), 10);
-   //   }
-   //   setIsOpen(!isOpen);
-   // };
+   useEffect(() => {
+      if (showFirst) {
+         const timer = setTimeout(() => {
+            setDelayedClass("show-item");
+         }, 300);
+
+         return () => clearTimeout(timer);
+      } else {
+         setDelayedClass("hide-item");
+      }
+   }, [showFirst]);
+
 
    return (
       <Navbar expand="lg" className="py-4">
          <Container className="mynavbar-container">
-            {/* <Nav>
-               <Navbar.Brand href="#">Varkala</Navbar.Brand>
-               <NavbarMenu />
-               <Nav className="me-auto d-none d-md-flex w-auto d-flex justify-content-center align-items-center flex-row">
-                  <NavLink className="px-2 collapse-icons">
-                     <SlUser className="mynavbar-icon" />
-                  </NavLink>
-                  <NavLink className="px-2 collapse-icons">
-                     <GoHeart className="mynavbar-icon-h" />
-                  </NavLink>
-                  <NavLink className="px-2 collapse-icons">
-                     <PiShoppingBagOpen className="mynavbar-icon-h" />
-                  </NavLink>
-                  <Button
-                     className="d-none d-lg-block bg-transparent border-0"
-                     onClick={handleShow}
-                  >
-                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="25"
-                        height="25"
-                        viewBox="0 0 24 24"
-                     >
-                        <path
-                           fill="none"
-                           stroke="black"
-                           stroke-linecap="round"
-                           stroke-linejoin="round"
-                           stroke-width="2"
-                           d="M4 6h16M4 12h8m-8 6h16"
-                        />
-                     </svg>
-                  </Button>
-               </Nav>
-               <Navbar.Toggle
-                  className="collapse-btn border-0"
-                  aria-controls="basic-navbar-nav"
-               >
-                  <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="25"
-                     height="25"
-                     viewBox="0 0 24 24"
-                  >
-                     <path
-                        fill="none"
-                        stroke="black"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M4 6h16M4 12h8m-8 6h16"
-                     />
-                  </svg>
-               </Navbar.Toggle>
-            </Nav> */}
             <Nav className="d-lg-none d-flex justify-content-between flex-row w-100 navbar-s-collapse">
-               <Navbar.Brand
-                  className={`mx-2 ${showFirst ? 'show-item' : 'hide-item'}`}
-                  href="#"
-               >
+               <Navbar.Brand className={`mx-2 ${delayedClass}`} href="#">
                   Varkala
                </Navbar.Brand>
-               <Nav
-                  className={`${
-                     showFirst ? 'show-item' : 'hide-item'
-                  }`}
-               >
-                  <div className='d-flex align-items-center'>
-                  <NavLink className="px-2 collapse-icons">
-                     <SlUser className="mynavbar-icon" />
-                  </NavLink>
-                  <NavLink className="px-2 collapse-icons">
-                     <GoHeart className="mynavbar-icon-h" />
-                  </NavLink>
-                  <NavLink className="px-2 collapse-icons">
-                     <PiShoppingBagOpen className="mynavbar-icon-h" />
-                  </NavLink>
+               <Nav className={delayedClass}>
+                  <div className="d-flex align-items-center">
+                     <Nav.Link className="px-2 pt-2 collapse-icons">
+                        <SlUser className="mynavbar-icon" />
+                     </Nav.Link>
+                     <Nav.Link className="px-2 pt-2 collapse-icons">
+                        <GoHeart className="mynavbar-icon-h" />
+                     </Nav.Link>
+                     <Nav.Link className="px-2 pt-2 collapse-icons">
+                        <PiShoppingBagOpen className="mynavbar-icon-h" />
+                     </Nav.Link>
                   </div>
                </Nav>
-               {/* <Navbar.Collapse className={`collapse-opacity  ${forceClose ? "collapse no-transition" : "collapse"}`}> */}
-               <Navbar.Collapse className='collapse-opacity'>
+
+               <Navbar.Collapse className="collapse-opacity">
                   <Nav className="me-auto w-auto d-flex justify-content-between align-items-center flex-row">
-                     <Navbar.Brand href="#" className='mx-2'>Varkala</Navbar.Brand>
-                     <div className='d-flex'>
-                     <NavLink className="px-2 collapse-icons">
-                        <SlUser className="mynavbar-icon" />
-                     </NavLink>
-                     <NavLink className="px-2 collapse-icons">
-                        <GoHeart className="mynavbar-icon-h" />
-                     </NavLink>
-                     <NavLink className="px-2 collapse-icons">
-                        <PiShoppingBagOpen className="mynavbar-icon-h" />
-                     </NavLink>
+                     <Navbar.Brand href="#" className="mx-2">
+                        Varkala
+                     </Navbar.Brand>
+                     <div className="d-flex">
+                        <Nav.Link className="px-2 collapse-icons">
+                           <SlUser className="mynavbar-icon" />
+                        </Nav.Link>
+                        <Nav.Link className="px-2 collapse-icons">
+                           <GoHeart className="mynavbar-icon-h" />
+                        </Nav.Link>
+                        <Nav.Link className="px-2 collapse-icons">
+                           <PiShoppingBagOpen className="mynavbar-icon-h" />
+                        </Nav.Link>
                      </div>
-                     {/* <Navbar.Toggle
-                        onClick={() => {setShowFirst(!showFirst);handleToggle();}}
-                        className={`border-0 ${
-                           showFirst ? 'hide-item' : 'show-item'
-                        }`}
-                        aria-controls="basic-navbar-nav"
-                     > */}
-                                             <Navbar.Toggle
-                        onClick={() => {setShowFirst(!showFirst)}}
-                        className={`border-0 ${
-                           showFirst ? 'hide-item' : 'show-item'
-                        }`}
+
+                     <Navbar.Toggle
+                        onClick={() => setShowFirst(!showFirst)}
+                        className={`border-0 ${!delayedClass}`}
                         aria-controls="basic-navbar-nav"
                      >
-                        <svg
-                           xmlns="http://www.w3.org/2000/svg"
-                           width="25"
-                           height="25"
-                           viewBox="0 0 24 24"
-                        >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
                            <path
                               fill="none"
                               stroke="black"
@@ -173,17 +103,10 @@ export default function MyNavbar() {
                </Navbar.Collapse>
                <Navbar.Toggle
                   onClick={() => setShowFirst(!showFirst)}
-                  className={`border-0 ${
-                     showFirst ? 'show-item' : 'hide-item'
-                  }`}
+                  className={`border-0 ${delayedClass}`}
                   aria-controls="basic-navbar-nav"
                >
-                  <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="25"
-                     height="25"
-                     viewBox="0 0 24 24"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
                      <path
                         fill="none"
                         stroke="black"
