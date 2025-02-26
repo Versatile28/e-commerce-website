@@ -2,7 +2,8 @@
 @import url('https://db.onlinewebfonts.com/c/3a0686ce5acec7b228f4580a02d0be41?family=VremenaGrotesk');
 
 :root{
-   --bs-font-monospace: "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;--bs-body-font-family: 'VremenaGrotesk', sans-serif;
+   --bs-font-monospace: "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace !important;
+   --bs-body-font-family: 'VremenaGrotesk', sans-serif !important;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -86,6 +87,10 @@ table {
    display: none;
 }
 
+.font-body-font-family{
+   font-family: var(--bs-body-font-family);
+}
+
 
 /* ========================================= Pages ============================================== */
 
@@ -121,11 +126,15 @@ table {
 }
 
 .headerbar-container .ph-no{
-   font-family: var(--bs-font-monospace) !important;
+   font-family: var(--bs-body-font-family) !important;
+   color: #343A40;
 }
 
 .title-head{
-   font-size: .9rem;
+   font-family: var(--bs-body-font-family);
+   font-size: .85rem;
+   font-weight:lighter;
+   color: #343A40;
 }
 
 .headerbar-options .dropdown-menu {
@@ -133,8 +142,9 @@ table {
    border: none;
    border-radius: 0;
    box-shadow: 0 0 10px rgb(205, 205, 205);
-   transform: translateX(-80px);
+   transform: translateY(14px) translateX(-50px);
 }
+
 
 .headerbar-options .dropdown-item{
    font-size: .9rem !important;
@@ -187,21 +197,22 @@ table {
    top: 100%;
    width: 13.1rem;
    opacity: 0;
+   z-index: 2;
    visibility: hidden;
-   transform: translateY(20px) translateX(70px);
+   transform: translateY(28px) translateX(70px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-home.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(0) translateX(70px);
+   transform: translateY(8px) translateX(70px);
 }
 
 .drop-home.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(70px);
+   transform: translateY(28px) translateX(70px);
 }
 
 .drop-shop {
@@ -210,20 +221,20 @@ table {
    width: 55rem;
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(400px);
+   transform: translateY(28px) translateX(400px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-shop.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(0) translateX(400px);
+   transform: translateY(8px) translateX(400px);
 }
 
 .drop-shop.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(400px);
+   transform: translateY(28px) translateX(400px);
 }
 
 .drop-product {
@@ -232,20 +243,20 @@ table {
    width: 35rem;
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(210px);
+   transform: translateY(28px) translateX(210px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-product.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(0) translateX(210px);
+   transform: translateY(8px) translateX(210px);
 }
 
 .drop-product.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(210px);
+   transform: translateY(28px) translateX(210px);
 }
 
 .drop-icons {
@@ -254,20 +265,20 @@ table {
    width: 45rem;
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(310px);
+   transform: translateY(28px) translateX(310px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-icons.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(0) translateX(310px);
+   transform: translateY(8px) translateX(310px);
 }
 
 .drop-icons.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(310px);
+   transform: translateY(28px) translateX(310px);
 }
 
 .drop-icons .icons-bottom{
@@ -291,20 +302,20 @@ table {
    width: 75rem;
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(118px);
+   transform: translateY(28px) translateX(118px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-pages.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(0) translateX(118px);
+   transform: translateY(8px) translateX(118px);
 }
 
 .drop-pages.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(118px);
+   transform: translateY(28px) translateX(118px);
 }
 
 .drop-pages img{
@@ -322,26 +333,26 @@ table {
    opacity: 0;
    width: 12rem;
    visibility: hidden;
-   transform: translateY(20px) translateX(50px);
+   transform: translateY(28px) translateX(50px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-docs.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(0) translateX(50px);
+   transform: translateY(8px) translateX(50px);
 }
 
 .drop-docs.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(20px) translateX(50px);
+   transform: translateY(28px) translateX(50px);
 }
 
 
 .menu-option{
    font-family: var(--bs-body-font-family);
-   font-weight: 600;
+   font-weight: 500;
    color: #76736D;
 }
 
@@ -582,7 +593,7 @@ table {
  .new-arrivals-section p {
    line-height: 1.6;
    font-size: 1.25rem;
-   color:#777777da;
+   color:#999999 ;
    font-weight:500;
  }
 
@@ -731,7 +742,7 @@ table {
  .card-title{
    font-family: var(--bs-body-font-family);
    font-size: 1rem;
-   font-weight: 600;
+   font-weight: 500;
    text-decoration: none;
    letter-spacing: .5px;
  }
@@ -858,8 +869,8 @@ table {
  }
  
  .section-title {
-   font-size: 1.5rem;
-   font-weight: 500;
+   font-size: 1.3rem;
+   font-weight: 600;
    color: #BCAC76;
    letter-spacing: .25rem;
    text-transform: uppercase;
@@ -867,7 +878,7 @@ table {
  
  .history-section p {
    line-height: 1.6;
-   font-size: 1.3rem;
+   font-size: 1.2rem;
    color:#777777da;
    font-weight: 500;
  }
@@ -946,7 +957,7 @@ table {
    font-size: 1.1rem;
    font-weight:bolder;
    margin-bottom: 1.8rem;
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-body-font-family);
  }
  
  .footer-text {
@@ -978,6 +989,7 @@ table {
 
  .email-input .form-control::placeholder{
    font-family: var(--bs-body-font-family);
+   color:#bbb ;
  }
  
  .email-input button{
@@ -1096,6 +1108,33 @@ table {
    font-family: var(--bs-body-font-family);
  }
 
+ .breadcrumb-section{
+   font-size: .88rem;
+   font-family: var(--bs-body-font-family) !important;
+   font-weight: 500;
+ }
+
+ .breadcrumb-section .breadcrumb-item a{
+   font-size: .88rem;
+   font-family: var(--bs-body-font-family) !important;
+   color: #BCAC76;
+   text-decoration: none;
+   font-weight: 500;
+ }
+
+ .breadcrumb-section .breadcrumb-item.item-category{
+   color: #868E96;
+ }
+
+ .breadcrumb-section .breadcrumb-item.item-category::before{
+   float: left !important;
+   padding-right: var(--bs-breadcrumb-item-padding-x) !important;
+   color: var(--bs-breadcrumb-divider-color) !important;
+   content: var(--bs-breadcrumb-divider, "–") !important;
+ }
+
+
+ /* Media Queries */
 
  @media(max-width: 575px){
   .w-xs{

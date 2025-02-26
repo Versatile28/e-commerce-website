@@ -8,14 +8,17 @@ import {
    Accordion,
 } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { GrMailOption } from "react-icons/gr";
+import { GrMailOption } from 'react-icons/gr';
 
 const Footer = () => {
    return (
       <footer className="footer w-xs">
          <Container style={{ padding: '6rem 0' }}>
             <Row>
-               <Col lg={6} className="pe-lg-5 pe-xl-6 mb-5 mb-lg-0 col-lg-5">
+               <Col
+                  lg={4}
+                  className="pe-lg-5 me-lg-5 pe-xl-6 mb-5 mb-lg-0 col-lg-5"
+               >
                   <h5 className="footer-title">Be in touch</h5>
                   <p className="footer-text">
                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
@@ -28,7 +31,7 @@ const Footer = () => {
                      />
 
                      <button>
-                     <GrMailOption className='email-icon'/>
+                        <GrMailOption className="email-icon" />
                      </button>
                   </InputGroup>
                </Col>
@@ -125,21 +128,15 @@ const Footer = () => {
                </Col>
             </Row>
          </Container>
-         <Container className="d-flex flex-column justify-content-center align-items-center">
-            <Row className="footer-bottom d-flex flex-row flex-xs-column justify-content-center align-items-center w-100">
+         <Container className="d-flex flex-column justify-content-center align-items-center p-0">
+            <Row className="footer-bottom d-flex flex-row flex-xs-column justify-content-center align-items-center w-100 font-body-font-family">
                <Col
                   lg={4}
                   md={12}
                   sm={12}
-                  className="text-muted d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center justify-content-center align-items-center mb-2"
+                  className=" d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center justify-content-center align-items-center mb-2 p-0 text-muted"
                >
-                  <div
-                     style={{
-                        fontFamily:
-                           'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-                        display: 'flex',
-                     }}
-                  >
+                  <div>
                      &copy; 2025 Your company. All rights reserved.
                   </div>
                </Col>
@@ -148,7 +145,7 @@ const Footer = () => {
                   md={12}
                   sm={12}
                   xs={12}
-                  className="text-lg-end text-md-center text-muted d-flex flex-wrap justify-content-lg-end justify-content-md-center justify-content-sm-center justify-content-center mb-2"
+                  className="text-lg-end text-md-center d-flex flex-wrap justify-content-lg-end justify-content-md-center justify-content-sm-center justify-content-center mb-2 p-0 text-muted"
                >
                   <span>Terms & Conditions</span>
                   <span>Privacy & cookies</span>

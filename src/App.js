@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from "react";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {HashRouter, Routes, Route} from 'react-router-dom';
 import './App.css'
 import Homepage from './pages/Homepage';
 import ProductDetails from './pages/ProductDetails';
@@ -18,12 +18,12 @@ export default function App() {
 
   return (
     <div>
-      <BrowserRouter basename='/e-commerce-website'>
+      <HashRouter>
         <Routes>
-          <Route path="/" element={<Homepage/>}/>
-          <Route path='/category-full/product' element={<ProductDetails/>}/>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/category-full/product" element={<ProductDetails />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }

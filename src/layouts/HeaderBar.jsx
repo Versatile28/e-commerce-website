@@ -25,13 +25,13 @@ export default function HeaderBar() {
                 </Navbar>
                 <Navbar className="headerbar-options" id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <NavDropdown title="English" id="basic-nav-dropdown">
+                        <NavDropdown title="English" id="basic-nav-dropdown" className="pe-2 ps-5">
                             <NavDropdown.Item href="#">German</NavDropdown.Item>
                             <NavDropdown.Item href="#">
                                 French
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <NavDropdown title="USD" id="basic-nav-dropdown">
+                        <NavDropdown title="USD" id="basic-nav-dropdown" className="pe-2">
                             <NavDropdown.Item href="#">EUR</NavDropdown.Item>
                             <NavDropdown.Item href="#">
                                 GBP
