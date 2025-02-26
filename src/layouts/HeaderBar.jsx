@@ -23,7 +23,7 @@ export default function HeaderBar() {
                 <Navbar className="d-flex justify-content-center title-head pe-5">
                         Free in-store delivery
                 </Navbar>
-                <Navbar className="headerbar-options" id="basic-navbar-nav">
+                <Navbar className="headerbar-options d-sm-inline-block d-none" id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown title="English" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#">German</NavDropdown.Item>
