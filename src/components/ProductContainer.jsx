@@ -55,7 +55,7 @@ export default function ProductContainer() {
                </Breadcrumb.Item>
             </Breadcrumb>
          </div>
-         <div className='py-3 px-2'>
+         <div className='py-3 product-details'>
             <div>
                <a
                   className="d-block mb-4"

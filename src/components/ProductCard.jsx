@@ -3,6 +3,7 @@ import { Card } from 'react-bootstrap';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { IoExpand } from "react-icons/io5";
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
+import { PiShoppingBagOpen } from 'react-icons/pi';
 
 export default function ProductCard({
    badgeText = '',
@@ -54,9 +55,10 @@ export default function ProductCard({
 
                <div className={`hover-overlay ${hovered ? 'show' : ''}`}>
                   <div className="overlay-content">
-                     <a href='/e-commerce-website' className='product-cart'>
+                     <a href='/e-commerce-website' className='product-cart d-sm-inline-block d-none'>
                         Add to cart
                      </a>
+                     <PiShoppingBagOpen className='d-sm-none d-inline-block icon'/>
                      <div>
                         <AiOutlineHeart className="icon" />
                         <IoExpand className="icon" />

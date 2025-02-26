@@ -20,12 +20,12 @@ export default function HeaderBar() {
                         020-800-456-747
                     </Navbar>
                 </Navbar>
-                <Navbar className="d-flex justify-content-center title-head">
+                <Navbar className="d-flex justify-content-center title-head pe-5">
                         Free in-store delivery
                 </Navbar>
                 <Navbar className="headerbar-options" id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <NavDropdown title="English" id="basic-nav-dropdown" className="pe-2 ps-5">
+                        <NavDropdown title="English" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#">German</NavDropdown.Item>
                             <NavDropdown.Item href="#">
                                 French

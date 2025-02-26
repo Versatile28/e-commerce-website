@@ -1133,6 +1133,11 @@ table {
    content: var(--bs-breadcrumb-divider, "–") !important;
  }
 
+ .product-details .product-img-grey{
+   height: 34rem;
+   width: 34rem;
+ }
+
 
  /* Media Queries */
 
