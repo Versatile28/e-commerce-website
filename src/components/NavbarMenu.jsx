@@ -47,7 +47,7 @@ export default function NavbarMenu() {
                      toggleDropdown('home');
                   }}
                >
-                  <button class="border-0 bg-transparent menu-option text-black">
+                  <button className="border-0 bg-transparent menu-option text-black">
                      Home
                   </button>
                   <MdExpandMore className="cursor-pointer" />
@@ -87,7 +87,7 @@ export default function NavbarMenu() {
                   className="d-flex justify-content-between align-items-center collapse-menu-items"
                   onClick={() => toggleDropdown('shopPages')}
                >
-                  <button class="border-0 bg-transparent menu-option">
+                  <button className="border-0 bg-transparent menu-option">
                      Shop
                   </button>
                   <MdExpandMore className="cursor-pointer" />
@@ -145,7 +145,7 @@ export default function NavbarMenu() {
                         <img
                            src="images/shop.webp"
                            alt="Model"
-                           class="img-fluid h-100"
+                           className="img-fluid h-100"
                         />
                      </div>
                   </div>
@@ -157,7 +157,7 @@ export default function NavbarMenu() {
                   className="d-flex justify-content-between align-items-center collapse-menu-items"
                   onClick={() => toggleDropdown('product')}
                >
-                  <button class="border-0 bg-transparent menu-option">
+                  <button className="border-0 bg-transparent menu-option">
                      Product Card
                   </button>
                   <MdExpandMore className="cursor-pointer" />
@@ -205,7 +205,7 @@ export default function NavbarMenu() {
                         <img
                            src="images/2.1.webp"
                            alt="Model"
-                           class="img-fluid h-100"
+                           className="img-fluid h-100"
                         />
                      </div>
                   </div>
@@ -218,7 +218,7 @@ export default function NavbarMenu() {
                   className="d-flex justify-content-between align-items-center collapse-menu-items"
                   onClick={() => toggleDropdown('icons')}
                >
-                  <button class="border-0 bg-transparent menu-option">
+                  <button className="border-0 bg-transparent menu-option">
                      Icons
                   </button>
                   <MdExpandMore className="cursor-pointer" />
@@ -371,7 +371,7 @@ export default function NavbarMenu() {
                   className="d-flex justify-content-between align-items-center collapse-menu-items"
                   onClick={() => toggleDropdown('pages')}
                >
-                  <button class="border-0 bg-transparent menu-option">
+                  <button className="border-0 bg-transparent menu-option">
                      Pages
                   </button>
                   <MdExpandMore className="cursor-pointer" />
@@ -636,7 +636,7 @@ export default function NavbarMenu() {
                      toggleDropdown('docs');
                   }}
                >
-                  <button class="border-0 bg-transparent menu-option">
+                  <button className="border-0 bg-transparent menu-option">
                      Docs
                   </button>
                   <MdExpandMore className="cursor-pointer" />

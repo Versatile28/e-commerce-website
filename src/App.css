@@ -78,6 +78,14 @@ table {
    padding-right: 0;
 } */
 
+.show-display{
+   display: flex;
+}
+
+.hide-display{
+   display: none;
+}
+
 
 /* ========================================= Pages ============================================== */
 
@@ -87,6 +95,15 @@ table {
    z-index: 1;
 }
 
+/* ProductDetails */
+
+.product-headerbar{
+   background-color: #E9ECEF;
+}
+
+.product-mynavbar{
+   box-shadow: 0 5px 10px rgb(239, 239, 239);
+}
 
 
 /* ================================== Components & Layouts ====================================== */
@@ -751,14 +768,13 @@ table {
    background-repeat: no-repeat;
    background-size:cover;
    background-position:center right;
-   min-height: 37.5rem;
-   max-height: 45rem;
+   height: 37.5rem;
    width: 100%;
    margin-top: 5rem;
  }
 
  .deal-section .deal-info{
-   height: 30rem;
+   height: auto;
  }
 
  .deal-section p{
@@ -787,8 +803,6 @@ table {
    margin-right: 1rem;
  }
 
-
- 
  .countdown-box {
    display: flex;
    justify-content: space-evenly;
@@ -1042,12 +1056,54 @@ table {
  .text-muted {
    color: #bbb !important;
  }
- 
+
+
+
+ /* Product Container */
+
+ .product-container{
+   padding: 3rem 8rem 6rem 8rem;
+ }
+
+ .add-cart-toast{
+   background-color: #69C17D;
+   height: 6rem;
+   padding: 1rem;
+   padding-left: 2rem;
+ }
+
+ .add-cart-toast .icon-tick{
+   color: white;
+   height: 4rem;
+   width: 4rem;
+ }
+
+ .add-cart-toast .icon-close{
+   color: #B4E0BE;
+   height: 1.8rem;
+   width: 1.8rem;
+   margin: 1rem;
+   transform: rotateZ(0deg);
+   transition: .3s;
+ }
+
+ .add-cart-toast .icon-close:hover{
+   transform: rotateZ(90deg);
+   transition: .15s;
+ }
+
+ .add-cart-toast p{
+   font-family: var(--bs-body-font-family);
+ }
+
 
  @media(max-width: 575px){
   .w-xs{
     width: 92% !important;
     margin: 0 4% !important;
+  }
+  .padd-10{
+   height: 50rem;
   }
   .flex-xs-column{
     flex-direction: column !important;
@@ -1104,4 +1160,11 @@ table {
       right: 0 !important;
    }
   }
+
+  @media (min-width: 1200px) {
+   .px-xl-7 {
+       padding-right: 8rem !important;
+       padding-left: 8rem !important;
+   }
+}  
  

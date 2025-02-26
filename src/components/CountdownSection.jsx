@@ -31,7 +31,7 @@ export default function CountdownSection () {
   }, );
 
   return (
-    <section className="deal-section d-flex align-items-center py-5">
+    <section className="deal-section d-flex align-items-center padd-10">
       <Container>
         <Row className="deal-info align-items-center">
           <Col xl={6} sm={12} md={12} className="w-xs">
