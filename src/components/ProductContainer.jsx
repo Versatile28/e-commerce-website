@@ -6,6 +6,9 @@ import { CiCircleCheck } from 'react-icons/ci';
 import { RxCross2 } from 'react-icons/rx';
 import { useRef } from 'react';
 import StarRating from './StarRating';
+import { RiFacebookFill } from 'react-icons/ri';
+import { FaTwitter } from 'react-icons/fa';
+import { FaRegHeart } from "react-icons/fa";
 
 export default function ProductContainer() {
    const toastRef = useRef(null);
@@ -15,7 +18,7 @@ export default function ProductContainer() {
    const [quantity, setQuantity] = useState(1);
 
    const handleQuantity = (e) => {
-     setQuantity(e.target.value);
+      setQuantity(e.target.value);
    };
 
    const handleChange = (e) => {
@@ -144,8 +147,8 @@ export default function ProductContainer() {
                </a>
             </div>
             <div className="pt-4 px-3 ms-lg-auto col-xl-4 col-lg-6 order-1 order-lg-2">
-               <div className='position-sticky'>
-               {/* <div> */}
+               <div className="position-sticky">
+                  {/* <div> */}
                   <h1 className="mb-4 fw-bold">College jacket</h1>
                   <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                      <ul className="list-inline mb-2 mb-sm-0 d-xxl-flex">
@@ -265,7 +268,10 @@ export default function ProductContainer() {
                      />
                      <div className="flex-grow-1">
                         <div className="d-grid h-100">
-                           <button type="submit" className="btn btn-dark add-cart-btn">
+                           <button
+                              type="submit"
+                              className="btn btn-dark add-cart-btn"
+                           >
                               <svg
                                  aria-hidden="true"
                                  focusable="false"
@@ -286,6 +292,37 @@ export default function ProductContainer() {
                         </div>
                      </div>
                   </div>
+                  <div className="row mb-4">
+                     <a
+                        href="/#"
+                        className="wishlist col-6 d-flex justify-content-start align-items-center"
+                     >
+                        <FaRegHeart className="wishlist-icon me-1" />
+                        <span className="wishlist-text">Add to wishlist</span>
+                     </a>
+                     <div className="some-links col-6 d-flex justify-content-end align-items-center">
+                        <RiFacebookFill />
+                        <FaTwitter />
+                     </div>
+                  </div>
+                  <ul class="list-unstyled">
+                     <li>
+                        <strong>Category:&nbsp;</strong>
+                        <a class="text-mute" href="/jackets">
+                           Jackets
+                        </a>
+                     </li>
+                     <li>
+                        <strong>Tags:&nbsp;</strong>
+                        <a class="text-mute" href="/">
+                           Leisure
+                        </a>
+                        ,&nbsp;
+                        <a class="text-mute" href="/">
+                           Elegant
+                        </a>
+                     </li>
+                  </ul>
                </div>
             </div>
          </div>

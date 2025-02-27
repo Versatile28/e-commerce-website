@@ -1253,7 +1253,7 @@ table {
  }
  
  .selected {
-   background-color: #BCAC76 !important; /* Change this color as needed */
+   background-color: #BCAC76 !important;
    color: white !important;
  }
 
@@ -1286,7 +1286,7 @@ table {
    display: none !important;
  }
 
- .input-group>.form-control, .input-group>.form-floating, .input-group>.form-select {
+ .product-details .input-group>.form-control, .product-details .input-group>.form-floating, .product-details .input-group>.form-select {
    position: relative;
    flex: 1 1 auto;
    width: 1%;
@@ -1299,8 +1299,8 @@ table {
    border-radius: 0 !important;
 }
 
-.form-control:focus,
-.form-control:active {
+.product-details .form-control:focus,
+.product-details .form-control:active {
    outline: none !important;
 }
 
@@ -1312,14 +1312,14 @@ table {
    letter-spacing: 4px;
 }
 
-.form-control-lg {
+.product-details .form-control-lg {
    min-height: calc(1.6em + 1rem + 2px);
    padding: .5rem 1rem;
    font-size: 1.25rem;
    border-radius: 0;
 }
 
-.input-group .form-control {
+.product-details .input-group .form-control {
    display: block !important;
    width: 100% !important;
    padding: .375rem .75rem !important;
@@ -1334,8 +1334,8 @@ table {
    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
 }
 
-.input-group .form-control:active,
-.input-group .form-control:focus{
+.product-details .input-group .form-control:active,
+.product-details .input-group .form-control:focus{
    border: 1px solid #BCAC76 !important;
    outline: none !important;
 }
@@ -1357,6 +1357,25 @@ table {
    font-size: inherit;
    height: 1em;
    vertical-align: -.125em;
+}
+
+.product-details a.wishlist{
+   text-decoration: none;
+   font-family: var(--bs-body-font-family);
+   font-size: 1rem;
+   font-weight: 500;
+   color: #BCAC76;
+}
+
+
+.product-details a.wishlist:hover{
+   text-decoration: underline !important;
+   color: #968A5E;
+}
+
+.product-details .wishlist-icon{
+   height: 1.1rem;
+   width: 1.1rem;
 }
 
 
