@@ -56,12 +56,9 @@ export default function ProductContainer() {
                </Breadcrumb.Item>
             </Breadcrumb>
          </div>
-         <div className='product-details d-flex row'>
-            <div className='pt-4 col-xl-7 col-lg-6 order-2 order-lg-1'>
-               <a
-                  className="d-block mb-4"
-                  href="images/detail-1-gray.jpg"
-               >
+         <div className="product-details d-flex row">
+            <div className="pt-4 col-xl-7 col-lg-6 order-2 order-lg-1">
+               <a className="d-block mb-4" href="images/detail-1-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
@@ -72,10 +69,7 @@ export default function ProductContainer() {
                      </div>
                   </figure>
                </a>
-               <a
-                  className="d-block mb-4"
-                  href="images/detail-2-gray.jpg"
-               >
+               <a className="d-block mb-4" href="images/detail-2-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
@@ -86,10 +80,7 @@ export default function ProductContainer() {
                      </div>
                   </figure>
                </a>
-               <a
-                  className="d-block mb-4"
-                  href="images/detail-3-gray.jpg"
-               >
+               <a className="d-block mb-4" href="images/detail-3-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
@@ -100,10 +91,7 @@ export default function ProductContainer() {
                      </div>
                   </figure>
                </a>
-               <a
-                  className="d-block mb-4"
-                  href="images/detail-4-gray.jpg"
-               >
+               <a className="d-block mb-4" href="images/detail-4-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
@@ -114,10 +102,7 @@ export default function ProductContainer() {
                      </div>
                   </figure>
                </a>
-               <a
-                  className="d-block mb-4"
-                  href="images/detail-5-gray.jpg"
-               >
+               <a className="d-block mb-4" href="images/detail-5-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
@@ -128,10 +113,7 @@ export default function ProductContainer() {
                      </div>
                   </figure>
                </a>
-               <a
-                  className="d-block mb-4"
-                  href="images/detail-6-gray.jpg"
-               >
+               <a className="d-block mb-4" href="images/detail-6-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
@@ -143,19 +125,33 @@ export default function ProductContainer() {
                   </figure>
                </a>
             </div>
-            <div className='pt-4 px-3 ms-lg-auto col-xl-4 col-lg-6 order-1 order-lg-2'>
-               <h1 className='mb-4 fw-bold'>College jacket</h1>
-               <div className='d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4'>
-                  <ul className='list-inline mb-2 mb-sm-0 d-xxl-flex'>
-                     <li className='font-body-font-family list-inline-item h4 fw-light mb-0'>$65.00</li>
-                     <li className='font-body-font-family list-inline-item text-mute fw-light'><del>$90</del></li>
-                  </ul>
-                  <div className='d-flex align-items-center text-sm'>
-                     <div><StarRating rating={4}/></div>
-                     <span className='text-mute text-uppercase'>25 reviews</span>
+            <div className="pt-4 px-3 ms-lg-auto col-xl-4 col-lg-6 order-1 order-lg-2">
+               <div className='position-sticky'>
+                  <h1 className="mb-4 fw-bold">College jacket</h1>
+                  <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
+                     <ul className="list-inline mb-2 mb-sm-0 d-xxl-flex">
+                        <li className="font-body-font-family list-inline-item h4 fw-light mb-0">
+                           $65.00
+                        </li>
+                        <li className="font-body-font-family list-inline-item text-mute fw-light">
+                           <del>$90</del>
+                        </li>
+                     </ul>
+                     <div className="d-flex align-items-center text-sm">
+                        <div>
+                           <StarRating rating={4} />
+                        </div>
+                        <span className="text-mute text-uppercase">
+                           25 reviews
+                        </span>
+                     </div>
                   </div>
+                  <p className="mb-4 text-mute">
+                     Samsa was a travelling salesman - and above it there hung a
+                     picture that he had recently cut out of an illustrated
+                     magazine and housed in a nice, gilded frame.
+                  </p>
                </div>
-               <p className='mb-4 text-mute'>Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
             </div>
          </div>
       </div>

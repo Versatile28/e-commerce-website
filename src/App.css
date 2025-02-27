@@ -1069,8 +1069,6 @@ table {
    color: #868E96 !important;
  }
 
-
-
  /* Product Container */
 
  .product-container{
@@ -1158,6 +1156,20 @@ table {
 
  .order-1 {
    order: 1 !important;
+}
+
+
+.position-sticky {
+   position: -webkit-sticky;
+   position: sticky;
+   top: 100px;
+   z-index: 10;
+   background: white;
+}
+
+.col-xl-4 {
+   height: auto;
+   overflow: visible;
 }
 
 
