@@ -308,17 +308,17 @@ export default function ProductContainer() {
                   <ul class="list-unstyled">
                      <li>
                         <strong>Category:&nbsp;</strong>
-                        <a class="text-mute" href="/jackets">
+                        <a class="text-mute text-decoration-none" href="/jackets">
                            Jackets
                         </a>
                      </li>
                      <li>
                         <strong>Tags:&nbsp;</strong>
-                        <a class="text-mute" href="/">
+                        <a class="text-mute text-decoration-none" href="/">
                            Leisure
                         </a>
-                        ,&nbsp;
-                        <a class="text-mute" href="/">
+                        <span class="text-mute text-decoration-none">,&nbsp;</span>
+                        <a class="text-mute text-decoration-none" href="/">
                            Elegant
                         </a>
                      </li>

@@ -170,8 +170,7 @@ export default function MyNavbar() {
                   <Offcanvas.Title className="pb-3">Disabled</Offcanvas.Title>
                   <Offcanvas.Title className="pb-3">
                      <div>
-                        <p
-                           onClick={() => setOpen(!open)}
+                        <p onClick={() => setOpen(!open)}
                            className="d-inline-block cursor-pointer"
                         >
                            Dropdown link{' '}
@@ -182,13 +181,13 @@ export default function MyNavbar() {
 
                         <Collapse in={open}>
                            <div className="pb-3">
-                              <p className="option option-color pb-3 pt-3">
+                              <p className="option option-color pt-3">
                                  Action
                               </p>
-                              <p className="option option-color pb-3">
+                              <p className="option option-color">
                                  Another action
                               </p>
-                              <p className="option option-color pb-3">
+                              <p className="option option-color">
                                  Something else here
                               </p>
                            </div>

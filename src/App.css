@@ -168,6 +168,7 @@ table {
    font-size: .9rem !important;
    background-color: #fff;
    color: #999999;
+   --bs-dropdown-link-active-bg: rgba(255, 255, 255, 0);
 }
 
 /* NavBar */
@@ -871,6 +872,9 @@ table {
    color: black;
    background-color: rgb(0,0,0,0);
    font-weight: 900;
+   --bs-btn-active-bg: black;
+   --bs-btn-active-border-color: black;
+   --bs-btn-hover-border-color: black;
  }
 
  .deal-section .btn:hover{
@@ -1276,13 +1280,13 @@ table {
 }
 
 
- .btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+.product-details .product-type .btn-check:checked+.product-details .btn, .product-details .product-type .btn.active, .product-details .product-type .btn.show, .product-details .product-type .btn:first-child:active,.product-details .product-type :not(.btn-check)+.btn:active {
    color: black !important;
    background-color: #BCAC76 !important;
    border-color: #BCAC76 !important;
 }
 
- .input-invisible{
+.product-details .input-invisible{
    display: none !important;
  }
 
