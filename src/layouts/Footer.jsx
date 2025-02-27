@@ -134,7 +134,7 @@ const Footer = () => {
                   lg={4}
                   md={12}
                   sm={12}
-                  className=" d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center justify-content-center align-items-center mb-2 p-0 text-muted"
+                  className=" d-flex justify-content-lg-start justify-content-md-center justify-content-sm-center justify-content-center align-items-center mb-2 p-0 text-mute"
                >
                   <div>
                      &copy; 2025 Your company. All rights reserved.
@@ -145,7 +145,7 @@ const Footer = () => {
                   md={12}
                   sm={12}
                   xs={12}
-                  className="text-lg-end text-md-center d-flex flex-wrap justify-content-lg-end justify-content-md-center justify-content-sm-center justify-content-center mb-2 p-0 text-muted"
+                  className="text-lg-end text-md-center d-flex flex-wrap justify-content-lg-end justify-content-md-center justify-content-sm-center justify-content-center mb-2 p-0 text-mute"
                >
                   <span>Terms & Conditions</span>
                   <span>Privacy & cookies</span>

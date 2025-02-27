@@ -3,6 +3,7 @@ import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import { CiCircleCheck } from 'react-icons/ci';
 import { RxCross2 } from 'react-icons/rx';
 import { useRef } from 'react';
+import StarRating from './StarRating';
 
 export default function ProductContainer() {
    const toastRef = useRef(null);
@@ -15,7 +16,7 @@ export default function ProductContainer() {
    }
 
    return (
-      <div className="px-xl-7 product-container">
+      <div className="px-xl-7 product-container container-fluid pb-lg-6">
          <div
             ref={toastRef}
             className="add-cart-toast show-display flex-row justify-content-between align-items-center mb-5"
@@ -55,8 +56,8 @@ export default function ProductContainer() {
                </Breadcrumb.Item>
             </Breadcrumb>
          </div>
-         <div className='py-3 product-details'>
-            <div>
+         <div className='product-details d-flex row'>
+            <div className='pt-4 col-xl-7 col-lg-6 order-2 order-lg-1'>
                <a
                   className="d-block mb-4"
                   href="images/detail-1-gray.jpg"
@@ -142,7 +143,20 @@ export default function ProductContainer() {
                   </figure>
                </a>
             </div>
-            <div></div>
+            <div className='pt-4 px-3 ms-lg-auto col-xl-4 col-lg-6 order-1 order-lg-2'>
+               <h1 className='mb-4 fw-bold'>College jacket</h1>
+               <div className='d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4'>
+                  <ul className='list-inline mb-2 mb-sm-0 d-xxl-flex'>
+                     <li className='font-body-font-family list-inline-item h4 fw-light mb-0'>$65.00</li>
+                     <li className='font-body-font-family list-inline-item text-mute fw-light'><del>$90</del></li>
+                  </ul>
+                  <div className='d-flex align-items-center text-sm'>
+                     <div><StarRating rating={4}/></div>
+                     <span className='text-mute text-uppercase'>25 reviews</span>
+                  </div>
+               </div>
+               <p className='mb-4 text-mute'>Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
+            </div>
          </div>
       </div>
    );

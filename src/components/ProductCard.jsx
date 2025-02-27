@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { IoExpand } from "react-icons/io5";
-import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
 import { PiShoppingBagOpen } from 'react-icons/pi';
+import StarRating from './StarRating';
 
 export default function ProductCard({
    badgeText = '',
@@ -14,23 +14,23 @@ export default function ProductCard({
 }) {
    const [hovered, setHovered] = useState(false);
 
-   const renderStars = () => {
-      const fullStars = Math.floor(rating);
-      const halfStar = rating % 1 !== 0;
-      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+   // const renderStars = () => {
+   //    const fullStars = Math.floor(rating);
+   //    const halfStar = rating % 1 !== 0;
+   //    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
-      return (
-         <>
-            {[...Array(fullStars)].map((_, i) => (
-               <BsStarFill key={`full-${i}`} />
-            ))}
-            {halfStar && <BsStarHalf />}
-            {[...Array(emptyStars)].map((_, i) => (
-               <BsStar key={`empty-${i}`} />
-            ))}
-         </>
-      );
-   };
+   //    return (
+   //       <>
+   //          {[...Array(fullStars)].map((_, i) => (
+   //             <BsStarFill key={`full-${i}`} />
+   //          ))}
+   //          {halfStar && <BsStarHalf />}
+   //          {[...Array(emptyStars)].map((_, i) => (
+   //             <BsStar key={`empty-${i}`} />
+   //          ))}
+   //       </>
+   //    );
+   // };
 
    return (
          <div onMouseEnter={() => setHovered(true)}
@@ -70,9 +70,9 @@ export default function ProductCard({
             <div>
                <a href='/e-commerce-website' className='card-title mt-3'>{title}</a>
                <div className='d-flex justify-content-between mt-2'>
-                  <p className="text-muted product-price">${price.toFixed(2)}</p>
+                  <p className="text-mute product-price">${price.toFixed(2)}</p>
                   <div className={`star-rating ${hovered ? 'show' : ''}`}>
-                     {renderStars()}
+                     {<StarRating rating={rating} size={12.8} gap={2}/>}
                   </div>
                </div>
             </div>
