@@ -1,5 +1,7 @@
 import React from 'react';
+import { useState } from 'react';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
+import Dropdown from 'react-bootstrap/Dropdown';
 import { CiCircleCheck } from 'react-icons/ci';
 import { RxCross2 } from 'react-icons/rx';
 import { useRef } from 'react';
@@ -7,6 +9,18 @@ import StarRating from './StarRating';
 
 export default function ProductContainer() {
    const toastRef = useRef(null);
+   const [selected, setSelected] = useState('Small');
+   const [change, setChange] = useState('value_0');
+
+   const [quantity, setQuantity] = useState(1);
+
+   const handleQuantity = (e) => {
+     setQuantity(e.target.value);
+   };
+
+   const handleChange = (e) => {
+      setChange(e.target.value);
+   };
 
    function handleClose() {
       if (toastRef.current?.classList.contains('show-display')) {
@@ -14,6 +28,10 @@ export default function ProductContainer() {
          toastRef.current.classList.add('hide-display');
       }
    }
+
+   const handleSelect = (option) => {
+      setSelected(option);
+   };
 
    return (
       <div className="px-xl-7 product-container container-fluid pb-lg-6">
@@ -127,6 +145,7 @@ export default function ProductContainer() {
             </div>
             <div className="pt-4 px-3 ms-lg-auto col-xl-4 col-lg-6 order-1 order-lg-2">
                <div className='position-sticky'>
+               {/* <div> */}
                   <h1 className="mb-4 fw-bold">College jacket</h1>
                   <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                      <ul className="list-inline mb-2 mb-sm-0 d-xxl-flex">
@@ -151,6 +170,122 @@ export default function ProductContainer() {
                      picture that he had recently cut out of an illustrated
                      magazine and housed in a nice, gilded frame.
                   </p>
+                  <div className="mb-4">
+                     <div className="product-size mb-4">
+                        <div className="d-flex align-items-center mb-1">
+                           <h6 className="fw-bold">Size</h6>
+                           <h6 className="text-mute required-text">
+                              &nbsp;(required)
+                           </h6>
+                        </div>
+                        <Dropdown>
+                           <Dropdown.Toggle
+                              variant="light"
+                              className="custom-dropdown"
+                           >
+                              <div className="d-flex justify-content-between align-items-center mx-1">
+                                 <span className="ls-4 fw-bold fs-7">
+                                    {selected.toUpperCase()}
+                                 </span>
+                                 <span className="arrow">&#9660;</span>
+                              </div>
+                           </Dropdown.Toggle>
+
+                           <Dropdown.Menu className="custom-dropdown-menu">
+                              {['Small', 'Medium', 'Large'].map(
+                                 (option, index) => (
+                                    <Dropdown.Item
+                                       key={option}
+                                       onClick={() => handleSelect(option)}
+                                       className={`dropdown-item-custom ${
+                                          selected === option ? 'selected' : ''
+                                       }`}
+                                    >
+                                       {option}
+                                    </Dropdown.Item>
+                                 )
+                              )}
+                           </Dropdown.Menu>
+                        </Dropdown>
+                     </div>
+                     <div className="product-type">
+                        <div className="d-flex align-items-center mb-1">
+                           <h6 className="fw-bold">Type</h6>
+                           <h6 className="text-mute required-text">
+                              &nbsp;(required)
+                           </h6>
+                        </div>
+                        <div className="type-btn">
+                           <label
+                              className={`btn btn-sm btn-outline-primary detail-option-btn-label me-1 ${
+                                 change === 'value_0' ? 'active' : ''
+                              }`}
+                              htmlFor="material_0"
+                           >
+                              HOODIE
+                              <input
+                                 name="material"
+                                 required
+                                 type="radio"
+                                 id="material_0"
+                                 className="input-invisible form-control"
+                                 value="value_0"
+                                 checked={change === 'value_0'}
+                                 onChange={handleChange}
+                              />
+                           </label>
+
+                           <label
+                              className={`btn btn-sm btn-outline-primary detail-option-btn-label me-1 
+                              ${change === 'value_1' ? 'active' : ''}`}
+                              htmlFor="material_1"
+                           >
+                              COLLEGE
+                              <input
+                                 name="material"
+                                 required
+                                 type="radio"
+                                 id="material_1"
+                                 className="input-invisible form-control"
+                                 value="value_1"
+                                 checked={change === 'value_1'}
+                                 onChange={handleChange}
+                              />
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+                  <div className="w-100 mb-4 input-group">
+                     <input
+                        name="items"
+                        type="number"
+                        className="detail-quantity form-control form-control-lg"
+                        value={quantity}
+                        onChange={handleQuantity}
+                     />
+                     <div className="flex-grow-1">
+                        <div className="d-grid h-100">
+                           <button type="submit" className="btn btn-dark add-cart-btn">
+                              <svg
+                                 aria-hidden="true"
+                                 focusable="false"
+                                 data-prefix="fas"
+                                 data-icon="shopping-cart"
+                                 className="svg-inline--fa fa-shopping-cart fa-w-18 me-2"
+                                 role="img"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 viewBox="0 0 576 512"
+                              >
+                                 <path
+                                    fill="currentColor"
+                                    d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"
+                                 ></path>
+                              </svg>
+                              ADD TO CART
+                           </button>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
