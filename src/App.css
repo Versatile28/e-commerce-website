@@ -69,12 +69,28 @@ table {
    width: 40% !important;
 }
 
+.w-60{
+   max-width: 40rem !important;
+}
+
+.w-5{
+   max-width: 53rem !important;
+}
+
+.star-bg-color{
+   color:#eeeeee ;
+}
+
 .phone-number{
    font-family: var(--bs-font-monospace) !important;
 }
 
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
    --bs-gutter-x: 0rem;
+}
+
+.ls-half{
+   letter-spacing: .5px;
 }
 
 .ls-1 {
@@ -1384,6 +1400,95 @@ table {
 .product-details .wishlist-icon{
    height: 1.1rem;
    width: 1.1rem;
+}
+
+
+/* Additional Information */
+
+.info-container .nav-link.active, .nav-link:focus, .nav-link:hover {
+   color: #212529 !important;
+   border-color: #fff #fff #212529 !important;
+}
+
+.info-container .nav-link {
+   padding: 1rem 1.5rem !important;
+   letter-spacing: .1em !important;
+   text-transform: uppercase !important;
+   color: #868e96 !important;
+   border-color: #fff #fff #e9ecef !important;
+   border-bottom-width: 2px !important;
+   font-size: .8rem !important;
+   font-weight: 700 !important;
+}
+
+.info-container .nav-tabs .nav-link {
+   margin-bottom: -1px;
+   background: none;
+   border: 1px solid transparent;
+   border-top-left-radius: 0;
+}
+
+.avatar.avatar-xl {
+   width: 7rem;
+}
+
+.avatar {
+   display: inline-block;
+   position: relative;
+   height: auto;
+   max-width: 100%;
+   text-align: center;
+   border: #dee2e6;
+   border-radius: 50%;
+   background: #fff;
+   box-shadow: 0 2px 1rem rgba(0, 0, 0, .15);
+   line-height: 3rem;
+}
+
+.review{
+   border-bottom: .5px solid #e6e6e6;
+}
+
+.review-form-label{
+   font-weight: 600 !important;
+   font-size: .95rem;
+}
+
+.review-form-items{
+   border-radius: 0 !important;
+}
+
+.review-form-items::placeholder{
+   color: #cacaca !important;
+}
+
+.review-form-items:active,
+.review-form-items:focus{
+   border: 1px solid #f2de9b !important;
+   outline: none !important;
+}
+
+.badge{
+   background-color: #DCF1F4;
+}
+
+.form-submit.btn{
+   padding: .5rem 1.2rem;
+   border: 1px solid black;
+   border-radius: 0;
+   font-family: var(--bs-font-monospace);
+   letter-spacing: .2rem;
+   color: black;
+   background-color: rgb(0,0,0,0);
+   font-weight: 900;
+   --bs-btn-active-bg: black;
+   --bs-btn-active-border-color: black;
+   --bs-btn-hover-border-color: black;
+}
+
+.form-submit.btn:hover{
+   background-color: black;
+   color: white;
 }
 
 
