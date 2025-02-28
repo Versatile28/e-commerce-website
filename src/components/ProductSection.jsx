@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ProductCard from './ProductCard';
 
-export default function App() {
+export default function ProductSection() {
    const products = [
       {
          badgeText: 'Fresh',

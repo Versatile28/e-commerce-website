@@ -7,6 +7,7 @@ import FeatureSection from '../components/FeatureSection'
 import BrandSection from '../components/BrandSection'
 import ProductContainer from '../components/ProductContainer'
 import AdditionalInformation from '../components/AdditionalInformation';
+import ProductCarousel from '../components/ProductCarousel';
 
 export default function Homepage() {
   return (
@@ -19,7 +20,7 @@ export default function Homepage() {
         </div>
         <ProductContainer/>
         <AdditionalInformation/>
-        <BrandSection/>
+        <ProductCarousel/>
         <FeatureSection/>
         <Footer/>
     </div>

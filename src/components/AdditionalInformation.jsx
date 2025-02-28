@@ -23,7 +23,7 @@ export default function AdditionalInformation() {
    return (
       <Container>
          <Tabs
-            defaultActiveKey="home"
+            defaultActiveKey="desc"
             transition={false}
             id="noanim-tab-example"
             className="mb-3 info-container"
