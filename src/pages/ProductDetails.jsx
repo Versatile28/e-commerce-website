@@ -6,6 +6,7 @@ import Footer from '../layouts/Footer'
 import FeatureSection from '../components/FeatureSection'
 import BrandSection from '../components/BrandSection'
 import ProductContainer from '../components/ProductContainer'
+import AdditionalInformation from '../components/AdditionalInformation';
 
 export default function Homepage() {
   return (
@@ -17,6 +18,7 @@ export default function Homepage() {
         <MyNavbar/>
         </div>
         <ProductContainer/>
+        <AdditionalInformation/>
         <BrandSection/>
         <FeatureSection/>
         <Footer/>

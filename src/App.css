@@ -97,6 +97,10 @@ table {
    font-size: .75rem;
  }
 
+ .fs-8{
+   font-size: .9rem;
+ }
+
 .show-display{
    display: flex;
 }
