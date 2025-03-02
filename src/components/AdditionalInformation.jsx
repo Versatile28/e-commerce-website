@@ -29,8 +29,8 @@ export default function AdditionalInformation() {
             className="mb-3 info-container"
          >
             <Tab eventKey="desc" title="Description">
-               <div className="d-flex row py-4 px-3">
-                  <div className="col-7">
+               <div className="d-flex flex-md-row flex-column row py-4 px-3">
+                  <div className="col-md-7 col-12">
                      <h5 className="fw-bold">About</h5>
                      <p className="text-mute">
                         Samsa was a travelling salesman - and above it there
@@ -51,7 +51,7 @@ export default function AdditionalInformation() {
                      </ul>
                   </div>
                   <img
-                     className="col-5"
+                     className="col-5 image-styles"
                      src="images/detail-1-gray.jpg"
                      alt=""
                   />
