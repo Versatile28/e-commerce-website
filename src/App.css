@@ -545,7 +545,7 @@ table {
 	bottom: 10px;
 }
 
-.dot {
+.hero-carousel-container .dot {
 	width: 6px;
 	height: 6px;
 	margin: 0 5px;
@@ -555,13 +555,13 @@ table {
 	transition: all 0.3s ease-in-out;
 }
   
-.dot.medium {
+.hero-carousel-container .dot.medium {
 	width: 8px;
 	height: 8px;
 	background-color: rgb(187, 193, 200);
 }
 
-.dot.large {
+.hero-carousel-container .dot.large {
 	width: 10px;
 	height: 10px;
 	background-color: rgb(192, 187, 177);
@@ -717,7 +717,7 @@ table {
 
  .product-image {
    object-fit: cover;
-   height: 17.5rem;
+   height: auto;
  }
 
  .product-price{
@@ -762,7 +762,7 @@ table {
 
 .product-link{
    text-decoration: none;
-   height: 17.5rem;
+   height: auto;
    color: black;
 }
 
@@ -1490,6 +1490,31 @@ table {
    background-color: black;
    color: white;
 }
+
+/* Product Carousel */
+
+.product-carousel-container .dot {
+	width: 6px;
+	height: 6px;
+	margin: 0 2px;
+	background-color: rgb(187, 193, 200);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+  
+.product-carousel-container .dot.medium {
+	width: 8px;
+	height: 8px;
+	background-color: rgb(187, 193, 200);
+}
+
+.product-carousel-container .dot.large {
+	width: 10px;
+	height: 10px;
+	background-color: rgb(192, 187, 177);
+}
+
 
 
  /* Media Queries */

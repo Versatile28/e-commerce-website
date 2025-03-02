@@ -93,11 +93,11 @@ export default function BrandSection() {
    const track = useMemo(() => [...products, ...products], []);
    const [currentIndex, setCurrentIndex] = useState(0);
 
-   const offsetPercentage = currentIndex * 20;
+   const offsetPercentage = currentIndex * 25;
 
    return (
       <div
-         className="position-relative"
+         className="position-relative product-carousel-container"
          style={{
             marginBottom: '6rem',
             maxWidth: '100vw',
@@ -120,7 +120,7 @@ export default function BrandSection() {
                      key={i}
                      className="d-flex justify-content-center align-items-center"
                      style={{
-                        width: '20%',
+                        width: '25%',
                         flex: '0 0 auto',
                         height: 'auto',
                      }}
@@ -139,7 +139,7 @@ export default function BrandSection() {
 
          <div
             className="d-flex align-items-center justify-content-center mt-3"
-            style={{ height: '1rem' }}
+            style={{ height: '2rem' }}
          >
             {Array.from({ length: 8 }).map((_, i) => {
                let size = 'small';

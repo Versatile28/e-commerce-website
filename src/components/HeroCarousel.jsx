@@ -18,7 +18,7 @@ export default function HeroCarousel() {
 
 
    return (
-      <div>
+      <div className='hero-carousel-container'>
          <Carousel activeIndex={index} onSelect={handleSelect} indicators={false}>
             <Carousel.Item interval={5000}>
                <div className='slide-container first-slide carousel-image'>
