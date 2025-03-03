@@ -1634,7 +1634,7 @@ table {
       padding-left: 8rem !important;
   }
   .padd-5{
-   padding: 7rem 5rem 7rem 5rem;
+   padding: 7rem .5rem 7rem .5rem;
   }
    .order-lg-1 {
       order: 1 !important;
