@@ -19,7 +19,7 @@ export default function Homepage() {
         <HeaderBar/>
         <MyNavbar/>
         </div>
-        <div className='position-relative w-100'>
+        <div className='position-relative w-100' style={{width:"100vw"}}>
         <HeroCarousel/>
         </div>
         <CatagorySection/>

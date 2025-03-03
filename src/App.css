@@ -555,14 +555,23 @@ table {
   background-color: rgb(33, 33, 33);
 }
 
+
 .swiper-button-prev::after{
-   margin-left: 2.5rem
+   margin-left: 2.5rem;
+   color: #cacaca;
+   transition: .3s all;
+}
+
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after{
+   color: #212529;
 }
 
 .swiper-button-next::after{
-   margin-right: 2.5rem
+   margin-right: 2.5rem;
+   color: #cacaca;
+   transition: .3s all;
 }
-
 
 /* .hero-carousel-container .dot {
 	width: 6px;

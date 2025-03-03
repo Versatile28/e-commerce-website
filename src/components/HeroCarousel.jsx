@@ -100,7 +100,7 @@ export default function HeroCarousel() {
 
          <SwiperSlide>
             <div className="slide-container second-slide carousel-image d-flex justify-content-center">
-               <div className="d-flex justify-content-center flex-column align-items-center w-40">
+               <div className="d-flex justify-content-center flex-column align-items-center w-75">
                   <h3 className="slide-highlight mb-3">BLUE & WHITE</h3>
                   <h1 className="slide-title mb-4 text-center">Linen and Denim</h1>
                   <button className="slide-btn">START SHOPPING</button>
