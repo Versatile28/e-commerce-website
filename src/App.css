@@ -6,6 +6,10 @@
    --bs-body-font-family: 'VremenaGrotesk', sans-serif !important;
 }
 
+/* *{
+   outline: 1px solid red;
+} */
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -34,9 +38,17 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-html{
-  overflow-x: hidden
-}
+/* html, body {
+   overflow-x: hidden;
+   width: 100%;
+ } */
+
+ html{
+   overflow-x: hidden;
+   touch-action: manipulation;
+   width: 100%;
+ }
+ 
 ol, ul {
 	list-style: none;
 }
@@ -476,6 +488,8 @@ table {
 
 .hero-carousel-container{
    z-index: 0;
+   padding: 0;
+   margin: 0;
 }
 
 .carousel-image{
@@ -506,6 +520,7 @@ table {
    justify-content: start;
    align-items: center;
    width: 100vw;
+   cursor: auto !important;
 }
 
 
@@ -572,28 +587,6 @@ table {
    color: #cacaca;
    transition: .3s all;
 }
-
-/* .hero-carousel-container .dot {
-	width: 6px;
-	height: 6px;
-	margin: 0 5px;
-	background-color: rgb(187, 193, 200);
-	border-radius: 50%;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-}
-  
-.hero-carousel-container .dot.medium {
-	width: 8px;
-	height: 8px;
-	background-color: rgb(187, 193, 200);
-}
-
-.hero-carousel-container .dot.large {
-	width: 10px;
-	height: 10px;
-	background-color: rgb(192, 187, 177);
-} */
 
 /* Catagory Section */
 
@@ -1589,6 +1582,14 @@ table {
   }
 
  @media(max-width: 992px){
+   .headerbar-container{
+      padding: 0 !important;
+      margin: 0 !important;
+   }
+   .mynavbar-container{
+      padding: 0 !important;
+      margin: 0 !important;
+   }
    .collapse-icons{
       display: none;
    }

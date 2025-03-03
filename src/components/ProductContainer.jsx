@@ -150,7 +150,6 @@ export default function ProductContainer() {
             </div>
             <div className="pt-4 px-3 ms-lg-auto col-xl-4 col-lg-6 order-1 order-lg-2">
                <div className="position-sticky">
-                  {/* <div> */}
                   <h1 className="mb-4 fw-bold">College jacket</h1>
                   <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                      <ul className="list-inline mb-2 mb-sm-0 d-xxl-flex">

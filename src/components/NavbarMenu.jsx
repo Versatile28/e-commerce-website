@@ -38,7 +38,7 @@ export default function NavbarMenu() {
    
    return (
       <>
-         <Nav className="me-auto">
+         <Nav className="me-auto" style={{maxWidth:"100%", boxSizing:"border-box"}}>
             {/* Home */}
             <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
                <div
