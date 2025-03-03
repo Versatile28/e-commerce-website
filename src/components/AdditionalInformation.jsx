@@ -59,13 +59,13 @@ export default function AdditionalInformation() {
             </Tab>
             <Tab eventKey="info" title="Additional Information">
                <div className="d-flex row py-4">
-                  <div className="col-2 d-flex flex-column">
+                  <div className="col-lg-2 col-6 d-flex flex-column">
                      <span className="p-2 fs-8">Product #</span>
                      <span className="p-2 fs-8">Available packaging</span>
                      <span className="p-2 fs-8">Weight</span>
                      <span className="p-2 fs-8">I am at fault.</span>
                   </div>
-                  <div className="col-4 d-flex flex-column">
+                  <div className="col-lg-4 col-6 d-flex flex-column">
                      <span className="text-mute p-2 fs-8">
                         Hello, it's a lot of pain.
                      </span>
@@ -77,13 +77,13 @@ export default function AdditionalInformation() {
                         Hello, it's a lot of pain.
                      </span>
                   </div>
-                  <div className="col-2 d-flex flex-column">
+                  <div className="col-lg-2 col-6 d-flex flex-column">
                      <span className="p-2 fs-8">Weight</span>
                      <span className="p-2 fs-8">I am at fault.</span>
                      <span className="p-2 fs-8">Product #</span>
                      <span className="p-2 fs-8">Available packaging</span>
                   </div>
-                  <div className="col-4 d-flex flex-column">
+                  <div className="col-lg-4 col-6 d-flex flex-column">
                      <span className="text-mute p-2 fs-8">It's painful.</span>
                      <span className="text-mute p-2 fs-8">
                         Hello, it's a lot of pain.

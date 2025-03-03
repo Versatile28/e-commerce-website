@@ -52,7 +52,7 @@ export default function MyNavbar() {
                   Varkala
                </Navbar.Brand>
                <Nav className={delayedClass}>
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex align-items-start">
                      <Nav.Link className="px-2 pt-2 collapse-icons">
                         <SlUser className="mynavbar-icon" />
                      </Nav.Link>

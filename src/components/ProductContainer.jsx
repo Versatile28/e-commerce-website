@@ -8,7 +8,7 @@ import { useRef } from 'react';
 import StarRating from './StarRating';
 import { RiFacebookFill } from 'react-icons/ri';
 import { FaTwitter } from 'react-icons/fa';
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart } from 'react-icons/fa';
 
 export default function ProductContainer() {
    const toastRef = useRef(null);
@@ -44,15 +44,17 @@ export default function ProductContainer() {
          >
             <div className="d-flex flex-row align-items-center">
                <CiCircleCheck className="icon-tick" />
-               <p className="m-0 ps-3 fw-semibold text-white fs-6">
-                  Black blouse have been added to your cart.
-               </p>
-               <a
-                  href="/e-commerce-website"
-                  className="m-0 ps-3 fw-semibold text-white fs-6"
-               >
-                  View Cart
-               </a>
+               <div className='d-flex flex-wrap align-items-center'>
+                  <p className="m-0 ps-3 fw-semibold text-white fs-6">
+                     Black blouse have been added to your cart.
+                  </p>
+                  <a
+                     href="/e-commerce-website"
+                     className="m-0 ps-3 fw-semibold text-white fs-6"
+                  >
+                     View Cart
+                  </a>
+               </div>
             </div>
             <button
                className="border-0 bg-transparent"
@@ -173,8 +175,8 @@ export default function ProductContainer() {
                      picture that he had recently cut out of an illustrated
                      magazine and housed in a nice, gilded frame.
                   </p>
-                  <div className="mb-4">
-                     <div className="product-size mb-4">
+                  <div className="mb-4 row">
+                     <div className="product-size mb-4 col-lg-12 col-sm-6 col-12">
                         <div className="d-flex align-items-center mb-1">
                            <h6 className="fw-bold">Size</h6>
                            <h6 className="text-mute required-text">
@@ -211,7 +213,7 @@ export default function ProductContainer() {
                            </Dropdown.Menu>
                         </Dropdown>
                      </div>
-                     <div className="product-type">
+                     <div className="product-type col-lg-12 col-sm-6 col-12">
                         <div className="d-flex align-items-center mb-1">
                            <h6 className="fw-bold">Type</h6>
                            <h6 className="text-mute required-text">
@@ -308,7 +310,10 @@ export default function ProductContainer() {
                   <ul class="list-unstyled">
                      <li>
                         <strong>Category:&nbsp;</strong>
-                        <a class="text-mute text-decoration-none" href="/jackets">
+                        <a
+                           class="text-mute text-decoration-none"
+                           href="/jackets"
+                        >
                            Jackets
                         </a>
                      </li>
@@ -317,7 +322,9 @@ export default function ProductContainer() {
                         <a class="text-mute text-decoration-none" href="/">
                            Leisure
                         </a>
-                        <span class="text-mute text-decoration-none">,&nbsp;</span>
+                        <span class="text-mute text-decoration-none">
+                           ,&nbsp;
+                        </span>
                         <a class="text-mute text-decoration-none" href="/">
                            Elegant
                         </a>
