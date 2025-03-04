@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import {HashRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.css'
 import Homepage from './pages/Homepage';
 import ProductDetails from './pages/ProductDetails';
+import ProductList from './pages/ProductList'
 import { baseUrl } from './utils/constant';
 
 export default function App() {
@@ -46,12 +47,13 @@ export default function App() {
 
   return (
     <div>
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage products={products} loading={loading}/>} />
           <Route path="/category-full/product/:id" element={<ProductDetails products={products} loading={loading}/>} />
+          <Route path="/category-full" element={<ProductList/>} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   )
 }
