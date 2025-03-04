@@ -12,7 +12,7 @@ import BrandSection from '../components/BrandSection'
 import ProductSection from '../components/ProductSection'
 import '../App.css';
 
-export default function Homepage() {
+export default function Homepage({ products }) {
   return (
     <div className='position-relative w-100'>
         <header className="position-absolute w-100 navigation-bars">
@@ -24,7 +24,7 @@ export default function Homepage() {
         </div>
         <CatagorySection/>
         <NewArrivalsSection/>
-        <ProductSection/>
+        <ProductSection products={products}/>
         <CountdownSection/>
         <HistorySection/>
         <BrandSection/>

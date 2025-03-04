@@ -8,9 +8,9 @@ import StarRating from './StarRating';
 
 export default function ProductCard({
    id,
-   badgeText = '',
-   imageSrc = 'images/1.1.webp',
-   title = 'White Tee',
+   badge = '',
+   image = 'images/1.1.webp',
+   name = 'White Tee',
    price = 40.0,
    rating = 3.5,
 }) {
@@ -22,17 +22,17 @@ export default function ProductCard({
             <Card
                className="product-card"
             >
-               {badgeText && (
-                  <span className={`badge-label ${badgeText === 'Fresh' ? 'fresh' : ''} ${badgeText === 'Sale' ? 'sale' : ''} ${badgeText === 'Sold out' ? 'sold-out' : ''}`}>
-                     {badgeText}
+               {badge && (
+                  <span className={`badge-label ${badge === 'Fresh' ? 'fresh' : ''} ${badge === 'Sale' ? 'sale' : ''} ${badge === 'Sold out' ? 'sold-out' : ''}`}>
+                     {badge}
                   </span>
                )}
 
                <Link className='product-link' to={`/category-full/product/${id}`}>
                <Card.Img
                   variant="top"
-                  src={imageSrc}
-                  alt={title}
+                  src={image}
+                  alt={name}
                   className="product-image"
                />
                </Link>
@@ -51,7 +51,7 @@ export default function ProductCard({
             </Card>
 
             <div>
-               <Link to={`/category-full/product/${id}`} className='card-title mt-3'>{title}</Link>
+               <Link to={`/category-full/product/${id}`} className='card-title mt-3'>{name}</Link>
                <div className='d-flex justify-content-between mt-2'>
                   <p className="text-mute product-price">${price.toFixed(2)}</p>
                   <div className={`star-rating ${hovered ? 'show' : ''}`}>

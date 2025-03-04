@@ -1,5 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { CiCircleCheck } from 'react-icons/ci';
@@ -14,8 +16,31 @@ export default function ProductContainer() {
    const toastRef = useRef(null);
    const [selected, setSelected] = useState('Small');
    const [change, setChange] = useState('value_0');
-
    const [quantity, setQuantity] = useState(1);
+   const [product, setProduct] = useState({});
+
+   const { id } = useParams();
+
+   useEffect(() => {
+      const fetchProduct = async () => {
+         try {
+            const { data } = await axios.get(
+               `http://localhost:5000/api/products/${id}`,
+               {
+                  headers: { 'Content-Type': 'application/json' },
+               }
+            );
+            setProduct(data);
+         } catch (err) {
+            console.error(
+               'Error fetching product:',
+               err.response?.data?.message || err.message
+            );
+         }
+      };
+
+      fetchProduct();
+   }, [id]);
 
    const handleQuantity = (e) => {
       setQuantity(e.target.value);
@@ -44,7 +69,7 @@ export default function ProductContainer() {
          >
             <div className="d-flex flex-row align-items-center">
                <CiCircleCheck className="icon-tick" />
-               <div className='d-flex flex-wrap align-items-center'>
+               <div className="d-flex flex-wrap align-items-center">
                   <p className="m-0 ps-3 fw-semibold text-white fs-6">
                      Black blouse have been added to your cart.
                   </p>
@@ -72,10 +97,10 @@ export default function ProductContainer() {
                   className="item-category"
                   href="https://getbootstrap.com/docs/4.0/components/breadcrumb/"
                >
-                  Tops & blouses
+                  {product.category}
                </Breadcrumb.Item>
                <Breadcrumb.Item className="item-category" active>
-                  Black blouse
+                  {product.name}
                </Breadcrumb.Item>
             </Breadcrumb>
          </div>
@@ -150,19 +175,23 @@ export default function ProductContainer() {
             </div>
             <div className="pt-4 px-3 ms-lg-auto col-xl-4 col-lg-6 order-1 order-lg-2">
                <div className="position-sticky">
-                  <h1 className="mb-4 fw-bold">College jacket</h1>
+                  <h1 className="mb-4 fw-bold">{product.name}</h1>
                   <div className="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                      <ul className="list-inline mb-2 mb-sm-0 d-xxl-flex">
                         <li className="font-body-font-family list-inline-item h4 fw-light mb-0">
-                           $65.00
+                           ${product.price?.toFixed(2)}
                         </li>
                         <li className="font-body-font-family list-inline-item text-mute fw-light">
-                           <del>$90</del>
+                           <del>${(product.price * 1.25).toFixed(2)}</del>
                         </li>
                      </ul>
                      <div className="d-flex align-items-center text-sm">
                         <div>
-                           <StarRating rating={4} />
+                           {product.rating !== undefined ? (
+                              <StarRating rating={product.rating} color="#bcac76"/>
+                           ) : (
+                              <StarRating rating={4} color="#bcac76"/>
+                           )}
                         </div>
                         <span className="text-mute text-uppercase">
                            25 reviews
@@ -170,9 +199,7 @@ export default function ProductContainer() {
                      </div>
                   </div>
                   <p className="mb-4 text-mute">
-                     Samsa was a travelling salesman - and above it there hung a
-                     picture that he had recently cut out of an illustrated
-                     magazine and housed in a nice, gilded frame.
+                     {product.description}
                   </p>
                   <div className="mb-4 row">
                      <div className="product-size mb-4 col-lg-12 col-sm-6 col-12">
@@ -306,25 +333,25 @@ export default function ProductContainer() {
                         <FaTwitter />
                      </div>
                   </div>
-                  <ul class="list-unstyled">
+                  <ul className="list-unstyled">
                      <li>
                         <strong>Category:&nbsp;</strong>
                         <a
-                           class="text-mute text-decoration-none"
+                           className="text-mute text-decoration-none"
                            href="/jackets"
                         >
-                           Jackets
+                           {product.category}
                         </a>
                      </li>
                      <li>
                         <strong>Tags:&nbsp;</strong>
-                        <a class="text-mute text-decoration-none" href="/">
+                        <a className="text-mute text-decoration-none" href="/">
                            Leisure
                         </a>
-                        <span class="text-mute text-decoration-none">
+                        <span className="text-mute text-decoration-none">
                            ,&nbsp;
                         </span>
-                        <a class="text-mute text-decoration-none" href="/">
+                        <a className="text-mute text-decoration-none" href="/">
                            Elegant
                         </a>
                      </li>

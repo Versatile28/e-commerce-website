@@ -1,33 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import ProductCard from './ProductCard';
 
-export default function ProductSection() {
-   const [products, setProducts] = useState([]);
-
-   const fetchProducts = async () => {
-      try {
-         const { data } = await axios.get(
-            'http://localhost:5000/api/products',
-            {
-               headers: { 'Content-Type': 'application/json' },
-            }
-         );
-         setProducts(data);
-      } catch (error) {
-         console.error(
-            'Error fetching products:',
-            error.response?.data?.message || error.message
-         );
-      }
-   };
-
-   useEffect(() => {
-      fetchProducts();
-   }, []);
-   console.log(products);
-
+export default function ProductSection({ products }) {
    return (
       <Container className="pb-3 product-section-container">
          <Row className="mb-2 d-flex justify-content-center">
