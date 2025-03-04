@@ -20,7 +20,7 @@ export default function HeaderBar() {
                         020-800-456-747
                     </Navbar>
                 </Navbar>
-                <Navbar className="d-flex justify-content-center title-head pe-5">
+                <Navbar className="d-flex justify-content-center title-head pe-5 ps-md-0 ps-3">
                         Free in-store delivery
                 </Navbar>
                 <Navbar className="headerbar-options d-sm-inline-block d-none" id="basic-navbar-nav">
