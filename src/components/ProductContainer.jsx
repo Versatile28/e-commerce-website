@@ -107,68 +107,68 @@ export default function ProductContainer() {
          </div>
          <div className="product-details d-flex row">
             <div className="pt-4 col-xl-7 col-lg-6 order-2 order-lg-1">
-               <a className="d-block mb-4" href="images/detail-1-gray.jpg">
+               <a className="d-block mb-4" href="/images/detail-1-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
                            className="product-img-grey"
                            alt=""
-                           src="images/detail-1-gray.jpg"
+                           src="/images/detail-1-gray.jpg"
                         />
                      </div>
                   </figure>
                </a>
-               <a className="d-block mb-4" href="images/detail-2-gray.jpg">
+               <a className="d-block mb-4" href="/images/detail-2-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
                            className="product-img-grey"
                            alt=""
-                           src="images/detail-2-gray.jpg"
+                           src="/images/detail-2-gray.jpg"
                         />
                      </div>
                   </figure>
                </a>
-               <a className="d-block mb-4" href="images/detail-3-gray.jpg">
+               <a className="d-block mb-4" href="/images/detail-3-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
                            className="product-img-grey"
                            alt=""
-                           src="images/detail-3-gray.jpg"
+                           src="/images/detail-3-gray.jpg"
                         />
                      </div>
                   </figure>
                </a>
-               <a className="d-block mb-4" href="images/detail-4-gray.jpg">
+               <a className="d-block mb-4" href="/images/detail-4-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
                            className="product-img-grey"
                            alt=""
-                           src="images/detail-4-gray.jpg"
+                           src="/images/detail-4-gray.jpg"
                         />
                      </div>
                   </figure>
                </a>
-               <a className="d-block mb-4" href="images/detail-5-gray.jpg">
+               <a className="d-block mb-4" href="/images/detail-5-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
                            className="product-img-grey"
                            alt=""
-                           src="images/detail-5-gray.jpg"
+                           src="/images/detail-5-gray.jpg"
                         />
                      </div>
                   </figure>
                </a>
-               <a className="d-block mb-4" href="images/detail-6-gray.jpg">
+               <a className="d-block mb-4" href="/images/detail-6-gray.jpg">
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
                            className="product-img-grey"
                            alt=""
-                           src="images/detail-6-gray.jpg"
+                           src="/images/detail-6-gray.jpg"
                         />
                      </div>
                   </figure>

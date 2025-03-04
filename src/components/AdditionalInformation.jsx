@@ -52,7 +52,7 @@ export default function AdditionalInformation() {
                   </div>
                   <img
                      className="col-5 image-styles"
-                     src="images/detail-1-gray.jpg"
+                     src="/images/detail-1-gray.jpg"
                      alt=""
                   />
                </div>
@@ -106,7 +106,7 @@ export default function AdditionalInformation() {
                               <div className="position-relative overflow-hidden rounded-circle h-100 d-flex align-items-center justify-content-center">
                                  <img
                                     alt="Han Solo"
-                                    src="images/person-1.webp"
+                                    src="/images/person-1.webp"
                                     width={96}
                                     height={96}
                                     className="rounded-circle"
@@ -149,7 +149,7 @@ export default function AdditionalInformation() {
                               <div className="position-relative overflow-hidden rounded-circle h-100 d-flex align-items-center justify-content-center">
                                  <img
                                     alt="Luke Skywalker"
-                                    src="images/person-2.webp"
+                                    src="/images/person-2.webp"
                                     width={96}
                                     height={96}
                                     className="rounded-circle"
@@ -194,7 +194,7 @@ export default function AdditionalInformation() {
                               <div className="position-relative overflow-hidden rounded-circle h-100 d-flex align-items-center justify-content-center">
                                  <img
                                     alt="Princess Leiar"
-                                    src="images/person-3.webp"
+                                    src="/images/person-3.webp"
                                     width={96}
                                     height={96}
                                     className="rounded-circle"
@@ -237,7 +237,7 @@ export default function AdditionalInformation() {
                               <div className="position-relative overflow-hidden rounded-circle h-100 d-flex align-items-center justify-content-center">
                                  <img
                                     alt="Jabba Hut"
-                                    src="images/person-4.webp"
+                                    src="/images/person-4.webp"
                                     width={96}
                                     height={96}
                                     className="rounded-circle"
