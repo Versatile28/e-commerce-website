@@ -905,6 +905,11 @@ h6 {
    border-top-right-radius: 0 !important;
 }
 
+.product-skeleton{
+   min-height: 250px;
+   width: 100%;
+}
+
 /* CountdownSection */
 
 .deal-section {

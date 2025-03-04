@@ -11,6 +11,7 @@ import StarRating from './StarRating';
 import { RiFacebookFill } from 'react-icons/ri';
 import { FaTwitter } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa';
+import { baseUrl } from '../utils/constant';
 
 export default function ProductContainer() {
    const toastRef = useRef(null);
@@ -25,7 +26,7 @@ export default function ProductContainer() {
       const fetchProduct = async () => {
          try {
             const { data } = await axios.get(
-               `http://localhost:5000/api/products/${id}`,
+               `${baseUrl}/api/products/${id}`,
                {
                   headers: { 'Content-Type': 'application/json' },
                }

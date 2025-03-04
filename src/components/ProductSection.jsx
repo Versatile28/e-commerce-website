@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import ProductCard from './ProductCard';
+import { motion } from 'framer-motion';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
-export default function ProductSection({ products }) {
+const ProductCard = lazy(() => import('./ProductCard'));
+
+const containerVariants = {
+   hidden: { opacity: 1 },
+   visible: {
+      transition: { staggerChildren: 0.1 },
+   },
+};
+
+const cardVariants = {
+   hidden: { opacity: 0, scale: 0.5 },
+   visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: 'easeOut' },
+   },
+};
+
+export default function ProductSection({ products, loading }) {
    return (
       <Container className="pb-3 product-section-container">
          <Row className="mb-2 d-flex justify-content-center">
@@ -41,29 +61,62 @@ export default function ProductSection({ products }) {
                </Col>
             </Row>
          </Row>
-         <Row className="mt-4">
-            {products.map((item, idx) => (
-               <Col
-                  key={idx}
-                  xs={6}
-                  sm={6}
-                  md={4}
-                  lg={3}
-                  xl={2}
-                  xxl={2}
-                  className="mb-4"
-               >
-                  <ProductCard
-                     id={item._id}
-                     badgeText={item.badge}
-                     imageSrc={item.image}
-                     title={item.name}
-                     price={item.price}
-                     rating={item.rating}
-                  />
-               </Col>
-            ))}
-         </Row>
+
+         <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+         >
+            <Row className="mt-4">
+               {loading
+                  ? Array.from({ length: 12 }).map((_, idx) => (
+                       <Col
+                          key={idx}
+                          xs={6}
+                          sm={6}
+                          md={4}
+                          lg={3}
+                          xl={2}
+                          xxl={2}
+                          className="mb-4"
+                       >
+                          <Skeleton className="product-skeleton" height={300} />
+                       </Col>
+                    ))
+                  : products.map((item, idx) => (
+                       <Col
+                          key={idx}
+                          xs={6}
+                          sm={6}
+                          md={4}
+                          lg={3}
+                          xl={2}
+                          xxl={2}
+                          className="mb-4"
+                       >
+                          <Suspense
+                             fallback={
+                                <Skeleton
+                                   className="product-skeleton"
+                                   height={300}
+                                />
+                             }
+                          >
+                             <motion.div variants={cardVariants}>
+                                <ProductCard
+                                   id={item._id}
+                                   badge={item.badge}
+                                   image={item.image}
+                                   name={item.name}
+                                   price={item.price}
+                                   rating={item.rating}
+                                />
+                             </motion.div>
+                          </Suspense>
+                       </Col>
+                    ))}
+            </Row>
+         </motion.div>
       </Container>
    );
 }

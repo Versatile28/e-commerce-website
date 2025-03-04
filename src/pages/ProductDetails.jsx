@@ -8,7 +8,7 @@ import ProductContainer from '../components/ProductContainer'
 import AdditionalInformation from '../components/AdditionalInformation';
 import ProductCarousel from '../components/ProductCarousel';
 
-export default function ProductDetails({ products }) {
+export default function ProductDetails({ products, loading }) {
   return (
     <div className='position-relative'>
         <div className='product-headerbar'>
@@ -19,7 +19,7 @@ export default function ProductDetails({ products }) {
         </div>
         <ProductContainer/>
         <AdditionalInformation/>
-        <ProductCarousel products={products}/>
+        <ProductCarousel products={products} loading={loading}/>
         <FeatureSection/>
         <Footer/>
     </div>

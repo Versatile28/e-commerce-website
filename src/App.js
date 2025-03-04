@@ -5,15 +5,17 @@ import {HashRouter, Routes, Route} from 'react-router-dom';
 import './App.css'
 import Homepage from './pages/Homepage';
 import ProductDetails from './pages/ProductDetails';
+import { baseUrl } from './utils/constant';
 
 export default function App() {
 
    const [products, setProducts] = useState([]);
+   const [loading, setLoading] = useState(true);
 
    const fetchProducts = async () => {
       try {
          const { data } = await axios.get(
-            'http://localhost:5000/api/products',
+            `${baseUrl}/api/products`,
             {
                headers: { 'Content-Type': 'application/json' },
             }
@@ -24,6 +26,8 @@ export default function App() {
             'Error fetching products:',
             error.response?.data?.message || error.message
          );
+      } finally {
+         setLoading(false);
       }
    };
 
@@ -44,8 +48,8 @@ export default function App() {
     <div>
       <HashRouter>
         <Routes>
-          <Route path="/" element={<Homepage products={products}/>} />
-          <Route path="/category-full/product/:id" element={<ProductDetails products={products}/>} />
+          <Route path="/" element={<Homepage products={products} loading={loading}/>} />
+          <Route path="/category-full/product/:id" element={<ProductDetails products={products} loading={loading}/>} />
         </Routes>
       </HashRouter>
     </div>
