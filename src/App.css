@@ -171,6 +171,11 @@ table {
    padding: 7rem;
 }
 
+.py-6{
+   padding-top: 6rem !important;
+   padding-bottom: 6rem !important;
+}
+
 .h6,
 h6 {
    font-size: 1rem;
@@ -1621,6 +1626,106 @@ svg:not(:root).svg-inline--fa {
    width: 8px;
    height: 8px;
    opacity: 0.6;
+}
+
+/* Category Full */
+
+.category-menu-container{
+   padding-right: 3.5rem !important;
+}
+
+.category-menu{
+   border-bottom: .1px solid #dcf1f4;
+}
+
+.category-menu .accordion-button{
+   padding: 0;
+   padding-top: 1.5rem;
+}
+
+.category-menu .accordion-body{
+   padding-top: 0;
+   padding-bottom: 2rem;
+}
+
+.category-title{
+   font-size: 3.5rem;
+   font-weight: 700;
+   letter-spacing: .05rem;
+}
+
+.category-desc{
+   font-size: 1.25rem;
+}
+
+.category-menu-title{
+   font-size: .85rem;
+   padding-left: .8rem;
+   font-weight: 600;
+}
+
+@keyframes underlineAnimation {
+   0% {
+      width: 0;
+   }
+   100% {
+      width: 100%;
+   }
+}
+
+.item-underline{
+   display: block;
+   height: 1.5px !important;
+   margin-bottom: .5rem !important;
+}
+
+.category-menu-list{
+   list-style: none;
+   padding: 0;
+   margin-bottom: 0;
+}
+
+.category-menu-list p{
+   margin-bottom: 0 !important;
+   transition: .1s ease-in-out;
+}
+
+.category-menu-list li:hover{
+   color: #bcac76;
+}
+
+.category-menu-list li:hover .item-underline{
+   animation-name: underlineAnimation;
+   animation-duration: .5s;
+   background-color: #bcac76;
+}
+
+.category-menu-head {
+   font-size: 1.1rem !important;
+   font-weight: 500 !important;
+   font-family: var(--bs-body-font-family);
+   padding-bottom: 1.5rem;
+}
+
+.category-menu-list li{
+   font-size: 0.875rem;
+   color: rgb(134, 142, 153);
+   font-weight: 500;
+   margin-bottom: .5rem;
+   margin-left: 2rem;
+   cursor: pointer;
+   transition: color 0.3s;
+}
+
+.category-menu-count{
+   outline: none;
+   font-size: .85rem;
+}
+
+.category-menu-icons{
+   color: black;
+   height: 2.2rem;
+   width: 2.2rem;
 }
 
 /* Media Queries */

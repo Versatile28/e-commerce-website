@@ -18,7 +18,14 @@ export default function ProductContainer() {
    const [selected, setSelected] = useState('Small');
    const [change, setChange] = useState('value_0');
    const [quantity, setQuantity] = useState(1);
-   const [product, setProduct] = useState({});
+   const [product, setProduct] = useState({   
+      id: null,
+      badge: '',
+      image: 'images/1.1.webp',
+      name: 'White Tee',
+      price: 40.0,
+      rating: 3.5,
+      category: 'Tops & blouses'});
 
    const { id } = useParams();
 
@@ -183,7 +190,7 @@ export default function ProductContainer() {
                            ${product.price?.toFixed(2)}
                         </li>
                         <li className="font-body-font-family list-inline-item text-mute fw-light">
-                           <del>${(product.price * 1.25).toFixed(2)}</del>
+                           <del>${isNaN(product.price) ? "50.00" : (product.price * 1.25).toFixed(2)}</del>
                         </li>
                      </ul>
                      <div className="d-flex align-items-center text-sm">

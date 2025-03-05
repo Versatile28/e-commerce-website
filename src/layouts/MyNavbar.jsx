@@ -48,11 +48,11 @@ export default function MyNavbar() {
       <Navbar expand="lg" className="py-4">
          <Container className="mynavbar-container">
             <Nav className="d-lg-none d-flex justify-content-between flex-row w-100 navbar-s-collapse">
-               <Navbar.Brand className={`mx-2 ${delayedClass}`} href="#">
+               <Navbar.Brand className={`mx-2 ${delayedClass}`} href="/">
                   Varkala
                </Navbar.Brand>
                <Nav className={delayedClass}>
-                  <div className="d-flex align-items-start">
+                  <div className="d-flex align-sitems-start">
                      <Nav.Link className="px-2 pt-2 collapse-icons">
                         <SlUser className="mynavbar-icon" />
                      </Nav.Link>
