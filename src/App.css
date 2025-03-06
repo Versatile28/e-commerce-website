@@ -1843,14 +1843,35 @@ svg:not(:root).svg-inline--fa {
    background-color: #E9ECEF !important;
 }
 
-.form-check-input:checked{
-   background-color: #bcac76 !important;
-   border-color: #bcac76 !important;
+.category-size .form-check-input:checked,
+.category-brand .form-check-input:checked{
+   background-color: #343A40 !important;
+   border-color: #343A40 !important;
 }
 
-.form-check-input{
-   height: 1rem;
-   width: 1rem;
+/* .colours-wrapper .form-check-input:checked[type=checkbox] {
+   --bs-form-check-bg-image: 0;
+} */
+
+.colours-wrapper .form-check-input{
+   background-image: none;
+   background-color: transparent;
+}
+
+.colours-wrapper .form-check-input[type=checkbox] {
+   border-radius: 50% !important;
+   height: 1.25rem !important;
+   width: 1.25rem !important;
+   border: none;
+}
+
+.colours-wrapper .form-check-input:focus { 
+   box-shadow: none !important;
+}
+
+.colours-wrapper .color-input{
+   border-radius: 50% !important;
+   border:1px solid #cacaca !important;
 }
 
 /* Media Queries */

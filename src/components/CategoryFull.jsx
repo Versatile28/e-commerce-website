@@ -199,7 +199,7 @@ export default function CategoryFull({ products, loading }) {
                <div>
                   <h5 className="fw-bold ls-1 pt-5">Price</h5>
                </div>
-               <div>
+               <div className='category-brand'>
                   <h5 className="fw-bold ls-1 pt-5">Brand</h5>
                   <form className="mt-4 mt-lg-0">
                      <div className="mb-1">
@@ -279,7 +279,7 @@ export default function CategoryFull({ products, loading }) {
                      </div>
                   </form>
                </div>
-               <div>
+               <div className='category-size'>
                   <h5 className="fw-bold ls-1 pt-5">Size</h5>
                   <form className="mt-4 mt-lg-0">
                      <div className="mb-1">
@@ -345,21 +345,17 @@ export default function CategoryFull({ products, loading }) {
                   </form>
                </div>
                <div>
-                  <h5 className="fw-bold ls-1 pt-5">Color</h5>
+                  <h5 className="fw-bold ls-1 pt-5 mb-3">Color</h5>
                   <ul className="list-inline mb-0 colours-wrapper mt-4 mt-lg-0">
                      {colors.map(({ id, color }) => (
                         <li className="list-inline-item" key={id}>
-                           <label
-                              className="btn-colour form-label"
-                              htmlFor={id}
-                              style={{ backgroundColor: color }}
-                           ></label>
-                           <div className="input-invisible">
+                           <div className="color-input">
                               <input
                                  name="colour"
                                  type="checkbox"
                                  id={id}
-                                 className="form-check-input"
+                                 className="form-check-input m-1"
+                                 style={{ backgroundColor: color }}
                                  checked={selectedColors.includes(id)}
                                  onChange={() => handleColorChange(id)}
                               />
