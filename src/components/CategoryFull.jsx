@@ -1,5 +1,12 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Container, Accordion, Dropdown, Row, Col } from 'react-bootstrap';
+import {
+   Container,
+   Accordion,
+   Dropdown,
+   Pagination,
+   Row,
+   Col,
+} from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -8,8 +15,17 @@ import { TbJacket } from 'react-icons/tb';
 import { PiTShirtLight } from 'react-icons/pi';
 import { Breadcrumb } from 'react-bootstrap';
 
+const colors = [
+   { id: 'value_sidebar_Blue', name: 'Blue', color: 'rgb(102, 140, 185)' },
+   { id: 'value_sidebar_White', name: 'White', color: 'rgb(255, 255, 255)' },
+   { id: 'value_sidebar_Violet', name: 'Violet', color: 'rgb(139, 110, 164)' },
+   { id: 'value_sidebar_Red', name: 'Red', color: 'rgb(221, 98, 101)' },
+];
+
 export default function CategoryFull({ products, loading }) {
    const [selected, setSelected] = useState('Default');
+   const [selectedSize, setSelectedSize] = useState('size0');
+   const [selectedColors, setSelectedColors] = useState([]);
 
    const handleSelect = (option) => {
       setSelected(option);
@@ -45,10 +61,38 @@ export default function CategoryFull({ products, loading }) {
       return () => window.removeEventListener('resize', handleResize);
    }, []);
 
+   const [selectedBrands, setSelectedBrands] = useState({
+      brand0: true,
+      brand1: true,
+      brand2: false,
+      brand3: false,
+      brand4: false,
+   });
+
+   const handleCheckboxChange = (event) => {
+      const { id, checked } = event.target;
+      setSelectedBrands((prevState) => ({
+         ...prevState,
+         [id]: checked,
+      }));
+   };
+
+   const handleRadioChange = (event) => {
+      setSelectedSize(event.target.id);
+   };
+
+   const handleColorChange = (id) => {
+      setSelectedColors((prev) =>
+         prev.includes(id)
+            ? prev.filter((color) => color !== id)
+            : [...prev, id]
+      );
+   };
+
    return (
       <Container className="px-3 py-6">
          <div className="row">
-            <div className="col-3 category-menu-container">
+            <div className="col-xl-3 d-xl-block d-none category-menu-container">
                <h5 className="fw-bold ls-1">Category</h5>
                <Accordion className="category-menu">
                   <Accordion.Item eventKey="0">
@@ -152,9 +196,180 @@ export default function CategoryFull({ products, loading }) {
                      </Accordion.Body>
                   </Accordion.Item>
                </Accordion>
-               <h5 className="fw-bold ls-1 pt-5">Price</h5>
+               <div>
+                  <h5 className="fw-bold ls-1 pt-5">Price</h5>
+               </div>
+               <div>
+                  <h5 className="fw-bold ls-1 pt-5">Brand</h5>
+                  <form className="mt-4 mt-lg-0">
+                     <div className="mb-1">
+                        <div className="form-check">
+                           <input
+                              name="clothes-brand"
+                              type="checkbox"
+                              id="brand0"
+                              className="form-check-input"
+                              checked={selectedBrands.brand0}
+                              onChange={handleCheckboxChange}
+                           />
+                           <label htmlFor="brand0" className="form-check-label">
+                              Calvin Klein <small>(18)</small>
+                           </label>
+                        </div>
+                     </div>
+                     <div className="mb-1">
+                        <div className="form-check">
+                           <input
+                              name="clothes-brand"
+                              type="checkbox"
+                              id="brand1"
+                              className="form-check-input"
+                              checked={selectedBrands.brand1}
+                              onChange={handleCheckboxChange}
+                           />
+                           <label htmlFor="brand1" className="form-check-label">
+                              Levi Strauss <small>(30)</small>
+                           </label>
+                        </div>
+                     </div>
+                     <div className="mb-1">
+                        <div className="form-check">
+                           <input
+                              name="clothes-brand"
+                              type="checkbox"
+                              id="brand2"
+                              className="form-check-input"
+                              checked={selectedBrands.brand2}
+                              onChange={handleCheckboxChange}
+                           />
+                           <label htmlFor="brand2" className="form-check-label">
+                              Hugo Boss <small>(120)</small>
+                           </label>
+                        </div>
+                     </div>
+                     <div className="mb-1">
+                        <div className="form-check">
+                           <input
+                              name="clothes-brand"
+                              type="checkbox"
+                              id="brand3"
+                              className="form-check-input"
+                              checked={selectedBrands.brand3}
+                              onChange={handleCheckboxChange}
+                           />
+                           <label htmlFor="brand3" className="form-check-label">
+                              Tomi Hilfiger <small>(70)</small>
+                           </label>
+                        </div>
+                     </div>
+                     <div className="mb-1">
+                        <div className="form-check">
+                           <input
+                              name="clothes-brand"
+                              type="checkbox"
+                              id="brand4"
+                              className="form-check-input"
+                              checked={selectedBrands.brand4}
+                              onChange={handleCheckboxChange}
+                           />
+                           <label htmlFor="brand4" className="form-check-label">
+                              Tom Ford <small>(110)</small>
+                           </label>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div>
+                  <h5 className="fw-bold ls-1 pt-5">Size</h5>
+                  <form className="mt-4 mt-lg-0">
+                     <div className="mb-1">
+                        <div className="form-check">
+                           <input
+                              name="size"
+                              type="radio"
+                              id="size0"
+                              className="form-check-input"
+                              checked={selectedSize === 'size0'}
+                              onChange={handleRadioChange}
+                           />
+                           <label htmlFor="size0" className="form-check-label">
+                              Small
+                           </label>
+                        </div>
+                     </div>
+                     <div className="mb-1">
+                        <div className="form-check">
+                           <input
+                              name="size"
+                              type="radio"
+                              id="size1"
+                              className="form-check-input"
+                              checked={selectedSize === 'size1'}
+                              onChange={handleRadioChange}
+                           />
+                           <label htmlFor="size1" className="form-check-label">
+                              Medium
+                           </label>
+                        </div>
+                     </div>
+                     <div className="mb-1">
+                        <div className="form-check">
+                           <input
+                              name="size"
+                              type="radio"
+                              id="size2"
+                              className="form-check-input"
+                              checked={selectedSize === 'size2'}
+                              onChange={handleRadioChange}
+                           />
+                           <label htmlFor="size2" className="form-check-label">
+                              Large
+                           </label>
+                        </div>
+                     </div>
+                     <div className="mb-1">
+                        <div className="form-check">
+                           <input
+                              name="size"
+                              type="radio"
+                              id="size3"
+                              className="form-check-input"
+                              checked={selectedSize === 'size3'}
+                              onChange={handleRadioChange}
+                           />
+                           <label htmlFor="size3" className="form-check-label">
+                              X-Large
+                           </label>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div>
+                  <h5 className="fw-bold ls-1 pt-5">Color</h5>
+                  <ul className="list-inline mb-0 colours-wrapper mt-4 mt-lg-0">
+                     {colors.map(({ id, color }) => (
+                        <li className="list-inline-item" key={id}>
+                           <label
+                              className="btn-colour form-label"
+                              htmlFor={id}
+                              style={{ backgroundColor: color }}
+                           ></label>
+                           <div className="input-invisible">
+                              <input
+                                 name="colour"
+                                 type="checkbox"
+                                 id={id}
+                                 className="form-check-input"
+                                 checked={selectedColors.includes(id)}
+                                 onChange={() => handleColorChange(id)}
+                              />
+                           </div>
+                        </li>
+                     ))}
+                  </ul>
+               </div>
             </div>
-            <div className="col-9">
+            <div className="col-xl-9 col-12">
                <div className="mb-5">
                   <span className="category-title">Jackets and tops</span>
                   <p className="text-mute category-desc width-lg-100">
@@ -170,7 +385,7 @@ export default function CategoryFull({ products, loading }) {
                      </Breadcrumb.Item>
                   </Breadcrumb>
                </div>
-               <div className="row filter-category mb-4">
+               <div className="row filter-category">
                   <div className="col-lg-4 col-6 h-100 d-flex align-items-center">
                      <div className="me-3 mb-3 text-mute d-flex align-items-center">
                         Showing
@@ -224,79 +439,101 @@ export default function CategoryFull({ products, loading }) {
                      </div>
                   </div>
                </div>
-               {Array.from({
-                  length: Math.ceil(products.length / itemsPerRow),
-               }).map((_, rowIndex) => (
-                  <Row key={rowIndex} className="mt-4">
-                     {loading
-                        ? Array.from({ length: itemsPerRow }).map((_, idx) => (
-                             <Col
-                                key={idx}
-                                xs={6}
-                                sm={6}
-                                md={6}
-                                lg={4}
-                                xl={3}
-                                xxl={3}
-                                className="mb-4"
-                             >
-                                <motion.div
-                                   variants={cardVariants}
-                                   initial="hidden"
-                                   whileInView="visible"
-                                   viewport={{ once: true, amount: 0.2 }}
-                                >
-                                   <Skeleton
-                                      className="product-skeleton"
-                                      height={300}
-                                   />
-                                </motion.div>
-                             </Col>
-                          ))
-                        : products
-                             .slice(
-                                rowIndex * itemsPerRow,
-                                rowIndex * itemsPerRow + itemsPerRow
-                             )
-                             .map((item, idx) => (
-                                <Col
-                                   key={idx}
-                                   xs={6}
-                                   sm={6}
-                                   md={6}
-                                   lg={4}
-                                   xl={3}
-                                   xxl={3}
-                                   className="mb-4"
-                                >
-                                   <Suspense
-                                      fallback={
-                                         <Skeleton
-                                            className="product-skeleton"
-                                            height={300}
-                                         />
-                                      }
-                                   >
-                                      <motion.div
-                                         variants={cardVariants}
-                                         initial="hidden"
-                                         whileInView="visible"
-                                         viewport={{ once: true, amount: 0.2 }}
+               <div className="category-card-container">
+                  {loading
+                     ? Array.from({ length: Math.ceil(12 / itemsPerRow) }).map(
+                          (_, rowIndex) => (
+                             <Row key={rowIndex} className="mt-4">
+                                {Array.from({ length: itemsPerRow }).map(
+                                   (_, idx) => (
+                                      <Col
+                                         key={idx}
+                                         xs={6}
+                                         sm={6}
+                                         md={6}
+                                         lg={4}
+                                         xl={3}
+                                         xxl={3}
+                                         className="mb-4"
                                       >
-                                         <ProductCard
-                                            id={item._id}
-                                            badge={item.badge}
-                                            image={item.image}
-                                            name={item.name}
-                                            price={item.price}
-                                            rating={item.rating}
-                                         />
-                                      </motion.div>
-                                   </Suspense>
-                                </Col>
-                             ))}
-                  </Row>
-               ))}
+                                         <motion.div
+                                            variants={cardVariants}
+                                            initial="hidden"
+                                            animate="visible"
+                                         >
+                                            <Skeleton
+                                               className="product-skeleton"
+                                               height={300}
+                                            />
+                                         </motion.div>
+                                      </Col>
+                                   )
+                                )}
+                             </Row>
+                          )
+                       )
+                     : Array.from({
+                          length: Math.ceil(products.length / itemsPerRow),
+                       }).map((_, rowIndex) => (
+                          <Row key={rowIndex} className="mt-4">
+                             {products
+                                .slice(
+                                   rowIndex * itemsPerRow,
+                                   rowIndex * itemsPerRow + itemsPerRow
+                                )
+                                .map((item, idx) => (
+                                   <Col
+                                      key={idx}
+                                      xs={6}
+                                      sm={6}
+                                      md={6}
+                                      lg={4}
+                                      xl={3}
+                                      xxl={3}
+                                      className="mb-4"
+                                   >
+                                      <Suspense
+                                         fallback={
+                                            <Skeleton
+                                               className="product-skeleton"
+                                               height={300}
+                                            />
+                                         }
+                                      >
+                                         <motion.div
+                                            variants={cardVariants}
+                                            initial="hidden"
+                                            whileInView="visible"
+                                            viewport={{
+                                               once: true,
+                                               amount: 0.2,
+                                            }}
+                                         >
+                                            <ProductCard
+                                               id={item._id}
+                                               badge={item.badge}
+                                               image={item.image}
+                                               name={item.name}
+                                               price={item.price}
+                                               rating={item.rating}
+                                            />
+                                         </motion.div>
+                                      </Suspense>
+                                   </Col>
+                                ))}
+                          </Row>
+                       ))}
+               </div>
+               <div className="w-100 d-flex justify-content-center category-pagination">
+                  <Pagination>
+                     <Pagination.Prev />
+                     <Pagination.Item active>{1}</Pagination.Item>
+                     <Pagination.Item>{2}</Pagination.Item>
+                     <Pagination.Item>{3}</Pagination.Item>
+                     <Pagination.Item>{4}</Pagination.Item>
+                     <Pagination.Next />
+                  </Pagination>
+               </div>
             </div>
          </div>
       </Container>

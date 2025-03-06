@@ -915,6 +915,20 @@ h6 {
    width: 100%;
 }
 
+.page-item .page-link{
+   border: none;
+
+   border-radius: 0 !important;
+}
+
+/* .page-item:first-child .page-link,
+.page-item:last-child .page-link{
+   border-top-left-radius: 0 !important;
+   border-bottom-left-radius: 0 !important;
+   border-top-right-radius: 0 !important;
+   border-bottom-right-radius: 0 !important;
+} */
+
 /* CountdownSection */
 
 .deal-section {
@@ -1794,6 +1808,49 @@ svg:not(:root).svg-inline--fa {
 
 .filter-category{
    height: 4rem !important;
+   box-sizing: border-box;
+   flex-wrap: wrap;
+   row-gap: 10px;
+   margin-bottom: 15px;
+}
+
+.category-pagination .page-item .page-link{
+   border: none;
+   padding: 1rem;
+   margin-right: .3rem;
+   border-radius: 0 !important;
+   color: #999999;
+   background-color: white;
+}
+
+.category-pagination .page-item .page-link:hover{
+   color: black !important;
+}
+
+.active>.page-link, .page-link.active {
+   background-color: white !important;
+   color: black !important;
+   font-weight: 700;
+}
+
+.category-pagination .page-item .page-link:focus,
+.category-pagination .page-item .page-link:active {
+   outline: 1px !important;
+   outline-color: #f0e3bb !important;
+   box-shadow: none !important;
+   border: 2px !important;
+   border-color: #f0e3bb !important;
+   background-color: #E9ECEF !important;
+}
+
+.form-check-input:checked{
+   background-color: #bcac76 !important;
+   border-color: #bcac76 !important;
+}
+
+.form-check-input{
+   height: 1rem;
+   width: 1rem;
 }
 
 /* Media Queries */
@@ -1900,6 +1957,9 @@ svg:not(:root).svg-inline--fa {
    }
    .width-lg-100{
       width: 100% !important;
+   }
+   .category-card-container{
+      padding-top: 3rem;
    }
 }
 

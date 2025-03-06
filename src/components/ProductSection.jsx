@@ -80,7 +80,7 @@ export default function ProductSection({ products, loading }) {
                           xxl={2}
                           className="mb-4"
                        >
-                          <Skeleton className="product-skeleton" height={300} />
+                          <Skeleton className="product-skeleton"/>
                        </Col>
                     ))
                   : products.map((item, idx) => (
@@ -98,7 +98,6 @@ export default function ProductSection({ products, loading }) {
                              fallback={
                                 <Skeleton
                                    className="product-skeleton"
-                                   height={300}
                                 />
                              }
                           >
