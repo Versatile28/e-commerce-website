@@ -1338,7 +1338,7 @@ h6 {
 }
 
 .custom-dropdown-menu .dropdown-item:hover {
-   background-color: var(--dropdown-hover, #f0f0f0);
+   background-color:#f0f0f0;
 }
 
 .dropdown-item-custom {
@@ -1656,6 +1656,7 @@ svg:not(:root).svg-inline--fa {
 
 .category-desc{
    font-size: 1.25rem;
+   width: 75%;
 }
 
 .category-menu-title{
@@ -1696,7 +1697,7 @@ svg:not(:root).svg-inline--fa {
 
 .category-menu-list li:hover .item-underline{
    animation-name: underlineAnimation;
-   animation-duration: .5s;
+   animation-duration: .3s;
    background-color: #bcac76;
 }
 
@@ -1714,7 +1715,7 @@ svg:not(:root).svg-inline--fa {
    margin-bottom: .5rem;
    margin-left: 2rem;
    cursor: pointer;
-   transition: color 0.3s;
+   /* transition: color 0.3s; */
 }
 
 .category-menu-count{
@@ -1726,6 +1727,73 @@ svg:not(:root).svg-inline--fa {
    color: black;
    height: 2.2rem;
    width: 2.2rem;
+}
+
+.sortby-dropdown::after {
+   content: none !important;
+}
+
+.sortby-dropdown {
+   border: 0.5px solid grey !important;
+   border-radius: 0 !important;
+   padding: 6px 12px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between !important;
+   width: 160px;
+}
+
+.sortby-dropdown span.ls-4 {
+   display: block;
+   max-width: 100px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.sortby-dropdown .arrow {
+   margin-left: 8px;
+   flex-shrink: 0;
+}
+
+.sortby-dropdown:focus,
+.sortby-dropdown:active {
+   outline: 0.25rem solid #bcac7644 !important;
+   box-shadow: none !important;
+   background-color: white !important;
+}
+
+.sortby-dropdown-menu {
+   background-color: white !important;
+   border: none !important;
+   border-radius: 0 !important;
+   width: 160px !important;
+   box-shadow: 0 0 10px rgb(218, 218, 218);
+   background-color: white;
+   transform: translate3d(0px, 44px, 0px) !important;
+}
+
+.sortby-dropdown-menu .dropdown-item:hover {
+   background-color:#f0f0f0;
+}
+
+.dropdown-item-sortby {
+   display: flex !important;
+   justify-content: start !important;
+   align-items: center !important;
+   height: 2.4rem;
+   font-family: var(--bs-body-font-family);
+   font-weight: 500;
+   font-size: 0.9rem;
+   transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown-item-sortby:hover {
+   background-color: lightgray;
+}
+
+.filter-category{
+   height: 4rem !important;
 }
 
 /* Media Queries */
@@ -1829,6 +1897,9 @@ svg:not(:root).svg-inline--fa {
    }
    .image-styles {
       height: 50% !important;
+   }
+   .width-lg-100{
+      width: 100% !important;
    }
 }
 

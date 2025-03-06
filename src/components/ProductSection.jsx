@@ -4,25 +4,25 @@ import { motion } from 'framer-motion';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-const ProductCard = lazy(() => import('./ProductCard'));
-
-const containerVariants = {
-   hidden: { opacity: 1 },
-   visible: {
-      transition: { staggerChildren: 0.1 },
-   },
-};
-
-const cardVariants = {
-   hidden: { opacity: 0, scale: 0.5 },
-   visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.5, ease: 'easeOut' },
-   },
-};
-
 export default function ProductSection({ products, loading }) {
+   const ProductCard = lazy(() => import('./ProductCard'));
+
+   const containerVariants = {
+      hidden: { opacity: 1 },
+      visible: {
+         transition: { staggerChildren: 0.1 },
+      },
+   };
+
+   const cardVariants = {
+      hidden: { opacity: 0, scale: 0.5 },
+      visible: {
+         opacity: 1,
+         scale: 1,
+         transition: { duration: 0.5, ease: 'easeOut' },
+      },
+   };
+
    return (
       <Container className="pb-3 product-section-container">
          <Row className="mb-2 d-flex justify-content-center">

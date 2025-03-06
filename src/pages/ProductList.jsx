@@ -13,7 +13,7 @@ export default function ProductDetails({ products, loading }) {
         <div className='product-mynavbar'>
         <MyNavbar/>
         </div>
-        <CategoryFull/>
+        <CategoryFull products={products} loading={loading}/>
         <FeatureSection/>
         <Footer/>
     </div>

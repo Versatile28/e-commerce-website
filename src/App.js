@@ -57,7 +57,12 @@ export default function App() {
                      <ProductDetails products={products} loading={loading} />
                   }
                />
-               <Route path="/category-full" element={<ProductList />} />
+               <Route
+                  path="/category-full"
+                  element={
+                     <ProductList products={products} loading={loading} />
+                  }
+               />
             </Routes>
          </BrowserRouter>
       </div>
