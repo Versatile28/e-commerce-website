@@ -15,6 +15,7 @@ import { GiTrousers } from 'react-icons/gi';
 import { TbJacket } from 'react-icons/tb';
 import { PiTShirtLight } from 'react-icons/pi';
 import { Breadcrumb } from 'react-bootstrap';
+import PriceSlider from './PriceSlider'
 
 const colors = [
    { id: 'value_sidebar_Blue', name: 'Blue', color: 'rgb(102, 140, 185)' },
@@ -48,7 +49,7 @@ export default function CategoryFull({ products, loading }) {
       if (width >= 1200) return 4;
       if (width >= 992) return 3;
       if (width >= 768) return 2;
-      return 1;
+      return 2;
    };
 
    const [itemsPerRow, setItemsPerRow] = useState(
@@ -199,10 +200,11 @@ export default function CategoryFull({ products, loading }) {
                </Accordion>
                <div>
                   <h5 className="fw-bold ls-1 pt-5">Price</h5>
+                  {/* <PriceSlider/> */}
                </div>
                <div className='category-brand'>
-                  <h5 className="fw-bold ls-1 pt-5">Brand</h5>
-                  <form className="mt-4 mt-lg-0">
+                  <h5 className="fw-bold ls-1 pt-4">Brand</h5>
+                  <form className="mt-4 mt-lg-0 mb-5">
                      <div className="mb-1">
                         <div className="form-check">
                            <input
@@ -281,8 +283,8 @@ export default function CategoryFull({ products, loading }) {
                   </form>
                </div>
                <div className='category-size'>
-                  <h5 className="fw-bold ls-1 pt-5">Size</h5>
-                  <form className="mt-4 mt-lg-0">
+                  <h5 className="fw-bold ls-1 pt-4">Size</h5>
+                  <form className="mt-4 mt-lg-0 mb-5">
                      <div className="mb-1">
                         <div className="form-check">
                            <input
@@ -346,7 +348,7 @@ export default function CategoryFull({ products, loading }) {
                   </form>
                </div>
                <div>
-                  <h5 className="fw-bold ls-1 pt-5 mb-3">Color</h5>
+                  <h5 className="fw-bold ls-1 pt-4 mb-3">Color</h5>
                   <ul className="list-inline mb-0 colours-wrapper mt-4 mt-lg-0">
                      {colors.map(({ id, color }) => (
                         <li className="list-inline-item" key={id}>
@@ -383,23 +385,23 @@ export default function CategoryFull({ products, loading }) {
                   </Breadcrumb>
                </div>
                <div className="row filter-category">
-                  <div className="col-lg-4 col-6 h-100 d-flex align-items-center">
-                     <div className="me-3 mb-3 text-mute d-flex align-items-center">
+                  <div className="col-lg-4 col-md-6 col-12 h-100 d-flex align-items-center">
+                     <div className="text-mute d-flex align-items-center">
                         Showing
                         <strong className="text-black">&nbsp;1-12&nbsp;</strong>
                         of&nbsp;<strong className="text-black">158</strong>
                         &nbsp;products
                      </div>
                   </div>
-                  <div className="col-lg-4 col-6 h-100 d-flex align-items-center justify-content-center">
-                     <div className="me-3 mb-3 text-mute d-flex align-items-center justify-content-center">
+                  <div className="col-lg-4 col-md-6 col-12 h-100 d-flex align-items-center justify-content-md-center">
+                     <div className="text-mute d-flex align-items-center justify-content-center">
                         Show &nbsp;
                         <strong className="text-black">&nbsp;12&nbsp;</strong>
                         &nbsp; 24&nbsp; All
                      </div>
                   </div>
-                  <div className="col-lg-4 col-6 h-100 d-flex align-items-center">
-                     <div className="me-3 mb-3 text-mute d-flex align-items-center">
+                  <div className="col-lg-4 col-md-6 col-12 h-100 d-flex align-items-center justify-content-lg-end">
+                     <div className="text-mute d-flex align-items-center">
                         <div className="pe-3">Sort by</div>
                         <Dropdown className="w-auto">
                            <Dropdown.Toggle
