@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Questrial&display=swap');
-@import url('https://db.onlinewebfonts.com/c/3a0686ce5acec7b228f4580a02d0be41?family=VremenaGrotesk');
+/* @import url('https://db.onlinewebfonts.com/c/3a0686ce5acec7b228f4580a02d0be41?family=VremenaGrotesk'); */
+@font-face {
+   font-family: 'vremenagrotesk';
+   src: url('./assets/fonts/vremenagrotesk-webfont.woff2') format('woff2'),
+        url('./assets/fonts/vremenagrotesk-webfont.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+
+}
 
 :root {
    --bs-font-monospace: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono',
       'Courier New', monospace !important;
-   --bs-body-font-family: 'VremenaGrotesk', sans-serif !important;
+   --bs-body-font-family: 'vremenagrotesk', sans-serif !important;
 }
 
 /* *{
@@ -248,7 +256,7 @@ h6 {
 }
 
 .font-body-font-family {
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
 }
 
 .secondary-color-1 {
@@ -293,7 +301,7 @@ h6 {
 }
 
 .title-head {
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    font-size: 0.85rem;
    font-weight: lighter;
    color: #343a40;
@@ -509,7 +517,7 @@ h6 {
 }
 
 .menu-option {
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    font-weight: 500;
    color: #76736d;
 }
@@ -521,7 +529,7 @@ h6 {
 .drop-down-title {
    font-size: 0.9rem;
    font-weight: 700;
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
 }
 
 .option {
@@ -529,7 +537,7 @@ h6 {
    color: #999999;
    font-size: 0.9rem;
    font-weight: 500 !important;
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
 }
 
 .option-color:hover {
@@ -617,14 +625,14 @@ h6 {
 }
 
 .slide-highlight {
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
    color: black;
    letter-spacing: 0.1rem;
    font-size: 1.2rem;
 }
 
 .slide-title {
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    color: #212529;
    letter-spacing: 0.05rem;
    font-size: 4.5rem;
@@ -644,7 +652,7 @@ h6 {
    padding: 0.5rem 1.2rem;
    border: 1px solid black;
    border-radius: 0;
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
    letter-spacing: 0.2rem;
    color: white;
    background-color: black;
@@ -763,7 +771,7 @@ h6 {
 }
 
 .product-link-a {
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
    letter-spacing: 0.2rem;
    font-weight: 500;
    font-size: 1rem;
@@ -821,7 +829,7 @@ h6 {
 }
 
 .product-price {
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
 }
 
 .hover-overlay {
@@ -878,7 +886,7 @@ h6 {
 }
 
 .card-title {
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    font-size: 1rem;
    font-weight: 500;
    text-decoration: none;
@@ -946,7 +954,7 @@ h6 {
 }
 
 .deal-section p {
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
    letter-spacing: 0.25rem;
    font-weight: 500;
    font-size: large;
@@ -960,12 +968,12 @@ h6 {
 }
 
 .deal-section .deal-price {
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
    color: #868ea0;
 }
 
 .deal-badge {
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
    font-size: 0.8rem;
    padding: 1rem 1.1rem;
    margin-right: 1rem;
@@ -1005,7 +1013,7 @@ h6 {
    padding: 0.5rem 1.2rem;
    border: 1px solid black;
    border-radius: 0;
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
    letter-spacing: 0.2rem;
    color: black;
    background-color: rgb(0, 0, 0, 0);
@@ -1073,13 +1081,13 @@ h6 {
 .features-section h6 {
    font-size: 0.9rem;
    margin-bottom: 0.5rem;
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
 }
 
 .features-section p {
    margin-bottom: 0;
    font-size: 0.8rem;
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
    color: #868e96;
 }
 
@@ -1094,7 +1102,7 @@ h6 {
    font-size: 1.1rem;
    font-weight: bolder;
    margin-bottom: 1.8rem;
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
 }
 
 .footer-text {
@@ -1125,7 +1133,7 @@ h6 {
 }
 
 .email-input .form-control::placeholder {
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    color: #bbb;
 }
 
@@ -1197,7 +1205,7 @@ h6 {
 .footer-title-a {
    font-size: 1.1rem !important;
    font-weight: 500 !important;
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    -webkit-text-stroke: 0.5px black;
 }
 
@@ -1239,12 +1247,12 @@ h6 {
 }
 
 .add-cart-toast p {
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    font-weight: 500 !important;
 }
 
 .add-cart-toast a {
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    font-weight: 500 !important;
 }
 
@@ -1360,7 +1368,7 @@ h6 {
    justify-content: start !important;
    align-items: center !important;
    height: 2.4rem;
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    font-weight: 500;
    font-size: 0.9rem;
    transition: background-color 0.2s ease-in-out;
@@ -1378,7 +1386,7 @@ h6 {
 .detail-option-btn-label {
    color: #bcac76 !important;
    border-color: #bcac76 !important;
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    border-radius: 0 !important;
    font-weight: 600 !important;
    font-size: 0.7rem !important;
@@ -1485,7 +1493,7 @@ svg:not(:root).svg-inline--fa {
 
 .product-details a.wishlist {
    text-decoration: none;
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    font-size: 1rem;
    font-weight: 500;
    color: #bcac76;
@@ -1576,7 +1584,7 @@ svg:not(:root).svg-inline--fa {
    padding: 0.5rem 1.2rem;
    border: 1px solid black;
    border-radius: 0;
-   font-family: var(--bs-font-monospace);
+   font-family: var(--bs-font-monospace) !important;
    letter-spacing: 0.2rem;
    color: black;
    background-color: rgb(0, 0, 0, 0);
@@ -1718,7 +1726,7 @@ svg:not(:root).svg-inline--fa {
 .category-menu-head {
    font-size: 1.1rem !important;
    font-weight: 500 !important;
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    padding-bottom: 1.5rem;
 }
 
@@ -1796,7 +1804,7 @@ svg:not(:root).svg-inline--fa {
    justify-content: start !important;
    align-items: center !important;
    height: 2.4rem;
-   font-family: var(--bs-body-font-family);
+   font-family: var(--bs-body-font-family) !important;
    font-weight: 500;
    font-size: 0.9rem;
    transition: background-color 0.2s ease-in-out;
