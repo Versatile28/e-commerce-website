@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import {
    Navbar,
@@ -19,7 +20,7 @@ export default function MyNavbar() {
    const [show, setShow] = useState(false);
    const [open, setOpen] = useState(false);
    const [showFirst, setShowFirst] = useState(true);
-   const [delayedClass, setDelayedClass] = useState("show-item");
+   const [delayedClass, setDelayedClass] = useState('show-item');
 
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
@@ -34,23 +35,24 @@ export default function MyNavbar() {
    useEffect(() => {
       if (showFirst) {
          const timer = setTimeout(() => {
-            setDelayedClass("show-item");
+            setDelayedClass('show-item');
          }, 300);
 
          return () => clearTimeout(timer);
       } else {
-         setDelayedClass("hide-item");
+         setDelayedClass('hide-item');
       }
    }, [showFirst]);
-
 
    return (
       <Navbar expand="lg" className="py-4">
          <Container className="mynavbar-container">
             <Nav className="d-lg-none d-flex justify-content-between flex-row w-100 navbar-s-collapse">
-               <Navbar.Brand className={`mx-2 ${delayedClass}`} href="/">
-                  Varkala
-               </Navbar.Brand>
+               <Link to="/home" className="navbar-brand">
+                  <Navbar.Brand className={`mx-2 ${delayedClass}`}>
+                     Varkala
+                  </Navbar.Brand>
+               </Link>
                <Nav className={delayedClass}>
                   <div className="d-flex align-sitems-start">
                      <Nav.Link className="px-2 pt-2 collapse-icons">
@@ -67,9 +69,9 @@ export default function MyNavbar() {
 
                <Navbar.Collapse className="collapse-opacity">
                   <Nav className="me-auto w-auto d-flex justify-content-between align-items-center flex-row">
-                     <Navbar.Brand href="#" className="mx-2">
-                        Varkala
-                     </Navbar.Brand>
+                     <Link to="/home" className="navbar-brand">
+                        <Navbar.Brand className="mx-2">Varkala</Navbar.Brand>
+                     </Link>
                      <div className="d-flex">
                         <Nav.Link className="px-2 collapse-icons">
                            <SlUser className="mynavbar-icon" />
@@ -87,7 +89,12 @@ export default function MyNavbar() {
                         className={`border-0 ${!delayedClass}`}
                         aria-controls="basic-navbar-nav"
                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                        <svg
+                           xmlns="http://www.w3.org/2000/svg"
+                           width="25"
+                           height="25"
+                           viewBox="0 0 24 24"
+                        >
                            <path
                               fill="none"
                               stroke="black"
@@ -106,7 +113,12 @@ export default function MyNavbar() {
                   className={`border-0 ${delayedClass}`}
                   aria-controls="basic-navbar-nav"
                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+                  <svg
+                     xmlns="http://www.w3.org/2000/svg"
+                     width="25"
+                     height="25"
+                     viewBox="0 0 24 24"
+                  >
                      <path
                         fill="none"
                         stroke="black"
@@ -119,7 +131,9 @@ export default function MyNavbar() {
                </Navbar.Toggle>
             </Nav>
             <Nav className="d-none d-lg-flex justify-content-between flex-row w-100">
-               <Navbar.Brand href="#">Varkala</Navbar.Brand>
+               <Link to="/home" className="navbar-brand">
+                  <Navbar.Brand>Varkala</Navbar.Brand>
+               </Link>
                {width > 992 && <NavbarMenu />}
                <Nav className="d-none d-lg-flex justify-content-end align-items-center flex-row">
                   <NavLink className="px-2 collapse-icons">
@@ -170,7 +184,8 @@ export default function MyNavbar() {
                   <Offcanvas.Title className="pb-3">Disabled</Offcanvas.Title>
                   <Offcanvas.Title className="pb-3">
                      <div>
-                        <p onClick={() => setOpen(!open)}
+                        <p
+                           onClick={() => setOpen(!open)}
                            className="d-inline-block cursor-pointer"
                         >
                            Dropdown link{' '}
@@ -181,9 +196,7 @@ export default function MyNavbar() {
 
                         <Collapse in={open}>
                            <div className="pb-3">
-                              <p className="option option-color pt-3">
-                                 Action
-                              </p>
+                              <p className="option option-color pt-3">Action</p>
                               <p className="option option-color">
                                  Another action
                               </p>
@@ -196,7 +209,7 @@ export default function MyNavbar() {
                   </Offcanvas.Title>
                   <Offcanvas.Title>
                      <Navbar>
-                        <Nav.Link href="#home" className="mar-r-5">
+                        <Nav.Link href="/home" className="mar-r-5">
                            <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="15"
@@ -209,7 +222,7 @@ export default function MyNavbar() {
                               />
                            </svg>
                         </Nav.Link>
-                        <Navbar.Brand href="#home">
+                        <Navbar.Brand href="/home">
                            <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="15"
@@ -222,7 +235,7 @@ export default function MyNavbar() {
                               />
                            </svg>
                         </Navbar.Brand>
-                        <Navbar href="#home" className="phone-number">
+                        <Navbar href="/home" className="phone-number">
                            <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="25"

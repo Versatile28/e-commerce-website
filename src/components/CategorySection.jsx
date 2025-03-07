@@ -1,34 +1,35 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-export default function CatagorySection() {
+export default function CategorySection() {
   return (
 <div className='category-section'>
 <Container className="w-xs category-container">
    <Row>
      <Col xs={12} sm={6} className="mb-3 mb-sm-0">
        <div className="image-container">
-         <a href="/women">
+         <Link to='/category-full'>
            <img
              src="images/category-women.webp"
              alt="Women"
              className="img-fluid"
            />
            <div className="overlay-text">Women</div>
-         </a>
+         </Link>
        </div>
      </Col>
 
      <Col xs={12} sm={6}>
        <div className="image-container">
-         <a href="/men">
+         <Link to='/category-full'>
            <img
              src="images/category-men.webp"
              alt="Men"
              className="img-fluid"
            />
            <div className="overlay-text">Men</div>
-         </a>
+         </Link>
        </div>
      </Col>
    </Row>

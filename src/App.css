@@ -344,6 +344,10 @@ h6 {
 
 /* NavBar */
 
+.navbar-brand{
+   text-decoration: none !important;
+}
+
 .show-item {
    display: flex !important;
    opacity: 1 !important;

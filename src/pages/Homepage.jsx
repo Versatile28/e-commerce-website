@@ -8,7 +8,7 @@ import FeatureSection from '../components/FeatureSection';
 import HistorySection from '../components/HistorySection';
 import NewArrivalsSection from '../components/NewArrivalsSection';
 import CountdownSection from '../components/CountdownSection';
-import CatagorySection from '../components/CatagorySection';
+import CategorySection from '../components/CategorySection';
 import BrandSection from '../components/BrandSection';
 import ProductSection from '../components/ProductSection';
 import Loader from '../components/Loader';
@@ -46,7 +46,7 @@ export default function Homepage({ products, loading }) {
                <div className="position-relative w-100">
                   <HeroCarousel />
                </div>
-               <CatagorySection />
+               <CategorySection />
                <NewArrivalsSection />
                <ProductSection products={products} loading={loading} />
                <CountdownSection />
