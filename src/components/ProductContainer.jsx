@@ -100,7 +100,7 @@ export default function ProductContainer() {
          </div>
          <div className="breadcrumb-section">
             <Breadcrumb>
-               <Breadcrumb.Item><Link to='/home'>Home</Link></Breadcrumb.Item>
+               <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
                <Breadcrumb.Item
                   className="item-category"
                >

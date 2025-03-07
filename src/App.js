@@ -48,7 +48,7 @@ export default function App() {
             <ScrollToTop />
             <Routes>
                <Route
-                  path="/home"
+                  path="/"
                   element={<Homepage products={products} loading={loading} />}
                />
                <Route

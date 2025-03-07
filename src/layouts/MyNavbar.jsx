@@ -48,7 +48,7 @@ export default function MyNavbar() {
       <Navbar expand="lg" className="py-4">
          <Container className="mynavbar-container">
             <Nav className="d-lg-none d-flex justify-content-between flex-row w-100 navbar-s-collapse">
-               <Link to="/home" className="navbar-brand">
+               <Link to="/" className="navbar-brand">
                   <Navbar.Brand className={`mx-2 ${delayedClass}`}>
                      Varkala
                   </Navbar.Brand>
@@ -69,7 +69,7 @@ export default function MyNavbar() {
 
                <Navbar.Collapse className="collapse-opacity">
                   <Nav className="me-auto w-auto d-flex justify-content-between align-items-center flex-row">
-                     <Link to="/home" className="navbar-brand">
+                     <Link to="/" className="navbar-brand">
                         <Navbar.Brand className="mx-2">Varkala</Navbar.Brand>
                      </Link>
                      <div className="d-flex">
@@ -131,7 +131,7 @@ export default function MyNavbar() {
                </Navbar.Toggle>
             </Nav>
             <Nav className="d-none d-lg-flex justify-content-between flex-row w-100">
-               <Link to="/home" className="navbar-brand">
+               <Link to="/" className="navbar-brand">
                   <Navbar.Brand>Varkala</Navbar.Brand>
                </Link>
                {width > 992 && <NavbarMenu />}
