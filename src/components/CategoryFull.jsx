@@ -198,9 +198,9 @@ export default function CategoryFull({ products, loading }) {
                      </Accordion.Body>
                   </Accordion.Item>
                </Accordion>
-               <div>
+               <div className='pb-3 mb-3 category-price'>
                   <h5 className="fw-bold ls-1 pt-5">Price</h5>
-                  {/* <PriceSlider/> */}
+                  <PriceSlider/>
                </div>
                <div className='category-brand'>
                   <h5 className="fw-bold ls-1 pt-4">Brand</h5>

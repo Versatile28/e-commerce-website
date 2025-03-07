@@ -1872,7 +1872,8 @@ svg:not(:root).svg-inline--fa {
 }
 
 .category-brand,
-.category-size{
+.category-size,
+.category-price{
    border-bottom: 1px solid #e6e6e6;
 }
 
@@ -1918,83 +1919,69 @@ svg:not(:root).svg-inline--fa {
    border-radius: 50% !important;
 }
 
-/* .range-slider-container {
-   width: 100%;
+.range-slider-container {
+   width: 99%;
    max-width: 400px;
    margin: 20px auto;
+ }
+ 
+ .sidebar-heading {
+   font-size: 18px;
+   font-weight: bold;
+   margin-bottom: 10px;
+ }
+ 
+ .nouislider-wrapper {
+   margin-top: 1rem !important;
+   margin-bottom: 1rem !important;
  }
  
  .slider-values {
    display: flex;
    justify-content: space-between;
-   margin-bottom: 10px;
-   font-size: 16px;
-   font-weight: bold;
+   color: #bbb;
+   font-size: .9rem;
+   font-weight: 500;
  }
+
+.noUi-target {
+   height: 3px !important;
+   background: #ccc !important;
+   border-radius: 0 !important;
+   border: none !important;
+}
+
+.noUi-connect {
+   background: black !important;
+}
+
+.noUi-connects {
+   background: #ccc !important;
+}
+
+
+.noUi-handle,
+.noUi-touch-area {
+   width: 2.5px !important;
+   height: 15px !important;
+   background: black !important;
+   border-radius: 0 !important;
+   box-shadow: none !important;
+   border: none !important;
+   cursor: pointer !important;
+   overflow: hidden;
+}
+
+.noUi-horizontal .noUi-handle {
+   right: 0px !important;
+   top: -6px !important;
+}
+
+.noUi-handle::after{
+   content: none;
+}
+
  
- .slider {
-   position: relative;
-   width: 100%;
- }
- 
- input[type="range"] {
-   position: absolute;
-   width: 100%;
-   height: 6px;
-   background: none;
-   pointer-events: none;
-   -webkit-appearance: none;
- }
- 
- .thumb {
-   pointer-events: auto;
-   -webkit-appearance: none;
-   appearance: none;
-   width: 100%;
-   background: transparent;
- }
- 
- .thumb::-webkit-slider-thumb {
-   -webkit-appearance: none;
-   width: 16px;
-   height: 16px;
-   background: black;
-   border-radius: 50%;
-   cursor: pointer;
-   position: relative;
-   z-index: 2;
- }
- 
- .thumb::-moz-range-thumb {
-   width: 16px;
-   height: 16px;
-   background: black;
-   border-radius: 50%;
-   cursor: pointer;
-   position: relative;
-   z-index: 2;
- }
- 
- .slider-track {
-   position: absolute;
-   height: 6px;
-   background: black;
-   top: 50%;
-   transform: translateY(-50%);
-   z-index: 1;
-   border-radius: 3px;
- }
- 
- .slider::before {
-   content: "";
-   position: absolute;
-   width: 100%;
-   height: 6px;
-   background: grey;
-   top: 50%;
-   transform: translateY(-50%);
-   border-radius: 3px;
- } */
 
 /* Media Queries */
 

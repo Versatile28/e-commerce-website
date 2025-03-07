@@ -1,54 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import noUiSlider from "nouislider";
+import "nouislider/dist/nouislider.css";
 
-const PriceSlider = () => {
-  const [minPrice, setMinPrice] = useState(40);
-  const [maxPrice, setMaxPrice] = useState(110);
-  const minValue = 0;
-  const maxValue = 250;
-
-  const handleMinChange = (e) => {
-    const value = Math.min(Number(e.target.value), maxPrice - 10);
-    setMinPrice(value);
-  };
-
-  const handleMaxChange = (e) => {
-    const value = Math.max(Number(e.target.value), minPrice + 10);
-    setMaxPrice(value);
-  };
-
-  return (
-    <div className="range-slider-container">
-      <div className="slider-values">
-        <span>${minPrice}</span>
-        <span>${maxPrice}</span>
-      </div>
-      <div className="slider">
-        <input
-          type="range"
-          min={minValue}
-          max={maxValue}
-          value={minPrice}
-          onChange={handleMinChange}
-          className="thumb thumb-left"
-        />
-        <input
-          type="range"
-          min={minValue}
-          max={maxValue}
-          value={maxPrice}
-          onChange={handleMaxChange}
-          className="thumb thumb-right"
-        />
-        <div
-          className="slider-track"
-          style={{
-            left: `${(minPrice / maxValue) * 100}%`,
-            width: `${((maxPrice - minPrice) / maxValue) * 100}%`,
-          }}
-        ></div>
-      </div>
-    </div>
-  );
-};
-
-export default PriceSlider;
+const PriceSlider = ({ min = 0, max = 250, initialMin = 40, initialMax = 110, onChange }) => {
+   const sliderRef = useRef(null);
+   const [minValue, setMinValue] = useState(initialMin);
+   const [maxValue, setMaxValue] = useState(initialMax);
+ 
+   useEffect(() => {
+     if (!sliderRef.current) return;
+ 
+     const slider = noUiSlider.create(sliderRef.current, {
+       start: [initialMin, initialMax],
+       connect: true,
+       range: { min, max },
+       step: 1,
+     });
+ 
+     slider.on("update", (values) => {
+       setMinValue(Math.round(values[0]));
+       setMaxValue(Math.round(values[1]));
+       onChange && onChange({ min: Math.round(values[0]), max: Math.round(values[1]) });
+     });
+ 
+     return () => slider.destroy();
+   }, [min, max, initialMin, initialMax, onChange]);
+ 
+   return (
+     <div className="range-slider-container">
+       <div className="nouislider-wrapper">
+         <div ref={sliderRef} className="nouislider"></div>
+       </div>
+       <div className="slider-values">
+         <span>From: ${minValue}</span>
+         <span>To: ${maxValue}</span>
+       </div>
+     </div>
+   );
+ };
+ 
+ export default PriceSlider;
