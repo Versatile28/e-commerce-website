@@ -1,4 +1,5 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { Link } from 'react-router-dom';
 import {
    Container,
    Accordion,
@@ -375,7 +376,7 @@ export default function CategoryFull({ products, loading }) {
                </div>
                <div className="breadcrumb-section">
                   <Breadcrumb>
-                     <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+                  <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
                      <Breadcrumb.Item className="item-category" active>
                         Shop
                      </Breadcrumb.Item>

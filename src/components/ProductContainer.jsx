@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -70,7 +70,7 @@ export default function ProductContainer() {
    };
 
    return (
-      <div className="px-xl-7 product-container container-fluid pb-lg-6">
+      <section className="px-xl-7 product-container container-fluid pb-lg-6">
          <div
             ref={toastRef}
             className="add-cart-toast show-display flex-row justify-content-between align-items-center mb-5"
@@ -100,12 +100,11 @@ export default function ProductContainer() {
          </div>
          <div className="breadcrumb-section">
             <Breadcrumb>
-               <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+               <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
                <Breadcrumb.Item
                   className="item-category"
-                  href="https://getbootstrap.com/docs/4.0/components/breadcrumb/"
                >
-                  {product.category}
+                  <Link to='/category-full'>{product.category}</Link>
                </Breadcrumb.Item>
                <Breadcrumb.Item className="item-category" active>
                   {product.name}
@@ -367,6 +366,6 @@ export default function ProductContainer() {
                </div>
             </div>
          </div>
-      </div>
+      </section>
    );
 }
