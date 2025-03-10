@@ -17,6 +17,7 @@ import {
    PiSuitcaseSimple,
    PiBaseballCap,
 } from 'react-icons/pi';
+import { IoIosSearch } from 'react-icons/io';
 
 export default function NavbarMenu() {
    const [activeDropdown, setActiveDropdown] = useState(null);
@@ -35,10 +36,12 @@ export default function NavbarMenu() {
       }
    };
 
-   
    return (
       <>
-         <Nav className="me-auto" style={{maxWidth:"100%", boxSizing:"border-box"}}>
+         <Nav
+            className="me-auto"
+            style={{ maxWidth: '100%', boxSizing: 'border-box', minWidth: '470px'}}
+         >
             {/* Home */}
             <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
                <div
@@ -712,13 +715,16 @@ export default function NavbarMenu() {
                </div>
             </div>
          </Nav>
-         <Form className="d-flex collapse-search">
-            <Form.Control
-               type="search"
-               placeholder="Search"
-               className="me-auto menu-search-item"
-               aria-label="Search"
-            />
+         <Form className="d-flex collapse-search menu-search-container">
+            <div className='d-flex'>
+               <Form.Control
+                  type="search"
+                  placeholder="Search"
+                  className="me-auto menu-search-item"
+                  aria-label="Search"
+               />
+               <IoIosSearch className="search-icon" />
+            </div>
          </Form>
       </>
    );

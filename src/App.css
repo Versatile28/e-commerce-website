@@ -346,6 +346,7 @@ h6 {
 
 .navbar-brand{
    text-decoration: none !important;
+   margin-right: 0 !important;
 }
 
 .show-item {
@@ -597,9 +598,31 @@ h6 {
    font-weight: 500 !important;
    border: none !important;
    border-radius: 0 !important;
-   border-bottom: 1px black solid !important;
    background-color: rgba(255, 255, 255, 0) !important;
    outline: none !important;
+   width: 100% !important;
+}
+
+.menu-search-item::placeholder{
+   color: #bbb !important;
+}
+.menu-search-container:focus-within{
+   border-bottom: 1px black solid !important;
+}
+
+.menu-search-container{
+   border-bottom: 1px #bbb solid !important;
+   margin-left: 0;
+   transition: .2s ease-in-out;
+}
+
+.search-icon{
+   height: 2rem;
+   width: 2rem;
+   position: relative;
+   top: 5px;
+   margin-right: 10px;
+   cursor: pointer;
 }
 
 /* HeroCarousel */
@@ -2047,6 +2070,9 @@ svg:not(:root).svg-inline--fa {
       display: flex !important;
       justify-content: space-between !important;
       width: 100%;
+   }
+   .menu-search-item{
+      width: 90vw !important;
    }
    .collapse-opacity {
       opacity: 1;
