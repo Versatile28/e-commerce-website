@@ -251,7 +251,7 @@ export default function NavbarMenu() {
                            href="/"
                         >
                            <TbJacket alt="Jackets" className="icon-style" />
-                           <span className="mb-3">ackets</span>
+                           <span className="mb-3">Jackets</span>
                         </a>
 
                         {/* 3) T-Shirts */}
