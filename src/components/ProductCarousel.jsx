@@ -59,14 +59,7 @@ const ProductCarousel = ({ products }) => {
                            amount: 0.2,
                         }}
                      >
-                        <ProductCard
-                           id={item._id}
-                           badge={item.badge}
-                           image={item.image}
-                           name={item.name}
-                           price={item.price}
-                           rating={item.rating}
-                        />
+                        <ProductCard item={item} />
                      </motion.div>
                   </Suspense>
                </SwiperSlide>

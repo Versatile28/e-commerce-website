@@ -12,20 +12,24 @@ import { RiFacebookFill } from 'react-icons/ri';
 import { FaTwitter } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa';
 import { baseUrl } from '../utils/constant';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../store/cartSlice';
 
 export default function ProductContainer() {
+   const dispatch = useDispatch();
    const toastRef = useRef(null);
    const [selected, setSelected] = useState('Small');
    const [change, setChange] = useState('value_0');
    const [quantity, setQuantity] = useState(1);
    const [product, setProduct] = useState({   
-      id: null,
+      _id: 1,
       badge: '',
-      image: 'images/1.1.webp',
+      image: '/images/1.1.webp',
       name: 'White Tee',
       price: 40.0,
       rating: 3.5,
       category: 'Tops & blouses'});
+
 
    const { id } = useParams();
 
@@ -68,6 +72,11 @@ export default function ProductContainer() {
    const handleSelect = (option) => {
       setSelected(option);
    };
+
+   
+   function handleAddToCart() {
+      dispatch(addToCart({ ...product, quantity: quantity}));
+   }
 
    return (
       <section className="px-xl-7 product-container container-fluid pb-lg-6">
@@ -306,6 +315,7 @@ export default function ProductContainer() {
                            <button
                               type="submit"
                               className="btn btn-dark add-cart-btn"
+                              onClick={handleAddToCart}
                            >
                               <svg
                                  aria-hidden="true"

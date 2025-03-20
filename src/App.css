@@ -933,6 +933,10 @@ h6 {
    cursor: pointer;
 }
 
+.overlay-content span{
+   cursor: pointer;
+}
+
 .product-link {
    text-decoration: none;
    height: auto;

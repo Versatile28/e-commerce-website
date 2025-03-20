@@ -15,7 +15,7 @@ import { GiTrousers } from 'react-icons/gi';
 import { TbJacket } from 'react-icons/tb';
 import { PiTShirtLight } from 'react-icons/pi';
 import { Breadcrumb } from 'react-bootstrap';
-import PriceSlider from './PriceSlider'
+import PriceSlider from './PriceSlider';
 
 const colors = [
    { id: 'value_sidebar_Blue', name: 'Blue', color: 'rgb(102, 140, 185)' },
@@ -198,11 +198,11 @@ export default function CategoryFull({ products, loading }) {
                      </Accordion.Body>
                   </Accordion.Item>
                </Accordion>
-               <div className='pb-3 mb-3 category-price'>
+               <div className="pb-3 mb-3 category-price">
                   <h5 className="fw-bold ls-1 pt-5">Price</h5>
-                  <PriceSlider/>
+                  <PriceSlider />
                </div>
-               <div className='category-brand'>
+               <div className="category-brand">
                   <h5 className="fw-bold ls-1 pt-4">Brand</h5>
                   <form className="mt-4 mt-lg-0 mb-5">
                      <div className="mb-1">
@@ -282,7 +282,7 @@ export default function CategoryFull({ products, loading }) {
                      </div>
                   </form>
                </div>
-               <div className='category-size'>
+               <div className="category-size">
                   <h5 className="fw-bold ls-1 pt-4">Size</h5>
                   <form className="mt-4 mt-lg-0 mb-5">
                      <div className="mb-1">
@@ -378,7 +378,9 @@ export default function CategoryFull({ products, loading }) {
                </div>
                <div className="breadcrumb-section">
                   <Breadcrumb>
-                  <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
+                     <Breadcrumb.Item>
+                        <Link to="/">Home</Link>
+                     </Breadcrumb.Item>
                      <Breadcrumb.Item className="item-category" active>
                         Shop
                      </Breadcrumb.Item>
@@ -508,14 +510,7 @@ export default function CategoryFull({ products, loading }) {
                                                amount: 0.2,
                                             }}
                                          >
-                                            <ProductCard
-                                               id={item._id}
-                                               badge={item.badge}
-                                               image={item.image}
-                                               name={item.name}
-                                               price={item.price}
-                                               rating={item.rating}
-                                            />
+                                            <ProductCard item={item} />
                                          </motion.div>
                                       </Suspense>
                                    </Col>
