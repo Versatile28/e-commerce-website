@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import { AiOutlineHeart } from 'react-icons/ai';
@@ -19,13 +19,17 @@ export default function ProductCard({
    },
 }) {
    const [hovered, setHovered] = useState(false);
+   const [width, setWidth] = useState(window.innerWidth);
    const dispatch = useDispatch();
    function handleAddToCart() {
       dispatch(addToCart(item));
    }
-   // const cartItems = useSelector((state) => state.cart);
-  
-   // console.log('Cart Items:', cartItems);
+
+   useEffect(() => {
+      const handleResize = () => setWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+   }, []);
 
    return (
       <div
@@ -56,7 +60,7 @@ export default function ProductCard({
                   className="product-image"
                />
             </Link>
-            <div className={`hover-overlay ${hovered ? 'show' : ''}`}>
+            <div className={`hover-overlay ${hovered  || width <= 768 ? 'show' : ''}`}>
                <div className="overlay-content">
                   <span
                      className="product-cart d-sm-inline-block d-none"
@@ -64,7 +68,10 @@ export default function ProductCard({
                   >
                      Add to cart
                   </span>
-                  <PiShoppingBagOpen className="d-sm-none d-inline-block icon" onClick={handleAddToCart}/>
+                  <PiShoppingBagOpen
+                     className="d-sm-none d-inline-block icon"
+                     onClick={handleAddToCart}
+                  />
                   <div>
                      <AiOutlineHeart className="icon" />
                      <IoExpand className="icon" />
@@ -84,7 +91,7 @@ export default function ProductCard({
                <p className="text-mute product-price">
                   ${item.price.toFixed(2)}
                </p>
-               <div className={`star-rating ${hovered ? 'show' : ''}`}>
+               <div className={`star-rating ${hovered || width <= 768 ? 'show' : ''}`}>
                   {<StarRating rating={item.rating} size={12.8} gap={2} />}
                </div>
             </div>

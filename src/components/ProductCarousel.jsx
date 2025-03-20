@@ -29,6 +29,7 @@ const ProductCarousel = ({ products }) => {
          </h5>
          <Swiper
             modules={[Navigation, Pagination, A11y]}
+            slidesPerView={2}
             spaceBetween={15}
             navigation={false}
             pagination={{

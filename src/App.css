@@ -350,7 +350,7 @@ h6 {
 
 .navbar-brand{
    text-decoration: none !important;
-   margin-right: 4px !important;
+   margin-right: 0 !important;
    display: flex;
    align-items: center;
 
@@ -2148,7 +2148,7 @@ svg:not(:root).svg-inline--fa {
       margin: 0 !important;
    }
    .navbar-menu-container{
-      min-width: 0;
+      min-width: 0 !important;
    }
    .collapse-menu {
       margin-bottom: 1rem !important;
