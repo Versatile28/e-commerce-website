@@ -2044,7 +2044,59 @@ svg:not(:root).svg-inline--fa {
    letter-spacing: .2rem;
    padding: .6rem !important;
 }
- 
+
+/* CartItem */
+
+.cart-items-container{
+   height: 200px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   overflow-x: auto;
+   scroll-snap-type: x mandatory;
+}
+
+.cartItemImg{
+   height: 85px !important;
+   width: 65px !important;
+}
+
+.cart-item-name{
+   font-size: 1rem;
+   color: black;
+   font-weight: 700;
+   letter-spacing: .8px;
+   text-decoration: none;
+}
+
+.cart-item-name:hover{
+   text-decoration: underline;
+}
+
+.cart-item-quantity{
+   font-size: .9rem;
+   margin: 5px 0;
+}
+
+.cart-item-price{
+   font-size: .85rem;
+   font-weight: 700;
+   margin-bottom: 5px;
+}
+
+.cart-item-container{
+   border-bottom: solid rgb(233, 233, 233) 1px;
+}
+
+.cart-item-clear{
+   font-size: 2rem;
+   color:#999999;
+}
+
+.cart-item-clear:hover{
+   cursor: pointer;
+}
+
 
 /* Media Queries */
 

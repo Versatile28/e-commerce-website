@@ -1,7 +1,14 @@
 import React from 'react';
 import { Offcanvas } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+import { selectCartItems, selectCartTotal } from '../store/cartSlice';
+import CartItem from './CartItem'
 
 export default function Cart({ showCart, setShowCart, handleCartClose }) {
+   const cartItems = useSelector(selectCartItems);
+   const cartTotal = useSelector(selectCartTotal);
+   console.log('Cart Items:', cartItems);
+
    return (
       <div>
          <Offcanvas
@@ -12,9 +19,19 @@ export default function Cart({ showCart, setShowCart, handleCartClose }) {
             name="end"
          >
             <div className="w-100">
-               <div className="m-1 px-5 py-3">
+               <Offcanvas.Header closeButton className='py-4 px-3 mb-4'></Offcanvas.Header>
+               <div className="mx-1 px-5 cart-items-container">
+                  {
+                     cartItems.map((item, idx) => {
+                        return (
+                           <CartItem item={item}/>
+                        )
+                     })
+                  }
+               </div>
+               <div className="m-1 px-5 py-3 mt-4">
                   <h5 class="mb-4 fw-semibold cart-total">
-                     Subtotal: <span class="float-end">$465.32</span>
+                     Subtotal: <span class="float-end">${cartTotal.toFixed(2)}</span>
                   </h5>
                   <a
                      role="button"
@@ -23,7 +40,11 @@ export default function Cart({ showCart, setShowCart, handleCartClose }) {
                   >
                      VIEW CART
                   </a>
-                  <a role="button" href="/checkout" class="w-100 btn btn-dark cart-btn fw-semibold">
+                  <a
+                     role="button"
+                     href="/checkout"
+                     class="w-100 btn btn-dark cart-btn fw-semibold"
+                  >
                      CHECKOUT
                   </a>
                </div>
