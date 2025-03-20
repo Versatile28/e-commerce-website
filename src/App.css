@@ -255,6 +255,10 @@ h6 {
    display: none;
 }
 
+.float-end{
+   float: right !important;
+}
+
 .font-body-font-family {
    font-family: var(--bs-body-font-family) !important;
 }
@@ -2022,6 +2026,20 @@ svg:not(:root).svg-inline--fa {
    content: none;
 }
 
+/* Cart */
+
+.cart-total{
+   font-size: 1.2rem;
+   letter-spacing: .04rem;
+}
+
+.cart-btn{
+   border-radius: 0 !important;
+   font-family: var(--bs-body-font-family) !important;
+   font-size: .8rem !important;
+   letter-spacing: .2rem;
+   padding: .6rem !important;
+}
  
 
 /* Media Queries */

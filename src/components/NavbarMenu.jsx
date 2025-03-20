@@ -146,7 +146,7 @@ export default function NavbarMenu() {
 
                      <div className="col padd-0">
                         <img
-                           src="images/shop.webp"
+                           src="/images/shop.webp"
                            alt="Model"
                            className="img-fluid h-100"
                         />
@@ -206,7 +206,7 @@ export default function NavbarMenu() {
 
                      <div className="col padd-0">
                         <img
-                           src="images/2.1.webp"
+                           src="/images/2.1.webp"
                            alt="Model"
                            className="img-fluid h-100"
                         />
@@ -390,7 +390,7 @@ export default function NavbarMenu() {
                   <div className="row m-0 mb-5">
                      {/* Column 1 */}
                      <div className="d-flex col col-3 flex-column px-3">
-                        <img src="images\pages-img-1.webp" alt="" />
+                        <img src="/images/pages-img-1.webp" alt="" />
                         <h5 className="mt-4 py-1 m-1 fw-bold">Homepage</h5>
                         <a
                            href="/"
@@ -466,7 +466,7 @@ export default function NavbarMenu() {
 
                      {/* Column 2 */}
                      <div className="d-flex col col-3 flex-column px-3">
-                        <img src="images\pages-img-2.webp" alt="" />
+                        <img src="/images/pages-img-2.webp" alt="" />
                         <h5 className="mt-4 py-1 m-1 fw-bold">Order Process</h5>
                         <a
                            href="/"
@@ -517,7 +517,7 @@ export default function NavbarMenu() {
 
                      {/* Column 3 */}
                      <div className="d-flex col col-3 flex-column px-3">
-                        <img src="images\pages-img-3.webp" alt="" />
+                        <img src="/images/pages-img-3.webp" alt="" />
                         <h5 className="mt-4 py-1 m-1 fw-bold">Blog</h5>
                         <a
                            href="/"
@@ -576,7 +576,7 @@ export default function NavbarMenu() {
 
                      {/* Column 4 */}
                      <div className="d-flex col col-3 flex-column px-3">
-                        <img src="images\pages-img-4.webp" alt="" />
+                        <img src="/images/pages-img-4.webp" alt="" />
                         <h5 className="mt-4 py-1 m-1 fw-bold">Customer</h5>
                         <a
                            href="/"

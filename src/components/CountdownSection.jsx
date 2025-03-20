@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Badge, Button } from "react-bootstrap";
 
 export default function CountdownSection () {
-  const dealEndDate = new Date("2025-03-18T00:00:00");
+  const dealEndDate = new Date("2025-03-30T00:00:00");
 
   const calculateTimeLeft = () => {
     const now = new Date();
