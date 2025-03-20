@@ -374,6 +374,10 @@ h6 {
    top: 5rem !important;
 }
 
+.cart-offcanvas{
+   width: 500px !important;
+}
+
 .mynavbar-icon {
    height: 1.4rem;
    width: 1.5rem;
@@ -397,20 +401,21 @@ h6 {
    opacity: 0;
    z-index: 2;
    visibility: hidden;
-   transform: translateY(28px) translateX(70px);
+   transform: translateY(32px) translateX(70px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-home.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(8px) translateX(70px);
+   transform: translateY(18px) translateX(70px);
+   z-index: 1000;
 }
 
 .drop-home.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(70px);
+   transform: translateY(32px) translateX(70px);
 }
 
 .drop-shop {
@@ -419,20 +424,21 @@ h6 {
    width: 55rem;
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(400px);
+   transform: translateY(32px) translateX(400px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-shop.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(8px) translateX(400px);
+   transform: translateY(18px) translateX(400px);
+   z-index: 1000;
 }
 
 .drop-shop.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(400px);
+   transform: translateY(32px) translateX(400px);
 }
 
 .drop-product {
@@ -441,20 +447,21 @@ h6 {
    width: 35rem;
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(210px);
+   transform: translateY(32px) translateX(210px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-product.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(8px) translateX(210px);
+   transform: translateY(18px) translateX(210px);
+   z-index: 1000;
 }
 
 .drop-product.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(210px);
+   transform: translateY(32px) translateX(210px);
 }
 
 .drop-icons {
@@ -463,20 +470,21 @@ h6 {
    width: 45rem;
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(310px);
+   transform: translateY(32px) translateX(310px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-icons.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(8px) translateX(310px);
+   transform: translateY(18px) translateX(310px);
+   z-index: 1000;
 }
 
 .drop-icons.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(310px);
+   transform: translateY(32px) translateX(310px);
 }
 
 .drop-icons .icons-bottom {
@@ -498,20 +506,21 @@ h6 {
    width: 75rem;
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(118px);
+   transform: translateY(32px) translateX(118px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-pages.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(8px) translateX(118px);
+   transform: translateY(18px) translateX(118px);
+   z-index: 1000;
 }
 
 .drop-pages.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(118px);
+   transform: translateY(32px) translateX(118px);
 }
 
 .drop-pages img {
@@ -529,20 +538,21 @@ h6 {
    opacity: 0;
    width: 12rem;
    visibility: hidden;
-   transform: translateY(28px) translateX(50px);
+   transform: translateY(32px) translateX(50px);
    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 
 .drop-docs.show {
    opacity: 1;
    visibility: visible;
-   transform: translateY(8px) translateX(50px);
+   transform: translateY(18px) translateX(50px);
+   z-index: 1000;
 }
 
 .drop-docs.hide {
    opacity: 0;
    visibility: hidden;
-   transform: translateY(28px) translateX(50px);
+   transform: translateY(32px) translateX(50px);
 }
 
 .menu-option {
