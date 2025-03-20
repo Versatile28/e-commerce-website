@@ -346,7 +346,10 @@ h6 {
 
 .navbar-brand{
    text-decoration: none !important;
-   margin-right: 0 !important;
+   margin-right: 4px !important;
+   display: flex;
+   align-items: center;
+
 }
 
 .show-item {
@@ -364,6 +367,7 @@ h6 {
    max-width: 100vw !important;
    padding-right: 3rem !important;
    padding-left: 3rem !important;
+   width: 100% !important;
 }
 
 .top-5 {
@@ -2059,8 +2063,8 @@ svg:not(:root).svg-inline--fa {
       padding: 0 !important;
       margin: 0 !important;
    }
-   .collapse-icons {
-      display: none;
+   .navbar-menu-container{
+      min-width: 0;
    }
    .collapse-menu {
       margin-bottom: 1rem !important;
@@ -2069,7 +2073,7 @@ svg:not(:root).svg-inline--fa {
    .collapse-menu-items {
       display: flex !important;
       justify-content: space-between !important;
-      width: 100%;
+      width: 100% !important;
    }
    .menu-search-item{
       width: 90vw !important;
@@ -2079,6 +2083,7 @@ svg:not(:root).svg-inline--fa {
       z-index: 1000;
       background-color: #fff;
       margin: 2px !important;
+      width: 98vw;
    }
    .collapse-search {
       display: flex !important;

@@ -15,15 +15,19 @@ import { PiShoppingBagOpen } from 'react-icons/pi';
 import { SlUser } from 'react-icons/sl';
 import { GoHeart } from 'react-icons/go';
 import NavbarMenu from '../components/NavbarMenu';
+import Cart from '../components/Cart';
 
 export default function MyNavbar() {
    const [show, setShow] = useState(false);
    const [open, setOpen] = useState(false);
+   const [showCart, setShowCart] = useState(false);
    const [showFirst, setShowFirst] = useState(true);
    const [delayedClass, setDelayedClass] = useState('show-item');
 
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
+   const handleCartClose = () => setShowCart(false);
+   const handleCartShow = () => setShowCart(true);
    const [width, setWidth] = useState(window.innerWidth);
 
    useEffect(() => {
@@ -54,7 +58,7 @@ export default function MyNavbar() {
                   </Navbar.Brand>
                </Link>
                <Nav className={delayedClass}>
-                  <div className="d-flex align-sitems-start">
+                  <div className="d-flex align-items-start">
                      <Nav.Link className="px-2 pt-2 collapse-icons">
                         <SlUser className="mynavbar-icon" />
                      </Nav.Link>
@@ -62,7 +66,15 @@ export default function MyNavbar() {
                         <GoHeart className="mynavbar-icon-h" />
                      </Nav.Link>
                      <Nav.Link className="px-2 pt-2 collapse-icons">
-                        <PiShoppingBagOpen className="mynavbar-icon-h" />
+                        <PiShoppingBagOpen
+                           className="mynavbar-icon-h"
+                           onClick={handleCartShow}
+                        />
+                        <Cart
+                           showCart={showCart}
+                           setShowCart={setShowCart}
+                           handleCartClose={handleCartClose}
+                        />
                      </Nav.Link>
                   </div>
                </Nav>
@@ -80,7 +92,15 @@ export default function MyNavbar() {
                            <GoHeart className="mynavbar-icon-h" />
                         </Nav.Link>
                         <Nav.Link className="px-2 collapse-icons">
-                           <PiShoppingBagOpen className="mynavbar-icon-h" />
+                           <PiShoppingBagOpen
+                              className="mynavbar-icon-h"
+                              onClick={handleCartShow}
+                           />
+                           <Cart
+                              showCart={showCart}
+                              setShowCart={setShowCart}
+                              handleCartClose={handleCartClose}
+                           />
                         </Nav.Link>
                      </div>
 
@@ -143,7 +163,15 @@ export default function MyNavbar() {
                      <GoHeart className="mynavbar-icon-h" />
                   </NavLink>
                   <NavLink className="px-2 collapse-icons">
-                     <PiShoppingBagOpen className="mynavbar-icon-h" />
+                     <PiShoppingBagOpen
+                        className="mynavbar-icon-h"
+                        onClick={handleCartShow}
+                     />
+                     <Cart
+                        showCart={showCart}
+                        setShowCart={setShowCart}
+                        handleCartClose={handleCartClose}
+                     />
                   </NavLink>
                </Nav>
             </Nav>

@@ -39,8 +39,8 @@ export default function NavbarMenu() {
    return (
       <>
          <Nav
-            className="me-auto"
-            style={{ maxWidth: '100%', boxSizing: 'border-box', minWidth: '470px'}}
+            className="me-auto navbar-menu-container"
+            style={{ maxWidth: '100%', boxSizing: 'border-box', minWidth:'470px'}}
          >
             {/* Home */}
             <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
@@ -53,7 +53,7 @@ export default function NavbarMenu() {
                   <button className="border-0 bg-transparent menu-option text-black">
                      Home
                   </button>
-                  <MdExpandMore className="cursor-pointer" />
+                  <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
                <div
                   className={`drop-home bg-white shadow position-absolute top-5 ${
@@ -93,7 +93,7 @@ export default function NavbarMenu() {
                   <button className="border-0 bg-transparent menu-option">
                      Shop
                   </button>
-                  <MdExpandMore className="cursor-pointer" />
+                  <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
 
                <div
@@ -163,7 +163,7 @@ export default function NavbarMenu() {
                   <button className="border-0 bg-transparent menu-option">
                      Product Card
                   </button>
-                  <MdExpandMore className="cursor-pointer" />
+                  <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
 
                <div
@@ -224,7 +224,7 @@ export default function NavbarMenu() {
                   <button className="border-0 bg-transparent menu-option">
                      Icons
                   </button>
-                  <MdExpandMore className="cursor-pointer" />
+                  <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
 
                {/* The dropdown container */}
@@ -377,7 +377,7 @@ export default function NavbarMenu() {
                   <button className="border-0 bg-transparent menu-option">
                      Pages
                   </button>
-                  <MdExpandMore className="cursor-pointer" />
+                  <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
 
                {/* Dropdown container */}
@@ -642,7 +642,7 @@ export default function NavbarMenu() {
                   <button className="border-0 bg-transparent menu-option">
                      Docs
                   </button>
-                  <MdExpandMore className="cursor-pointer" />
+                  <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
                <div
                   className={`drop-docs bg-white shadow position-absolute top-5 ${
