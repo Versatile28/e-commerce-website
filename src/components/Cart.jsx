@@ -7,43 +7,42 @@ import CartItem from './CartItem'
 export default function Cart({ showCart, setShowCart, handleCartClose }) {
    const cartItems = useSelector(selectCartItems);
    const cartTotal = useSelector(selectCartTotal);
-   console.log('Cart Items:', cartItems);
 
    return (
       <div>
          <Offcanvas
-            className="overflow-auto d-flex justify-content-start align-items-center cart-offcanvas"
+            className="d-flex align-items-center justify-content-start cart-offcanvas overflow-auto"
             show={showCart}
             onHide={handleCartClose}
             placement="end"
             name="end"
          >
             <div className="w-100">
-               <Offcanvas.Header closeButton className='py-4 px-3 mb-4'></Offcanvas.Header>
-               <div className="mx-1 px-5 cart-items-container">
+               <Offcanvas.Header closeButton className='mb-4 px-3 py-4'></Offcanvas.Header>
+               <div className="cart-items-container mx-1 px-5">
                   {
                      cartItems.map((item, idx) => {
                         return (
-                           <CartItem item={item}/>
+                           <CartItem key={idx} item={item}/>
                         )
                      })
                   }
                </div>
-               <div className="m-1 px-5 py-3 mt-4">
-                  <h5 class="mb-4 fw-semibold cart-total">
-                     Subtotal: <span class="float-end">${cartTotal.toFixed(2)}</span>
+               <div className="m-1 mt-4 px-5 py-3">
+                  <h5 className="cart-total fw-semibold mb-4">
+                     Subtotal: <span className="float-end">${cartTotal.toFixed(2)}</span>
                   </h5>
                   <a
                      role="button"
                      href="/cart"
-                     class="mb-3 w-100 btn btn-outline-dark cart-btn fw-semibold"
+                     className="btn btn-outline-dark w-100 cart-btn fw-semibold mb-3"
                   >
                      VIEW CART
                   </a>
                   <a
                      role="button"
                      href="/checkout"
-                     class="w-100 btn btn-dark cart-btn fw-semibold"
+                     className="btn btn-dark w-100 cart-btn fw-semibold"
                   >
                      CHECKOUT
                   </a>
