@@ -36,7 +36,7 @@ const Footer = () => {
                   </InputGroup>
                </Col>
                <Col lg={6}>
-                  <Row className="d-lg-none">
+                  <Row className="d-lg-none" data-testid="small-screen-accordion">
                      {/* Collapsible sections for small screens */}
                      <Col xl={12} className="mt-4">
                         <Accordion>
