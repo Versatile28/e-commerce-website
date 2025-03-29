@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import HeaderBar from '../layouts/HeaderBar';
 import MyNavbar from '../layouts/MyNavbar';
 import Footer from '../layouts/Footer';
@@ -14,34 +13,17 @@ import ProductSection from '../components/ProductSection';
 import Loader from '../components/Loader';
 import '../App.css';
 
-export default function Homepage({ products, loading }) {
-   const [pageloading, setPageLoading] = useState(true);
-
-   useEffect(() => {
-      const handleLoad = () => {
-         setTimeout(() => {
-            setPageLoading(false);
-         }, 1000);
-      };
-
-      if (document.readyState === 'complete') {
-         handleLoad();
-      } else {
-         window.addEventListener('load', handleLoad);
-      }
-
-      return () => window.removeEventListener('load', handleLoad);
-   }, []);
+export default function Homepage({ products, loading, menu, menuLoading }) {
 
    return (
       <>
-         {pageloading ? (
+         {menuLoading? (
             <Loader />
          ) : (
             <div className="position-relative w-100">
                <header className="position-absolute w-100 navigation-bars">
                   <HeaderBar />
-                  <MyNavbar />
+                  <MyNavbar menu={menu}/>
                </header>
                <div className="position-relative w-100">
                   <HeroCarousel />

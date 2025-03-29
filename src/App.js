@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -11,7 +10,9 @@ import { baseUrl } from './utils/constant';
 
 export default function App() {
    const [products, setProducts] = useState([]);
+   const [menu, setMenu] = useState([]);
    const [loading, setLoading] = useState(true);
+   const [menuLoading, setMenuLoading] = useState(true);
 
    const fetchProducts = async () => {
       try {
@@ -29,8 +30,25 @@ export default function App() {
       }
    };
 
+   const fetchMenu = async () => {
+      try {
+          const { data } = await axios.get(`${baseUrl}/api/menu`, {
+              headers: { "Content-Type": "application/json" },
+          });
+          setMenu(data);
+      } catch (error) {
+          console.error(
+              "Error fetching categories:",
+              error.response?.data?.message || error.message
+          );
+      } finally {
+         setMenuLoading(false);
+      }
+  };
+
    useEffect(() => {
       fetchProducts();
+      fetchMenu();
    }, []);
 
    useEffect(() => {
@@ -49,18 +67,18 @@ export default function App() {
             <Routes>
                <Route
                   path="/"
-                  element={<Homepage products={products} loading={loading} />}
+                  element={<Homepage products={products} loading={loading} menu={menu} menuLoading={menuLoading}/>}
                />
                <Route
                   path="/category-full/product/:id"
                   element={
-                     <ProductDetails products={products} loading={loading} />
+                     <ProductDetails products={products} loading={loading} menu={menu} menuLoading={menuLoading}/>
                   }
                />
                <Route
                   path="/category-full"
                   element={
-                     <ProductList products={products} loading={loading} />
+                     <ProductList products={products} loading={loading} menu={menu} menuLoading={menuLoading}/>
                   }
                />
             </Routes>

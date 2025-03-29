@@ -19,7 +19,7 @@ import {
 } from 'react-icons/pi';
 import { IoIosSearch } from 'react-icons/io';
 
-export default function NavbarMenu() {
+export default function NavbarMenu({ menu }) {
    const [activeDropdown, setActiveDropdown] = useState(null);
    const [closingDropdown, setClosingDropdown] = useState(null);
 
@@ -40,7 +40,11 @@ export default function NavbarMenu() {
       <>
          <Nav
             className="me-auto navbar-menu-container"
-            style={{ maxWidth: '100%', boxSizing: 'border-box', minWidth:'470px'}}
+            style={{
+               maxWidth: '100%',
+               boxSizing: 'border-box',
+               minWidth: '470px',
+            }}
          >
             {/* Home */}
             <div className="d-flex flex-column justify-content-center align-items-center collapse-menu">
@@ -51,7 +55,7 @@ export default function NavbarMenu() {
                   }}
                >
                   <button className="border-0 bg-transparent menu-option text-black">
-                     Home
+                     {menu[0].name}
                   </button>
                   <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
@@ -61,24 +65,30 @@ export default function NavbarMenu() {
                   } ${closingDropdown === 'home' ? 'hide' : ''}`}
                >
                   <div className="d-flex flex-column justify-content-center align-items-center py-2 px-4">
-                     <a href="/" className="option option-color w-100 py-1 m-1">
-                        Home 1 - Fashion
-                     </a>
-                     <a href="/" className="option option-color w-100 py-1 m-1">
-                        Home 2 - Fashion
+                     <a
+                        href={menu[0].subcategories[0].subcategorylist[0].link}
+                        className="option option-color w-100 py-1 m-1"
+                     >
+                        {menu[0].subcategories[0].subcategorylist[0].name}
                      </a>
                      <a
-                        href="/"
+                        href={menu[0].subcategories[0].subcategorylist[1].link}
+                        className="option option-color w-100 py-1 m-1"
+                     >
+                        {menu[0].subcategories[0].subcategorylist[1].name}
+                     </a>
+                     <a
+                        href={menu[0].subcategories[0].subcategorylist[2].link}
                         className="option option-color w-100 d-flex justify-content-start align-items-center py-1 m-1"
                      >
-                        Home 3 - Design
+                        {menu[0].subcategories[0].subcategorylist[2].name}
                         <div className="new-btn">New</div>
                      </a>
                      <a
-                        href="/"
+                        href={menu[0].subcategories[0].subcategorylist[3].link}
                         className="option option-color w-100 d-flex justify-content-start align-items-center py-1 m-1"
                      >
-                        Home 4 - Design
+                        {menu[0].subcategories[0].subcategorylist[3].name}
                         <div className="new-btn">New</div>
                      </a>
                   </div>
@@ -91,7 +101,7 @@ export default function NavbarMenu() {
                   onClick={() => toggleDropdown('shopPages')}
                >
                   <button className="border-0 bg-transparent menu-option">
-                     Shop
+                     {menu[1].name}
                   </button>
                   <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
@@ -104,49 +114,95 @@ export default function NavbarMenu() {
                   <div className="row m-0">
                      <div className="col d-flex flex-column my-5 ms-4">
                         <h5 className="mb-4 drop-down-title">Shop pages</h5>
-                        <a href="/" className="mb-4 option option-color">
-                           Full width
-                        </a>
-                        <a href="/" className="mb-4 option option-color">
-                           Full width with category menu
-                        </a>
-                        <a href="/" className="mb-4 option option-color">
-                           Full width with big products
-                        </a>
-                        <a href="/" className="mb-4 option option-color">
-                           Fixed width
-                        </a>
-                        <a href="/" className="mb-4 option option-color">
-                           Fixed width &amp; sidebar
+                        <a
+                           href={
+                              menu[1].subcategories[0].subcategorylist[0].link
+                           }
+                           className="mb-4 option option-color"
+                        >
+                           {menu[1].subcategories[0].subcategorylist[0].name}
                         </a>
                         <a
-                           href="/"
+                           href={
+                              menu[1].subcategories[0].subcategorylist[1].link
+                           }
+                           className="mb-4 option option-color"
+                        >
+                           {menu[1].subcategories[0].subcategorylist[1].name}
+                        </a>
+                        <a
+                           href={
+                              menu[1].subcategories[0].subcategorylist[2].link
+                           }
+                           className="mb-4 option option-color"
+                        >
+                           {menu[1].subcategories[0].subcategorylist[2].name}
+                        </a>
+                        <a
+                           href={
+                              menu[1].subcategories[0].subcategorylist[3].link
+                           }
+                           className="mb-4 option option-color"
+                        >
+                           {menu[1].subcategories[0].subcategorylist[3].name}
+                        </a>
+                        <a
+                           href={
+                              menu[1].subcategories[0].subcategorylist[4].link
+                           }
+                           className="mb-4 option option-color"
+                        >
+                           {menu[1].subcategories[0].subcategorylist[4].name}
+                        </a>
+                        <a
+                           href={
+                              menu[1].subcategories[0].subcategorylist[5].link
+                           }
                            className="mb-4 d-flex align-items-center option option-color"
                         >
-                           Fixed width &amp; masonry layout
+                           {menu[1].subcategories[0].subcategorylist[5].name}
                            <span className="new-btn">New</span>
                         </a>
-                        <a href="/" className="mb-4 option option-color">
-                           Subcategories
+                        <a
+                           href={
+                              menu[1].subcategories[0].subcategorylist[6].link
+                           }
+                           className="mb-4 option option-color"
+                        >
+                           {menu[1].subcategories[0].subcategorylist[6].name}
                         </a>
                      </div>
 
                      <div className="col d-flex flex-column my-5">
                         <h5 className="mb-4 drop-down-title">Product pages</h5>
-                        <a href="/" className="mb-4 option option-color">
-                           Product with sticky info
+                        <a
+                           href={
+                              menu[1].subcategories[1].subcategorylist[0].link
+                           }
+                           className="mb-4 option option-color"
+                        >
+                           {menu[1].subcategories[1].subcategorylist[0].name}
                         </a>
-                        <a href="/" className="mb-4 option option-color">
-                           Product with background
+                        <a
+                           href={
+                              menu[1].subcategories[1].subcategorylist[1].link
+                           }
+                           className="mb-4 option option-color"
+                        >
+                           {menu[1].subcategories[1].subcategorylist[1].name}
                         </a>
-                        <a href="/" className="mb-4 option option-color">
-                           Product standard
+                        <a
+                           href={
+                              menu[1].subcategories[1].subcategorylist[2].link
+                           }
+                           className="mb-4 option option-color"
+                        >
+                           {menu[1].subcategories[1].subcategorylist[2].name}
                         </a>
                      </div>
-
                      <div className="col padd-0">
                         <img
-                           src="/images/shop.webp"
+                           src={menu[1].subcategories[2].image}
                            alt="Model"
                            className="img-fluid h-100"
                         />
@@ -161,7 +217,7 @@ export default function NavbarMenu() {
                   onClick={() => toggleDropdown('product')}
                >
                   <button className="border-0 bg-transparent menu-option">
-                     Product Card
+                     {menu[2].name}
                   </button>
                   <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
@@ -173,40 +229,82 @@ export default function NavbarMenu() {
                >
                   <div className="row m-0">
                      <div className="col d-flex flex-column my-5 ms-4">
-                        <h5 className="mb-3 drop-down-title">Shop Card</h5>
-                        <a href="/" className="mb-3 option option-color">
-                           Default
+                        <h5 className="mb-3 drop-down-title">
+                           {menu[2].subcategories[0].name}
+                        </h5>
+                        <a
+                           href={
+                              menu[2].subcategories[0].subcategorylist[0].link
+                           }
+                           className="mb-3 option option-color"
+                        >
+                           {menu[2].subcategories[0].subcategorylist[0].name}
                         </a>
-                        <a href="/" className="mb-3 option option-color">
-                           Product Card 1
+                        <a
+                           href={
+                              menu[2].subcategories[0].subcategorylist[1].link
+                           }
+                           className="mb-3 option option-color"
+                        >
+                           {menu[2].subcategories[0].subcategorylist[1].name}
                         </a>
-                        <a href="/" className="mb-3 option option-color">
-                           Product Card 2
+                        <a
+                           href={
+                              menu[2].subcategories[0].subcategorylist[2].link
+                           }
+                           className="mb-3 option option-color"
+                        >
+                           {menu[2].subcategories[0].subcategorylist[2].name}
                         </a>
-                        <a href="/" className="mb-3 option option-color">
-                           Product Card 3
+                        <a
+                           href={
+                              menu[2].subcategories[0].subcategorylist[3].link
+                           }
+                           className="mb-3 option option-color"
+                        >
+                           {menu[2].subcategories[0].subcategorylist[3].name}
                         </a>
                      </div>
 
                      <div className="col d-flex flex-column my-5">
                         <h5 className="mb-4 p-1"> </h5>
-                        <a href="/" className="mb-3 option option-color">
-                           Product Card 4
+                        <a
+                           href={
+                              menu[2].subcategories[1].subcategorylist[0].link
+                           }
+                           className="mb-3 option option-color"
+                        >
+                           {menu[2].subcategories[1].subcategorylist[0].name}
                         </a>
-                        <a href="/" className="mb-3 option option-color">
-                           Product Card 5
+                        <a
+                           href={
+                              menu[2].subcategories[1].subcategorylist[1].link
+                           }
+                           className="mb-3 option option-color"
+                        >
+                           {menu[2].subcategories[1].subcategorylist[1].name}
                         </a>
-                        <a href="/" className="mb-3 option option-color">
-                           Product Card 6
+                        <a
+                           href={
+                              menu[2].subcategories[1].subcategorylist[2].link
+                           }
+                           className="mb-3 option option-color"
+                        >
+                           {menu[2].subcategories[1].subcategorylist[2].name}
                         </a>
-                        <a href="/" className="mb-3 option option-color">
-                           Product Card 7
+                        <a
+                           href={
+                              menu[2].subcategories[1].subcategorylist[3].link
+                           }
+                           className="mb-3 option option-color"
+                        >
+                           {menu[2].subcategories[1].subcategorylist[3].name}
                         </a>
                      </div>
 
                      <div className="col padd-0">
                         <img
-                           src="/images/2.1.webp"
+                           src={menu[2].subcategories[2].image}
                            alt="Model"
                            className="img-fluid h-100"
                         />
@@ -222,7 +320,7 @@ export default function NavbarMenu() {
                   onClick={() => toggleDropdown('icons')}
                >
                   <button className="border-0 bg-transparent menu-option">
-                     Icons
+                     {menu[3].name}
                   </button>
                   <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
@@ -239,61 +337,103 @@ export default function NavbarMenu() {
                         {/* 1) Trousers */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[0].subcategorylist[0].link}
                         >
-                           <GiTrousers alt="Trousers" className="icon-style" />
-                           <span className="mb-3">Trousers</span>
+                           <GiTrousers
+                              alt={
+                                 menu[3].subcategories[0].subcategorylist[0]
+                                    .name
+                              }
+                              className="icon-style"
+                           />
+                           <span className="mb-3">
+                              {menu[3].subcategories[0].subcategorylist[0].name}
+                           </span>
                         </a>
 
                         {/* 2) Jackets */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[1].subcategorylist[0].link}
                         >
-                           <TbJacket alt="Jackets" className="icon-style" />
-                           <span className="mb-3">Jackets</span>
+                           <TbJacket
+                              alt={
+                                 menu[3].subcategories[1].subcategorylist[0]
+                                    .name
+                              }
+                              className="icon-style"
+                           />
+                           <span className="mb-3">
+                              {menu[3].subcategories[1].subcategorylist[0].name}
+                           </span>
                         </a>
 
                         {/* 3) T-Shirts */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[2].subcategorylist[0].link}
                         >
                            <PiTShirtLight
-                              alt="T-Shirts"
+                              alt={
+                                 menu[3].subcategories[2].subcategorylist[0]
+                                    .name
+                              }
                               className="icon-style"
                            />
-                           <span className="mb-3">T-Shirts</span>
+                           <span className="mb-3">
+                              {menu[3].subcategories[2].subcategorylist[0].name}
+                           </span>
                         </a>
 
                         {/* 4) Shirts */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[3].subcategorylist[0].link}
                         >
-                           <PiShirtFolded alt="Shirts" className="icon-style" />
-                           <span className="mb-3">Shirts</span>
+                           <PiShirtFolded
+                              alt={
+                                 menu[3].subcategories[3].subcategorylist[0]
+                                    .name
+                              }
+                              className="icon-style"
+                           />
+                           <span className="mb-3">
+                              {menu[3].subcategories[3].subcategorylist[0].name}
+                           </span>
                         </a>
 
                         {/* 5) Pullovers */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[4].subcategorylist[0].link}
                         >
                            <PiHoodieLight
-                              alt="Pullovers"
+                              alt={
+                                 menu[3].subcategories[4].subcategorylist[0]
+                                    .name
+                              }
                               className="icon-style"
                            />
-                           <span className="mb-3">Pullovers</span>
+                           <span className="mb-3">
+                              {menu[3].subcategories[4].subcategorylist[0].name}
+                           </span>
                         </a>
 
                         {/* 6) Scarfs */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[5].subcategorylist[0].link}
                         >
-                           <GiTrousers alt="Scarfs" className="icon-style" />
-                           <span className="mb-3">Scarfs</span>
+                           <GiTrousers
+                              alt={
+                                 menu[3].subcategories[5].subcategorylist[0]
+                                    .name
+                              }
+                              className="icon-style"
+                           />
+                           <span className="mb-3">
+                              {menu[3].subcategories[5].subcategorylist[0].name}
+                           </span>
                         </a>
                      </div>
 
@@ -301,61 +441,103 @@ export default function NavbarMenu() {
                         {/* 7) Shorts */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[0].subcategorylist[1].link}
                         >
-                           <GiShorts alt="Shorts" className="icon-style" />
-                           <span className="mb-3">Shorts</span>
+                           <GiShorts
+                              alt={
+                                 menu[3].subcategories[0].subcategorylist[1]
+                                    .name
+                              }
+                              className="icon-style"
+                           />
+                           <span className="mb-3">
+                              {menu[3].subcategories[0].subcategorylist[1].name}
+                           </span>
                         </a>
 
                         {/* 8) Underwear */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[1].subcategorylist[1].link}
                         >
                            <GiUnderwearShorts
-                              alt="Underwear"
+                              alt={
+                                 menu[3].subcategories[1].subcategorylist[1]
+                                    .name
+                              }
                               className="icon-style"
                            />
-                           <span className="mb-3">Underwear</span>
+                           <span className="mb-3">
+                              {menu[3].subcategories[1].subcategorylist[1].name}
+                           </span>
                         </a>
 
                         {/* 9) Watches */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[2].subcategorylist[1].link}
                         >
-                           <GiWatch alt="Watches" className="icon-style" />
-                           <span className="mb-3">Watches</span>
+                           <GiWatch
+                              alt={
+                                 menu[3].subcategories[2].subcategorylist[1]
+                                    .name
+                              }
+                              className="icon-style"
+                           />
+                           <span className="mb-3">
+                              {menu[3].subcategories[2].subcategorylist[1].name}
+                           </span>
                         </a>
 
                         {/* 10) Bags */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[3].subcategorylist[1].link}
                         >
                            <PiSuitcaseSimple
-                              alt="Bags"
+                              alt={
+                                 menu[3].subcategories[3].subcategorylist[1]
+                                    .name
+                              }
                               className="icon-style"
                            />
-                           <span className="mb-3">Bags</span>
+                           <span className="mb-3">
+                              {menu[3].subcategories[3].subcategorylist[1].name}
+                           </span>
                         </a>
 
                         {/* 11) Caps */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[4].subcategorylist[1].link}
                         >
-                           <PiBaseballCap alt="Caps" className="icon-style" />
-                           <span className="mb-3">Caps</span>
+                           <PiBaseballCap
+                              alt={
+                                 menu[3].subcategories[4].subcategorylist[1]
+                                    .name
+                              }
+                              className="icon-style"
+                           />
+                           <span className="mb-3">
+                              {menu[3].subcategories[4].subcategorylist[1].name}
+                           </span>
                         </a>
 
                         {/* 12) Accessories */}
                         <a
                            className="col-2 d-flex flex-column align-items-center icon-select"
-                           href="/"
+                           href={menu[3].subcategories[5].subcategorylist[1].link}
                         >
-                           <GiBowTie alt="Accessories" className="icon-style" />
-                           <span className="mb-3">Accessories</span>
+                           <GiBowTie
+                              alt={
+                                 menu[3].subcategories[5].subcategorylist[1]
+                                    .name
+                              }
+                              className="icon-style"
+                           />
+                           <span className="mb-3">
+                              {menu[3].subcategories[5].subcategorylist[1].name}
+                           </span>
                         </a>
                      </div>
                   </div>
@@ -375,7 +557,7 @@ export default function NavbarMenu() {
                   onClick={() => toggleDropdown('pages')}
                >
                   <button className="border-0 bg-transparent menu-option">
-                     Pages
+                  {menu[4].name}
                   </button>
                   <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
@@ -387,244 +569,244 @@ export default function NavbarMenu() {
                   } ${closingDropdown === 'pages' ? 'hide' : ''}`}
                >
                   {/* Four columns in a row */}
-                  <div className="row m-0 mb-5">
+                  <div className="row m-0 mb-5 mt-4">
                      {/* Column 1 */}
                      <div className="d-flex col col-3 flex-column px-3">
-                        <img src="/images/pages-img-1.webp" alt="" />
-                        <h5 className="mt-4 py-1 m-1 fw-bold">Homepage</h5>
+                        <img src={menu[4].subcategories[0].image} className='menu-img' alt="" />
+                        <h5 className="mt-4 py-1 m-1 fw-bold">{menu[4].subcategories[0].name}</h5>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[0].subcategorylist[0].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Home 1 - Fashion
+                           {menu[4].subcategories[0].subcategorylist[0].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[0].subcategorylist[1].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Home 2 - Fashion
+                           {menu[4].subcategories[0].subcategorylist[1].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[0].subcategorylist[2].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Home 3 - Design
+                           {menu[4].subcategories[0].subcategorylist[2].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[0].subcategorylist[3].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Home 4 - Design
+                           {menu[4].subcategories[0].subcategorylist[3].name}
                            <div className="new-btn">New</div>
                         </a>
-                        <h5 className="mt-4 py-1 m-1 fw-bold">Category</h5>
+                        <h5 className="mt-4 py-1 m-1 fw-bold">{menu[4].subcategories[4].name}</h5>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[4].subcategorylist[0].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Full width
+                           {menu[4].subcategories[4].subcategorylist[0].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[4].subcategorylist[1].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Full width with category menu
+                           {menu[4].subcategories[4].subcategorylist[1].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[4].subcategorylist[2].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Full width with big products
+                           {menu[4].subcategories[4].subcategorylist[2].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[4].subcategorylist[3].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Fixed width
+                           {menu[4].subcategories[4].subcategorylist[3].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[4].subcategorylist[4].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Fixed width &amp; sidebar
+                           {menu[4].subcategories[4].subcategorylist[4].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[4].subcategorylist[5].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Fixed width &amp; masonry layout
+                           {menu[4].subcategories[4].subcategorylist[5].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[4].subcategorylist[6].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Subcategories
+                           {menu[4].subcategories[4].subcategorylist[6].name}
                         </a>
                      </div>
 
                      {/* Column 2 */}
                      <div className="d-flex col col-3 flex-column px-3">
-                        <img src="/images/pages-img-2.webp" alt="" />
-                        <h5 className="mt-4 py-1 m-1 fw-bold">Order Process</h5>
+                        <img src={menu[4].subcategories[1].image} className='menu-img' alt="" />
+                        <h5 className="mt-4 py-1 m-1 fw-bold">{menu[4].subcategories[1].name}</h5>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[1].subcategorylist[0].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Shopping cart
+                           {menu[4].subcategories[1].subcategorylist[0].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[1].subcategorylist[1].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Checkout - Five steps
+                           {menu[4].subcategories[1].subcategorylist[1].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[1].subcategorylist[2].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Checkout - Single page
+                           {menu[4].subcategories[1].subcategorylist[2].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[1].subcategorylist[3].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Checkout - confirm
+                           {menu[4].subcategories[1].subcategorylist[3].name}
                            <div className="new-btn">New</div>
                         </a>
-                        <h5 className="mt-4 py-1 m-1 fw-bold">Product</h5>
+                        <h5 className="mt-4 py-1 m-1 fw-bold">{menu[4].subcategories[5].name}</h5>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[5].subcategorylist[0].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Product with sticky info
+                           {menu[4].subcategories[5].subcategorylist[0].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[5].subcategorylist[1].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Product with sticky info
+                           {menu[4].subcategories[5].subcategorylist[1].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[5].subcategorylist[2].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Product standard
+                           {menu[4].subcategories[5].subcategorylist[2].name}
                         </a>
                      </div>
 
                      {/* Column 3 */}
                      <div className="d-flex col col-3 flex-column px-3">
-                        <img src="/images/pages-img-3.webp" alt="" />
-                        <h5 className="mt-4 py-1 m-1 fw-bold">Blog</h5>
+                        <img src={menu[4].subcategories[2].image} className='menu-img' alt="" />
+                        <h5 className="mt-4 py-1 m-1 fw-bold">{menu[4].subcategories[2].name}</h5>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[2].subcategorylist[0].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Blog
+                           {menu[4].subcategories[2].subcategorylist[0].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[2].subcategorylist[1].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Blog - Masonry
+                           {menu[4].subcategories[2].subcategorylist[1].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[2].subcategorylist[2].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Post
+                           {menu[4].subcategories[2].subcategorylist[2].name}
                         </a>
-                        <h5 className="mt-4 py-1 m-1 fw-bold">Page</h5>
+                        <h5 className="mt-4 py-1 m-1 fw-bold">{menu[4].subcategories[6].name}</h5>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[6].subcategorylist[0].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           About - Company
+                           {menu[4].subcategories[6].subcategorylist[0].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[6].subcategorylist[1].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           About v2 - Person
+                           {menu[4].subcategories[6].subcategorylist[1].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[6].subcategorylist[2].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           F.A.Q.
+                           {menu[4].subcategories[6].subcategorylist[2].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[6].subcategorylist[3].link}
                            className="option option-color w-100 py-1 m-1"
                         >
-                           Contact
+                           {menu[4].subcategories[6].subcategorylist[3].name}
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[6].subcategorylist[4].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Privacy policy
+                           {menu[4].subcategories[6].subcategorylist[4].name}
                            <div className="new-btn">New</div>
                         </a>
                      </div>
 
                      {/* Column 4 */}
                      <div className="d-flex col col-3 flex-column px-3">
-                        <img src="/images/pages-img-4.webp" alt="" />
-                        <h5 className="mt-4 py-1 m-1 fw-bold">Customer</h5>
+                        <img src={menu[4].subcategories[3].image} className='menu-img' alt="" />
+                        <h5 className="mt-4 py-1 m-1 fw-bold">{menu[4].subcategories[3].name}</h5>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[3].subcategorylist[0].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Login/signup
+                           {menu[4].subcategories[3].subcategorylist[0].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[3].subcategorylist[1].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Orders
+                           {menu[4].subcategories[3].subcategorylist[1].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[3].subcategorylist[2].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Order detail
+                           {menu[4].subcategories[3].subcategorylist[2].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[3].subcategorylist[3].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Order tracking
+                           {menu[4].subcategories[3].subcategorylist[3].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[3].subcategorylist[4].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Addresses
+                           {menu[4].subcategories[3].subcategorylist[4].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[3].subcategorylist[5].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Profile
+                           {menu[4].subcategories[3].subcategorylist[5].name}
                            <div className="new-btn">New</div>
                         </a>
                         <a
-                           href="/"
+                           href={menu[4].subcategories[3].subcategorylist[6].link}
                            className="option option-color w-100 d-flex justify-content-start align-items-center m-1"
                         >
-                           Wishlist
+                           {menu[4].subcategories[3].subcategorylist[6].name}
                            <div className="new-btn">New</div>
                         </a>
                      </div>
@@ -640,7 +822,7 @@ export default function NavbarMenu() {
                   }}
                >
                   <button className="border-0 bg-transparent menu-option">
-                     Docs
+                  {menu[5].name}
                   </button>
                   <MdExpandMore className="cursor-pointer me-lg-0 me-3" />
                </div>
@@ -651,72 +833,72 @@ export default function NavbarMenu() {
                >
                   <div className="d-flex flex-column">
                      <h5 className="mt-4 py-1 m-1 px-3 drop-down-title">
-                        Documentation
+                     {menu[5].subcategories[0].name}
                      </h5>
                      <a
-                        href="/"
+                        href={menu[5].subcategories[0].subcategorylist[0].link}
                         className="option option-color w-100 py-1 m-1 px-3"
                      >
-                        Introduction
+                     {menu[5].subcategories[0].subcategorylist[0].name}
                      </a>
                      <a
-                        href="/"
+                        href={menu[5].subcategories[0].subcategorylist[1].link}
                         className="option option-color w-100 py-1 m-1 px-3"
                      >
-                        Directory structure
+                     {menu[5].subcategories[0].subcategorylist[1].name}
                      </a>
                      <a
-                        href="/"
+                        href={menu[5].subcategories[0].subcategorylist[2].link}
                         className="option option-color w-100 py-1 m-1 px-3"
                      >
-                        Next.js
+                     {menu[5].subcategories[0].subcategorylist[2].name}
                      </a>
                      <a
-                        href="/"
+                        href={menu[5].subcategories[0].subcategorylist[3].link}
                         className="option option-color w-100 py-1 m-1 px-3"
                      >
-                        Customizing CSS
+                     {menu[5].subcategories[0].subcategorylist[3].name}
                      </a>
                      <a
-                        href="/"
+                        href={menu[5].subcategories[0].subcategorylist[4].link}
                         className="option option-color w-100 py-1 m-1 px-3"
                      >
-                        Demo Data
+                     {menu[5].subcategories[0].subcategorylist[4].name}
                      </a>
                      <a
-                        href="/"
+                        href={menu[5].subcategories[0].subcategorylist[5].link}
                         className="option option-color w-100 py-1 m-1 px-3"
                      >
-                        Credits
+                     {menu[5].subcategories[0].subcategorylist[5].name}
                      </a>
                      <a
-                        href="/"
+                        href={menu[5].subcategories[0].subcategorylist[6].link}
                         className="option option-color w-100 py-1 m-1 px-3"
                      >
-                        Change log
+                     {menu[5].subcategories[0].subcategorylist[6].name}
                      </a>
                      <hr />
                      <h5 className="py-1 m-1 px-3 drop-down-title">
-                        Components
+                     {menu[5].subcategories[1].name}
                      </h5>
                      <a
-                        href="/"
+                        href={menu[5].subcategories[1].subcategorylist[0].link}
                         className="option option-color w-100 py-1 m-1 px-3"
                      >
-                        Bootstrap
+                     {menu[5].subcategories[1].subcategorylist[0].name}
                      </a>
                      <a
-                        href="/"
+                        href={menu[5].subcategories[1].subcategorylist[1].link}
                         className="option option-color w-100 py-1 m-1 px-3 "
                      >
-                        Theme
+                     {menu[5].subcategories[1].subcategorylist[1].name}
                      </a>
                   </div>
                </div>
             </div>
          </Nav>
          <Form className="d-flex collapse-search menu-search-container">
-            <div className='d-flex'>
+            <div className="d-flex">
                <Form.Control
                   type="search"
                   placeholder="Search"

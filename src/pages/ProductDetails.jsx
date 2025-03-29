@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import HeaderBar from '../layouts/HeaderBar';
 import MyNavbar from '../layouts/MyNavbar';
 import Footer from '../layouts/Footer';
@@ -11,28 +10,11 @@ import Loader from '../components/Loader';
 
 
 
-export default function ProductDetails({ products, loading }) {
-   const [pageloading, setPageLoading] = useState(true);
-
-   useEffect(() => {
-      const handleLoad = () => {
-         setTimeout(() => {
-            setPageLoading(false);
-         }, 1000);
-      };
-
-      if (document.readyState === 'complete') {
-         handleLoad();
-      } else {
-         window.addEventListener('load', handleLoad);
-      }
-
-      return () => window.removeEventListener('load', handleLoad);
-   }, []);
+export default function ProductDetails({ products, loading, menu, menuLoading }) {
     
    return (
       <>
-         {pageloading ? (
+         {menuLoading ? (
             <Loader />
          ) : (
             <div className="position-relative">
@@ -40,7 +22,7 @@ export default function ProductDetails({ products, loading }) {
                   <HeaderBar />
                </div>
                <div className="product-mynavbar">
-                  <MyNavbar />
+                  <MyNavbar menu={menu}/>
                </div>
                <ProductContainer/>
                <AdditionalInformation />

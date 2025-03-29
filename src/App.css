@@ -643,6 +643,11 @@ h6 {
    cursor: pointer;
 }
 
+.menu-img{
+   height: 175px;
+   width: 265px;
+}
+
 /* HeroCarousel */
 
 .hero-carousel-container {

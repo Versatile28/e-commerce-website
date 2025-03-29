@@ -17,7 +17,7 @@ import { GoHeart } from 'react-icons/go';
 import NavbarMenu from '../components/NavbarMenu';
 import Cart from '../components/Cart';
 
-export default function MyNavbar() {
+export default function MyNavbar({ menu }) {
    const [show, setShow] = useState(false);
    const [open, setOpen] = useState(false);
    const [showCart, setShowCart] = useState(false);
@@ -126,7 +126,7 @@ export default function MyNavbar() {
                         </svg>
                      </Navbar.Toggle>
                   </Nav>
-                  {width <= 992 && <NavbarMenu />}
+                  {width <= 992 && <NavbarMenu menu={menu}/>}
                </Navbar.Collapse>
                <Navbar.Toggle
                   onClick={() => setShowFirst(!showFirst)}
@@ -154,7 +154,7 @@ export default function MyNavbar() {
                <Link to="/" className="navbar-brand">
                   <Navbar.Brand>Varkala</Navbar.Brand>
                </Link>
-               {width > 992 && <NavbarMenu />}
+               {width > 992 && <NavbarMenu menu={menu}/>}
                <Nav className="d-none d-lg-flex justify-content-end align-items-center flex-row">
                   <NavLink className="px-2 collapse-icons">
                      <SlUser className="mynavbar-icon" />
