@@ -1,7 +1,6 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { CiCircleCheck } from 'react-icons/ci';
@@ -11,7 +10,6 @@ import StarRating from './StarRating';
 import { RiFacebookFill } from 'react-icons/ri';
 import { FaTwitter } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa';
-import { baseUrl } from '../utils/constant';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
 
@@ -21,42 +19,6 @@ export default function ProductContainer({ product }) {
    const [selected, setSelected] = useState('Small');
    const [change, setChange] = useState('value_0');
    const [quantity, setQuantity] = useState(1);
-   // const [product, setProduct] = useState({   
-   //    _id: 1,
-   //    badge: '',
-   //    image: '/images/1.1.webp',
-   //    name: 'White Tee',
-   //    price: 40.0,
-   //    rating: 3.5,
-   //    category: 'Tops & blouses',
-   //    type: "COLLEGE",
-   //    size: ["SMALL", "MEDIUM", "LARGE"],
-   //    brand: "Calvin Klein",
-   //    tags: ["Leisure", "Elegant"]});
-
-
-   // const { id } = useParams();
-
-   // useEffect(() => {
-   //    const fetchProduct = async () => {
-   //       try {
-   //          const { data } = await axios.get(
-   //             `${baseUrl}/api/products/${id}`,
-   //             {
-   //                headers: { 'Content-Type': 'application/json' },
-   //             }
-   //          );
-   //          setProduct(data);
-   //       } catch (err) {
-   //          console.error(
-   //             'Error fetching product:',
-   //             err.response?.data?.message || err.message
-   //          );
-   //       }
-   //    };
-
-   //    fetchProduct();
-   // }, [id]);
 
    const handleQuantity = (e) => {
       setQuantity(e.target.value);

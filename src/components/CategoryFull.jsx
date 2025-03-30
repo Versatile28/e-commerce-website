@@ -26,8 +26,43 @@ const colors = [
 
 export default function CategoryFull({ products, loading }) {
    const [selected, setSelected] = useState('Default');
-   const [selectedSize, setSelectedSize] = useState('size0');
+   const [selectedSize, setSelectedSize] = useState('');
    const [selectedColors, setSelectedColors] = useState([]);
+   const [minValue, setMinValue] = useState(40);
+   const [maxValue, setMaxValue] = useState(110);
+   const [filteredProducts, setFilteredProducts] = useState(products);
+   const [selectedBrands, setSelectedBrands] = useState({});
+
+   useEffect(() => {
+      let filtered = products;
+      if (Object.values(selectedBrands).some((isSelected) => isSelected)) {
+         const activeBrands = Object.keys(selectedBrands).filter(
+            (key) => selectedBrands[key]
+         );
+         filtered = filtered.filter((product) =>
+            activeBrands.includes(product.brand)
+         );
+      }
+      if (selectedSize) {
+         filtered = filtered.filter((product) => product.size.includes(selectedSize));
+      }
+      if (minValue) {
+         filtered = filtered.filter(
+            (product) => product.price >= parseFloat(minValue)
+         );
+      }
+      if (maxValue) {
+         filtered = filtered.filter(
+            (product) => product.price <= parseFloat(maxValue)
+         );
+      }
+      if (selected === "Rating") {
+         filtered = filtered.sort((a, b) => b.rating - a.rating);
+      } else if (selected === "Newest first") {
+         filtered = filtered.sort((a, b) => new Date(b.created) - new Date(a.created));
+      }
+      setFilteredProducts(filtered);
+   }, [selectedBrands, selectedSize, minValue, maxValue, selected, products]);
 
    const handleSelect = (option) => {
       setSelected(option);
@@ -63,20 +98,10 @@ export default function CategoryFull({ products, loading }) {
       return () => window.removeEventListener('resize', handleResize);
    }, []);
 
-   const [selectedBrands, setSelectedBrands] = useState({
-      brand0: true,
-      brand1: true,
-      brand2: false,
-      brand3: false,
-      brand4: false,
-   });
 
    const handleCheckboxChange = (event) => {
       const { id, checked } = event.target;
-      setSelectedBrands((prevState) => ({
-         ...prevState,
-         [id]: checked,
-      }));
+      setSelectedBrands((prev) => ({ ...prev, [id]: checked }));
    };
 
    const handleRadioChange = (event) => {
@@ -200,7 +225,7 @@ export default function CategoryFull({ products, loading }) {
                </Accordion>
                <div className="pb-3 mb-3 category-price">
                   <h5 className="fw-bold ls-1 pt-5">Price</h5>
-                  <PriceSlider />
+                  <PriceSlider minValue={minValue} setMinValue={setMinValue} maxValue={maxValue} setMaxValue={setMaxValue}/>
                </div>
                <div className="category-brand">
                   <h5 className="fw-bold ls-1 pt-4">Brand</h5>
@@ -210,12 +235,12 @@ export default function CategoryFull({ products, loading }) {
                            <input
                               name="clothes-brand"
                               type="checkbox"
-                              id="brand0"
                               className="form-check-input"
-                              checked={selectedBrands.brand0}
+                              id="Calvin Klein"
+                              checked={selectedBrands["Calvin Klein"] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="brand0" className="form-check-label">
+                           <label htmlFor="Calvin Klein" className="form-check-label">
                               Calvin Klein <small>(18)</small>
                            </label>
                         </div>
@@ -225,12 +250,12 @@ export default function CategoryFull({ products, loading }) {
                            <input
                               name="clothes-brand"
                               type="checkbox"
-                              id="brand1"
+                              id="Levi Strauss"
                               className="form-check-input"
-                              checked={selectedBrands.brand1}
+                              checked={selectedBrands["Levi Strauss"] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="brand1" className="form-check-label">
+                           <label htmlFor="Levi Strauss" className="form-check-label">
                               Levi Strauss <small>(30)</small>
                            </label>
                         </div>
@@ -240,12 +265,12 @@ export default function CategoryFull({ products, loading }) {
                            <input
                               name="clothes-brand"
                               type="checkbox"
-                              id="brand2"
+                              id="Hugo Boss"
                               className="form-check-input"
-                              checked={selectedBrands.brand2}
+                              checked={selectedBrands["Hugo Boss"] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="brand2" className="form-check-label">
+                           <label htmlFor="Hugo Boss" className="form-check-label">
                               Hugo Boss <small>(120)</small>
                            </label>
                         </div>
@@ -255,12 +280,12 @@ export default function CategoryFull({ products, loading }) {
                            <input
                               name="clothes-brand"
                               type="checkbox"
-                              id="brand3"
+                              id="Tomi Hilfiger"
                               className="form-check-input"
-                              checked={selectedBrands.brand3}
+                              checked={selectedBrands["Tomi Hilfiger"] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="brand3" className="form-check-label">
+                           <label htmlFor="Tomi Hilfiger" className="form-check-label">
                               Tomi Hilfiger <small>(70)</small>
                            </label>
                         </div>
@@ -270,12 +295,12 @@ export default function CategoryFull({ products, loading }) {
                            <input
                               name="clothes-brand"
                               type="checkbox"
-                              id="brand4"
+                              id="Tom Ford"
                               className="form-check-input"
-                              checked={selectedBrands.brand4}
+                              checked={selectedBrands["Tom Ford"] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="brand4" className="form-check-label">
+                           <label htmlFor="Tom Ford" className="form-check-label">
                               Tom Ford <small>(110)</small>
                            </label>
                         </div>
@@ -290,12 +315,13 @@ export default function CategoryFull({ products, loading }) {
                            <input
                               name="size"
                               type="radio"
-                              id="size0"
+                              id="SMALL"
+                              value="SMALL"
                               className="form-check-input"
-                              checked={selectedSize === 'size0'}
+                              checked={selectedSize === 'SMALL'}
                               onChange={handleRadioChange}
                            />
-                           <label htmlFor="size0" className="form-check-label">
+                           <label htmlFor="SMALL" className="form-check-label">
                               Small
                            </label>
                         </div>
@@ -305,12 +331,13 @@ export default function CategoryFull({ products, loading }) {
                            <input
                               name="size"
                               type="radio"
-                              id="size1"
+                              id="MEDIUM"
+                              value='MEDIUM'
                               className="form-check-input"
-                              checked={selectedSize === 'size1'}
+                              checked={selectedSize === 'MEDIUM'}
                               onChange={handleRadioChange}
                            />
-                           <label htmlFor="size1" className="form-check-label">
+                           <label htmlFor="MEDIUM" className="form-check-label">
                               Medium
                            </label>
                         </div>
@@ -320,12 +347,13 @@ export default function CategoryFull({ products, loading }) {
                            <input
                               name="size"
                               type="radio"
-                              id="size2"
+                              id="LARGE"
+                              value="LARGE"
                               className="form-check-input"
-                              checked={selectedSize === 'size2'}
+                              checked={selectedSize === 'LARGE'}
                               onChange={handleRadioChange}
                            />
-                           <label htmlFor="size2" className="form-check-label">
+                           <label htmlFor="LARGE" className="form-check-label">
                               Large
                            </label>
                         </div>
@@ -335,12 +363,13 @@ export default function CategoryFull({ products, loading }) {
                            <input
                               name="size"
                               type="radio"
-                              id="size3"
+                              id="X-LARGE"
+                              value="X-LARGE"
                               className="form-check-input"
-                              checked={selectedSize === 'size3'}
+                              checked={selectedSize === 'X-LARGE'}
                               onChange={handleRadioChange}
                            />
-                           <label htmlFor="size3" className="form-check-label">
+                           <label htmlFor="X-LARGE" className="form-check-label">
                               X-Large
                            </label>
                         </div>
@@ -429,7 +458,7 @@ export default function CategoryFull({ products, loading }) {
                                     key={option}
                                     onClick={() => handleSelect(option)}
                                     className={`dropdown-item-sortby ${
-                                       selected === option ? 'selected' : ''
+                                       selected === option.toUpperCase ? 'selected' : ''
                                     }`}
                                  >
                                     {option}
@@ -474,10 +503,12 @@ export default function CategoryFull({ products, loading }) {
                           )
                        )
                      : Array.from({
-                          length: Math.ceil(products.length / itemsPerRow),
+                          length: Math.ceil(
+                             filteredProducts.length / itemsPerRow
+                          ),
                        }).map((_, rowIndex) => (
                           <Row key={rowIndex} className="mt-4">
-                             {products
+                             {filteredProducts
                                 .slice(
                                    rowIndex * itemsPerRow,
                                    rowIndex * itemsPerRow + itemsPerRow

@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import noUiSlider from "nouislider";
 import "nouislider/dist/nouislider.css";
 
-const PriceSlider = ({ min = 0, max = 250, initialMin = 40, initialMax = 110, onChange }) => {
+const PriceSlider = ({ min = 0, max = 250, minValue, maxValue, setMinValue, setMaxValue, onChange }) => {
    const sliderRef = useRef(null);
-   const [minValue, setMinValue] = useState(initialMin);
-   const [maxValue, setMaxValue] = useState(initialMax);
+   const initialMin = 40;
+   const initialMax = 110;
  
    useEffect(() => {
      if (!sliderRef.current) return;
@@ -24,7 +24,7 @@ const PriceSlider = ({ min = 0, max = 250, initialMin = 40, initialMax = 110, on
      });
  
      return () => slider.destroy();
-   }, [min, max, initialMin, initialMax, onChange]);
+   }, [min, max, initialMin, initialMax, onChange, setMinValue, setMaxValue]);
  
    return (
      <div className="range-slider-container">
