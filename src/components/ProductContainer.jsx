@@ -15,44 +15,48 @@ import { baseUrl } from '../utils/constant';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
 
-export default function ProductContainer() {
+export default function ProductContainer({ product }) {
    const dispatch = useDispatch();
    const toastRef = useRef(null);
    const [selected, setSelected] = useState('Small');
    const [change, setChange] = useState('value_0');
    const [quantity, setQuantity] = useState(1);
-   const [product, setProduct] = useState({   
-      _id: 1,
-      badge: '',
-      image: '/images/1.1.webp',
-      name: 'White Tee',
-      price: 40.0,
-      rating: 3.5,
-      category: 'Tops & blouses'});
+   // const [product, setProduct] = useState({   
+   //    _id: 1,
+   //    badge: '',
+   //    image: '/images/1.1.webp',
+   //    name: 'White Tee',
+   //    price: 40.0,
+   //    rating: 3.5,
+   //    category: 'Tops & blouses',
+   //    type: "COLLEGE",
+   //    size: ["SMALL", "MEDIUM", "LARGE"],
+   //    brand: "Calvin Klein",
+   //    tags: ["Leisure", "Elegant"]});
 
 
-   const { id } = useParams();
+   // const { id } = useParams();
 
-   useEffect(() => {
-      const fetchProduct = async () => {
-         try {
-            const { data } = await axios.get(
-               `${baseUrl}/api/products/${id}`,
-               {
-                  headers: { 'Content-Type': 'application/json' },
-               }
-            );
-            setProduct(data);
-         } catch (err) {
-            console.error(
-               'Error fetching product:',
-               err.response?.data?.message || err.message
-            );
-         }
-      };
+   // useEffect(() => {
+   //    const fetchProduct = async () => {
+   //       try {
+   //          const { data } = await axios.get(
+   //             `${baseUrl}/api/products/${id}`,
+   //             {
+   //                headers: { 'Content-Type': 'application/json' },
+   //             }
+   //          );
+   //          setProduct(data);
+   //       } catch (err) {
+   //          console.error(
+   //             'Error fetching product:',
+   //             err.response?.data?.message || err.message
+   //          );
+   //       }
+   //    };
 
-      fetchProduct();
-   }, [id]);
+   //    fetchProduct();
+   // }, [id]);
 
    const handleQuantity = (e) => {
       setQuantity(e.target.value);
