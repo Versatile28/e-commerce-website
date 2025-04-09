@@ -32,6 +32,8 @@ export default function CategoryFull({ products, loading }) {
    const [maxValue, setMaxValue] = useState(110);
    const [filteredProducts, setFilteredProducts] = useState(products);
    const [selectedBrands, setSelectedBrands] = useState({});
+   const [productNumber, setProductNumber] = useState(12);
+   const [category, setCategory] = useState('');
 
    useEffect(() => {
       let filtered = products;
@@ -41,6 +43,11 @@ export default function CategoryFull({ products, loading }) {
          );
          filtered = filtered.filter((product) =>
             activeBrands.includes(product.brand)
+         );
+      }
+      if (category) {
+         filtered = filtered.filter(
+            (product) => product.category === category
          );
       }
       if (selectedSize) {
@@ -62,7 +69,7 @@ export default function CategoryFull({ products, loading }) {
          filtered = filtered.sort((a, b) => new Date(b.created) - new Date(a.created));
       }
       setFilteredProducts(filtered);
-   }, [selectedBrands, selectedSize, minValue, maxValue, selected, products]);
+   }, [selectedBrands, selectedSize, minValue, maxValue, selected, category, products]);
 
    const handleSelect = (option) => {
       setSelected(option);
@@ -116,6 +123,16 @@ export default function CategoryFull({ products, loading }) {
       );
    };
 
+   const handleProductNumberChange = (num) => {
+      setProductNumber(num);
+   }
+
+   const handleCategoryChange = (cat) => {
+      setCategory(cat);
+   }
+
+
+
    return (
       <Container className="px-3 py-6">
          <div className="row">
@@ -135,19 +152,19 @@ export default function CategoryFull({ products, loading }) {
                      </Accordion.Header>
                      <Accordion.Body>
                         <ul className="category-menu-list">
-                           <li>
-                              <p className="category-item">Lorem ipsum</p>
+                           <li onClick={()=>{handleCategoryChange("Jeans")}}>
+                              <p className="category-item">Jeans</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li>
+                           <li onClick={()=>{handleCategoryChange("Jeans")}}>
                               <p>Dolor</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li>
+                           <li onClick={()=>{handleCategoryChange("Jeans")}}>
                               <p>Sit amet</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li>
+                           <li onClick={()=>{handleCategoryChange("Jeans")}}>
                               <p>Donec vitae</p>
                               <span className="item-underline"></span>
                            </li>
@@ -169,19 +186,19 @@ export default function CategoryFull({ products, loading }) {
                      </Accordion.Header>
                      <Accordion.Body>
                         <ul className="category-menu-list">
-                           <li>
-                              <p>Lorem ipsum</p>
+                           <li onClick={()=>{handleCategoryChange("Jackets")}}>
+                              <p>Jackets</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li>
-                              <p>Dolor</p>
+                           <li onClick={()=>{handleCategoryChange("Sweaters")}}>
+                              <p>Sweaters</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li>
+                           <li onClick={()=>{handleCategoryChange("Jackets")}}>
                               <p>Sit amet</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li>
+                           <li onClick={()=>{handleCategoryChange("Jackets")}}>
                               <p>Donec vitae</p>
                               <span className="item-underline"></span>
                            </li>
@@ -203,19 +220,19 @@ export default function CategoryFull({ products, loading }) {
                      </Accordion.Header>
                      <Accordion.Body>
                         <ul className="category-menu-list">
-                           <li>
-                              <p>Lorem ipsum</p>
+                           <li onClick={()=>{handleCategoryChange("Shirts")}}>
+                              <p>Shirts</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li>
-                              <p>Dolor</p>
+                           <li onClick={()=>{handleCategoryChange("Tops & blouses")}}>
+                              <p>Tops & blouses</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li>
+                           <li onClick={()=>{handleCategoryChange("Shirts")}}>
                               <p>Sit amet</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li>
+                           <li onClick={()=>{handleCategoryChange("Shirts")}}>
                               <p>Donec vitae</p>
                               <span className="item-underline"></span>
                            </li>
@@ -427,8 +444,8 @@ export default function CategoryFull({ products, loading }) {
                   <div className="col-lg-4 col-md-6 col-12 h-100 d-flex align-items-center justify-content-md-center">
                      <div className="text-mute d-flex align-items-center justify-content-center">
                         Show &nbsp;
-                        <strong className="text-black">&nbsp;12&nbsp;</strong>
-                        &nbsp; 24&nbsp; All
+                        <strong className="cursor-pointer" onClick={()=>{handleProductNumberChange(12)}}>&nbsp;12&nbsp;</strong>
+                        <strong className='cursor-pointer' onClick={()=>{handleProductNumberChange(24)}}>&nbsp;24&nbsp;</strong> All
                      </div>
                   </div>
                   <div className="col-lg-4 col-md-6 col-12 h-100 d-flex align-items-center justify-content-lg-end">
@@ -471,7 +488,7 @@ export default function CategoryFull({ products, loading }) {
                </div>
                <div className="category-card-container">
                   {loading
-                     ? Array.from({ length: Math.ceil(12 / itemsPerRow) }).map(
+                     ? Array.from({ length: Math.ceil(productNumber / itemsPerRow) }).map(
                           (_, rowIndex) => (
                              <Row key={rowIndex} className="mt-4">
                                 {Array.from({ length: itemsPerRow }).map(
