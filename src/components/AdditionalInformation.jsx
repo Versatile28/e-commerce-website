@@ -289,6 +289,7 @@ export default function AdditionalInformation({ product }) {
                                     required
                                     type="text"
                                     id="name"
+                                    autoComplete='name'
                                     className="form-control review-form-items"
                                     value={formData.name}
                                     onChange={handleChange}
@@ -334,6 +335,7 @@ export default function AdditionalInformation({ product }) {
                               required
                               type="email"
                               id="email"
+                              autoComplete='email'
                               className="form-control review-form-items"
                               value={formData.email}
                               onChange={handleChange}

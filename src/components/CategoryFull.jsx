@@ -119,7 +119,7 @@ export default function CategoryFull({ products, loading }) {
    return (
       <Container className="px-3 py-6">
          <div className="row">
-            <div className="col-xl-3 d-xl-block d-none category-menu-container">
+            <div className="col-lg-3 col-12 category-menu-container order-2 order-lg-1">
                <h5 className="fw-bold ls-1">Category</h5>
                <Accordion className="category-menu">
                   <Accordion.Item eventKey="0">
@@ -397,7 +397,7 @@ export default function CategoryFull({ products, loading }) {
                   </ul>
                </div>
             </div>
-            <div className="col-xl-9 col-12">
+            <div className="col-lg-9 col-12 order-1 order-lg-2">
                <div className="mb-5">
                   <span className="category-title">Jackets and tops</span>
                   <p className="text-mute category-desc width-lg-100">

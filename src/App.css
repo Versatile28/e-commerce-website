@@ -135,10 +135,6 @@ html {
    width: 100%;
 }
 
-ol,
-ul {
-   list-style: none;
-}
 blockquote,
 q {
    quotes: none;
@@ -2223,10 +2219,10 @@ svg:not(:root).svg-inline--fa {
       padding: 7rem 0.5rem 7rem 0.5rem;
    }
    .order-lg-1 {
-      order: 1 !important;
+      order: 1;
    }
    .order-lg-2 {
-      order: 2 !important;
+      order: 2;
    }
    .image-styles {
       height: 50% !important;
