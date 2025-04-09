@@ -903,6 +903,7 @@ h6 {
 }
 
 .hover-overlay {
+   padding: 0.8rem 0.8rem;
    position: absolute;
    bottom: 0;
    left: 0;
@@ -918,15 +919,33 @@ h6 {
    font-weight: 500;
 }
 
-.hover-overlay.show {
+.premanent-overlay{
+   margin: 0.8rem 0;
+   width: 100%;
+   background: rgba(255, 255, 255, 0.95);
+   opacity: 0;
+   z-index: 3;
+   font-weight: 500;
+   display: none;
+}
+
+.premanent-overlay.show1{
+   opacity: 1;
+   transform: translateY(0);
+   display: flex;
+   align-items: end;
+   justify-content: center;
+}
+
+.hover-overlay.show{
    opacity: 1;
    transform: translateY(0);
 }
 
 .overlay-content {
    width: 100%;
-   margin: 0.8rem 0.8rem;
-   display: flex;
+   /* margin: 0.8rem 0.8rem; */
+   display: flex !important;
    flex-direction: row;
    align-items: center;
    justify-content: space-between;
@@ -934,7 +953,7 @@ h6 {
 }
 
 .overlay-content .icon {
-   font-size: 1.2rem;
+   font-size: 1.5rem;
    cursor: pointer;
 }
 

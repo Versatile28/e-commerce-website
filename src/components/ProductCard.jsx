@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { IoExpand } from 'react-icons/io5';
-import { PiShoppingBagOpen } from 'react-icons/pi';
 import StarRating from './StarRating';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
+import AddToCartBar from './AddToCartBar';
 
 export default function ProductCard({
    item = {
@@ -60,27 +58,15 @@ export default function ProductCard({
                   className="product-image"
                />
             </Link>
-            <div className={`hover-overlay ${hovered  || width <= 768 ? 'show' : ''}`}>
-               <div className="overlay-content">
-                  <span
-                     className="product-cart d-sm-inline-block d-none"
-                     onClick={handleAddToCart}
-                  >
-                     Add to cart
-                  </span>
-                  <PiShoppingBagOpen
-                     className="d-sm-none d-inline-block icon"
-                     onClick={handleAddToCart}
-                  />
-                  <div>
-                     <AiOutlineHeart className="icon" />
-                     <IoExpand className="icon" />
-                  </div>
-               </div>
+            <div className={`hover-overlay ${hovered ? 'show' : ''}`}>
+               <AddToCartBar handleAddToCart={handleAddToCart}/>
             </div>
          </Card>
 
          <div>
+            <div className={`premanent-overlay ${width <= 768 ? 'show1' : ''}`}>
+               <AddToCartBar handleAddToCart={handleAddToCart}/>
+            </div>
             <Link
                to={`/category-full/product/${item._id}`}
                className="card-title mt-3"

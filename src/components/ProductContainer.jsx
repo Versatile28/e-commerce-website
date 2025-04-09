@@ -88,13 +88,13 @@ export default function ProductContainer({ product }) {
          </div>
          <div className="product-details d-flex row">
             <div className="pt-4 col-xl-7 col-lg-6 order-2 order-lg-1">
-               <a className="d-block mb-4" href="/images/detail-1-gray.jpg">
+               <a className="d-block mb-4" href={product.image}>
                   <figure className="product-grey cursor-pointer">
                      <div>
                         <img
                            className="product-img-grey"
                            alt=""
-                           src="/images/detail-1-gray.jpg"
+                           src={product.image}
                         />
                      </div>
                   </figure>

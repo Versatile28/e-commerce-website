@@ -69,7 +69,7 @@ export default function ProductDetails({ products, loading, menu, menuLoading })
                   <MyNavbar menu={menu}/>
                </div>
                <ProductContainer product={product}/>
-               <AdditionalInformation />
+               <AdditionalInformation product={product}/>
                <ProductCarousel products={products} loading={loading} />
                <FeatureSection />
                <Footer />

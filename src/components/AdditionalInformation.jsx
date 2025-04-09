@@ -4,7 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { FaStar } from 'react-icons/fa';
 
-export default function AdditionalInformation() {
+export default function AdditionalInformation({ product }) {
    const [formData, setFormData] = useState({
       name: '',
       rating: '5',
@@ -52,7 +52,7 @@ export default function AdditionalInformation() {
                   </div>
                   <img
                      className="col-5 image-styles"
-                     src="/images/detail-1-gray.jpg"
+                     src={product.image}
                      alt=""
                   />
                </div>
