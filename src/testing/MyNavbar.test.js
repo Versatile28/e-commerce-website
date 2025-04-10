@@ -5,8 +5,9 @@ import userEvent from '@testing-library/user-event';
 import MyNavbar from '../layouts/MyNavbar';
 
 jest.mock('react-router-dom', () => ({
-  Link: ({ children, ...props }) => <a {...props}>{children}</a>,
-}));
+   ...jest.requireActual('react-router-dom'),
+   Link: ({ children, ...props }) => <a {...props}>{children}</a>,
+ }));
 
 jest.mock('../components/NavbarMenu', () => () => <div data-testid="navbar-menu">NavbarMenu</div>);
 jest.mock('../components/Cart', () => () => <div data-testid="cart">Cart Component</div>);

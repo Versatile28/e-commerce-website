@@ -16,6 +16,7 @@ import { TbJacket } from 'react-icons/tb';
 import { PiTShirtLight } from 'react-icons/pi';
 import { Breadcrumb } from 'react-bootstrap';
 import PriceSlider from './PriceSlider';
+import { baseUrl } from '../utils/constant';
 
 const colors = [
    { id: 'value_sidebar_Blue', name: 'Blue', color: 'rgb(102, 140, 185)' },
@@ -35,41 +36,73 @@ export default function CategoryFull({ products, loading }) {
    const [productNumber, setProductNumber] = useState(12);
    const [category, setCategory] = useState('');
 
+   // useEffect(() => {
+   //    let filtered = products;
+   //    if (Object.values(selectedBrands).some((isSelected) => isSelected)) {
+   //       const activeBrands = Object.keys(selectedBrands).filter(
+   //          (key) => selectedBrands[key]
+   //       );
+   //       filtered = filtered.filter((product) =>
+   //          activeBrands.includes(product.brand)
+   //       );
+   //    }
+   //    if (category) {
+   //       filtered = filtered.filter(
+   //          (product) => product.category === category
+   //       );
+   //    }
+   //    if (selectedSize) {
+   //       filtered = filtered.filter((product) => product.size.includes(selectedSize));
+   //    }
+   //    if (minValue) {
+   //       filtered = filtered.filter(
+   //          (product) => product.price >= parseFloat(minValue)
+   //       );
+   //    }
+   //    if (maxValue) {
+   //       filtered = filtered.filter(
+   //          (product) => product.price <= parseFloat(maxValue)
+   //       );
+   //    }
+   //    if (selected === "Rating") {
+   //       filtered = filtered.sort((a, b) => b.rating - a.rating);
+   //    } else if (selected === "Newest first") {
+   //       filtered = filtered.sort((a, b) => new Date(b.created) - new Date(a.created));
+   //    }
+   //    setFilteredProducts(filtered);
+   // }, [selectedBrands, selectedSize, minValue, maxValue, selected, category, products]);
+
    useEffect(() => {
-      let filtered = products;
-      if (Object.values(selectedBrands).some((isSelected) => isSelected)) {
-         const activeBrands = Object.keys(selectedBrands).filter(
-            (key) => selectedBrands[key]
-         );
-         filtered = filtered.filter((product) =>
-            activeBrands.includes(product.brand)
-         );
-      }
-      if (category) {
-         filtered = filtered.filter(
-            (product) => product.category === category
-         );
-      }
-      if (selectedSize) {
-         filtered = filtered.filter((product) => product.size.includes(selectedSize));
-      }
-      if (minValue) {
-         filtered = filtered.filter(
-            (product) => product.price >= parseFloat(minValue)
-         );
-      }
-      if (maxValue) {
-         filtered = filtered.filter(
-            (product) => product.price <= parseFloat(maxValue)
-         );
-      }
-      if (selected === "Rating") {
-         filtered = filtered.sort((a, b) => b.rating - a.rating);
-      } else if (selected === "Newest first") {
-         filtered = filtered.sort((a, b) => new Date(b.created) - new Date(a.created));
-      }
-      setFilteredProducts(filtered);
-   }, [selectedBrands, selectedSize, minValue, maxValue, selected, category, products]);
+      const fetchFilteredProducts = async () => {
+         try {
+            const params = new URLSearchParams();
+
+            if (Object.values(selectedBrands).some((val) => val)) {
+               const activeBrands = Object.keys(selectedBrands).filter(
+                  (key) => selectedBrands[key]
+               );
+               params.append('selectedBrands', activeBrands.join(','));
+            }
+
+            if (category) params.append('category', category);
+            if (selectedSize) params.append('selectedSize', selectedSize);
+            if (minValue) params.append('minValue', minValue);
+            if (maxValue) params.append('maxValue', maxValue);
+            if (selected) params.append('selected', selected);
+            console.log(params.toString());
+
+            const res = await fetch(`${baseUrl}/api/filter?${params.toString()}`);
+            const data = await res.json();
+            setFilteredProducts(data);
+         } catch (err) {
+            console.error('Error fetching filtered products', err);
+         }
+      };
+
+      fetchFilteredProducts();
+   }, [selectedBrands, selectedSize, minValue, maxValue, selected, category]);
+
+   console.log(filteredProducts);
 
    const handleSelect = (option) => {
       setSelected(option);
@@ -105,7 +138,6 @@ export default function CategoryFull({ products, loading }) {
       return () => window.removeEventListener('resize', handleResize);
    }, []);
 
-
    const handleCheckboxChange = (event) => {
       const { id, checked } = event.target;
       setSelectedBrands((prev) => ({ ...prev, [id]: checked }));
@@ -125,13 +157,11 @@ export default function CategoryFull({ products, loading }) {
 
    const handleProductNumberChange = (num) => {
       setProductNumber(num);
-   }
+   };
 
    const handleCategoryChange = (cat) => {
       setCategory(cat);
-   }
-
-
+   };
 
    return (
       <Container className="px-3 py-6">
@@ -152,19 +182,35 @@ export default function CategoryFull({ products, loading }) {
                      </Accordion.Header>
                      <Accordion.Body>
                         <ul className="category-menu-list">
-                           <li onClick={()=>{handleCategoryChange("Jeans")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Jeans');
+                              }}
+                           >
                               <p className="category-item">Jeans</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li onClick={()=>{handleCategoryChange("Jeans")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Jeans');
+                              }}
+                           >
                               <p>Dolor</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li onClick={()=>{handleCategoryChange("Jeans")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Jeans');
+                              }}
+                           >
                               <p>Sit amet</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li onClick={()=>{handleCategoryChange("Jeans")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Jeans');
+                              }}
+                           >
                               <p>Donec vitae</p>
                               <span className="item-underline"></span>
                            </li>
@@ -186,19 +232,35 @@ export default function CategoryFull({ products, loading }) {
                      </Accordion.Header>
                      <Accordion.Body>
                         <ul className="category-menu-list">
-                           <li onClick={()=>{handleCategoryChange("Jackets")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Jackets');
+                              }}
+                           >
                               <p>Jackets</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li onClick={()=>{handleCategoryChange("Sweaters")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Sweaters');
+                              }}
+                           >
                               <p>Sweaters</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li onClick={()=>{handleCategoryChange("Jackets")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Jackets');
+                              }}
+                           >
                               <p>Sit amet</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li onClick={()=>{handleCategoryChange("Jackets")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Jackets');
+                              }}
+                           >
                               <p>Donec vitae</p>
                               <span className="item-underline"></span>
                            </li>
@@ -220,19 +282,35 @@ export default function CategoryFull({ products, loading }) {
                      </Accordion.Header>
                      <Accordion.Body>
                         <ul className="category-menu-list">
-                           <li onClick={()=>{handleCategoryChange("Shirts")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Shirts');
+                              }}
+                           >
                               <p>Shirts</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li onClick={()=>{handleCategoryChange("Tops & blouses")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Tops & blouses');
+                              }}
+                           >
                               <p>Tops & blouses</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li onClick={()=>{handleCategoryChange("Shirts")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Shirts');
+                              }}
+                           >
                               <p>Sit amet</p>
                               <span className="item-underline"></span>
                            </li>
-                           <li onClick={()=>{handleCategoryChange("Shirts")}}>
+                           <li
+                              onClick={() => {
+                                 handleCategoryChange('Shirts');
+                              }}
+                           >
                               <p>Donec vitae</p>
                               <span className="item-underline"></span>
                            </li>
@@ -242,7 +320,12 @@ export default function CategoryFull({ products, loading }) {
                </Accordion>
                <div className="pb-3 mb-3 category-price">
                   <h5 className="fw-bold ls-1 pt-5">Price</h5>
-                  <PriceSlider minValue={minValue} setMinValue={setMinValue} maxValue={maxValue} setMaxValue={setMaxValue}/>
+                  <PriceSlider
+                     minValue={minValue}
+                     setMinValue={setMinValue}
+                     maxValue={maxValue}
+                     setMaxValue={setMaxValue}
+                  />
                </div>
                <div className="category-brand">
                   <h5 className="fw-bold ls-1 pt-4">Brand</h5>
@@ -254,10 +337,13 @@ export default function CategoryFull({ products, loading }) {
                               type="checkbox"
                               className="form-check-input"
                               id="Calvin Klein"
-                              checked={selectedBrands["Calvin Klein"] || false}
+                              checked={selectedBrands['Calvin Klein'] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="Calvin Klein" className="form-check-label">
+                           <label
+                              htmlFor="Calvin Klein"
+                              className="form-check-label"
+                           >
                               Calvin Klein <small>(18)</small>
                            </label>
                         </div>
@@ -269,10 +355,13 @@ export default function CategoryFull({ products, loading }) {
                               type="checkbox"
                               id="Levi Strauss"
                               className="form-check-input"
-                              checked={selectedBrands["Levi Strauss"] || false}
+                              checked={selectedBrands['Levi Strauss'] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="Levi Strauss" className="form-check-label">
+                           <label
+                              htmlFor="Levi Strauss"
+                              className="form-check-label"
+                           >
                               Levi Strauss <small>(30)</small>
                            </label>
                         </div>
@@ -284,10 +373,13 @@ export default function CategoryFull({ products, loading }) {
                               type="checkbox"
                               id="Hugo Boss"
                               className="form-check-input"
-                              checked={selectedBrands["Hugo Boss"] || false}
+                              checked={selectedBrands['Hugo Boss'] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="Hugo Boss" className="form-check-label">
+                           <label
+                              htmlFor="Hugo Boss"
+                              className="form-check-label"
+                           >
                               Hugo Boss <small>(120)</small>
                            </label>
                         </div>
@@ -299,10 +391,13 @@ export default function CategoryFull({ products, loading }) {
                               type="checkbox"
                               id="Tomi Hilfiger"
                               className="form-check-input"
-                              checked={selectedBrands["Tomi Hilfiger"] || false}
+                              checked={selectedBrands['Tomi Hilfiger'] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="Tomi Hilfiger" className="form-check-label">
+                           <label
+                              htmlFor="Tomi Hilfiger"
+                              className="form-check-label"
+                           >
                               Tomi Hilfiger <small>(70)</small>
                            </label>
                         </div>
@@ -314,10 +409,13 @@ export default function CategoryFull({ products, loading }) {
                               type="checkbox"
                               id="Tom Ford"
                               className="form-check-input"
-                              checked={selectedBrands["Tom Ford"] || false}
+                              checked={selectedBrands['Tom Ford'] || false}
                               onChange={handleCheckboxChange}
                            />
-                           <label htmlFor="Tom Ford" className="form-check-label">
+                           <label
+                              htmlFor="Tom Ford"
+                              className="form-check-label"
+                           >
                               Tom Ford <small>(110)</small>
                            </label>
                         </div>
@@ -349,7 +447,7 @@ export default function CategoryFull({ products, loading }) {
                               name="size"
                               type="radio"
                               id="MEDIUM"
-                              value='MEDIUM'
+                              value="MEDIUM"
                               className="form-check-input"
                               checked={selectedSize === 'MEDIUM'}
                               onChange={handleRadioChange}
@@ -386,7 +484,10 @@ export default function CategoryFull({ products, loading }) {
                               checked={selectedSize === 'X-LARGE'}
                               onChange={handleRadioChange}
                            />
-                           <label htmlFor="X-LARGE" className="form-check-label">
+                           <label
+                              htmlFor="X-LARGE"
+                              className="form-check-label"
+                           >
                               X-Large
                            </label>
                         </div>
@@ -444,8 +545,23 @@ export default function CategoryFull({ products, loading }) {
                   <div className="col-lg-4 col-md-6 col-12 h-100 d-flex align-items-center justify-content-md-center">
                      <div className="text-mute d-flex align-items-center justify-content-center">
                         Show &nbsp;
-                        <strong className="cursor-pointer" onClick={()=>{handleProductNumberChange(12)}}>&nbsp;12&nbsp;</strong>
-                        <strong className='cursor-pointer' onClick={()=>{handleProductNumberChange(24)}}>&nbsp;24&nbsp;</strong> All
+                        <strong
+                           className="cursor-pointer"
+                           onClick={() => {
+                              handleProductNumberChange(12);
+                           }}
+                        >
+                           &nbsp;12&nbsp;
+                        </strong>
+                        <strong
+                           className="cursor-pointer"
+                           onClick={() => {
+                              handleProductNumberChange(24);
+                           }}
+                        >
+                           &nbsp;24&nbsp;
+                        </strong>{' '}
+                        All
                      </div>
                   </div>
                   <div className="col-lg-4 col-md-6 col-12 h-100 d-flex align-items-center justify-content-lg-end">
@@ -475,7 +591,9 @@ export default function CategoryFull({ products, loading }) {
                                     key={option}
                                     onClick={() => handleSelect(option)}
                                     className={`dropdown-item-sortby ${
-                                       selected === option.toUpperCase ? 'selected' : ''
+                                       selected === option.toUpperCase
+                                          ? 'selected'
+                                          : ''
                                     }`}
                                  >
                                     {option}
@@ -488,37 +606,37 @@ export default function CategoryFull({ products, loading }) {
                </div>
                <div className="category-card-container">
                   {loading
-                     ? Array.from({ length: Math.ceil(productNumber / itemsPerRow) }).map(
-                          (_, rowIndex) => (
-                             <Row key={rowIndex} className="mt-4">
-                                {Array.from({ length: itemsPerRow }).map(
-                                   (_, idx) => (
-                                      <Col
-                                         key={idx}
-                                         xs={6}
-                                         sm={6}
-                                         md={6}
-                                         lg={4}
-                                         xl={3}
-                                         xxl={3}
-                                         className="mb-4"
+                     ? Array.from({
+                          length: Math.ceil(productNumber / itemsPerRow),
+                       }).map((_, rowIndex) => (
+                          <Row key={rowIndex} className="mt-4">
+                             {Array.from({ length: itemsPerRow }).map(
+                                (_, idx) => (
+                                   <Col
+                                      key={idx}
+                                      xs={6}
+                                      sm={6}
+                                      md={6}
+                                      lg={4}
+                                      xl={3}
+                                      xxl={3}
+                                      className="mb-4"
+                                   >
+                                      <motion.div
+                                         variants={cardVariants}
+                                         initial="hidden"
+                                         animate="visible"
                                       >
-                                         <motion.div
-                                            variants={cardVariants}
-                                            initial="hidden"
-                                            animate="visible"
-                                         >
-                                            <Skeleton
-                                               className="product-skeleton"
-                                               height={300}
-                                            />
-                                         </motion.div>
-                                      </Col>
-                                   )
-                                )}
-                             </Row>
-                          )
-                       )
+                                         <Skeleton
+                                            className="product-skeleton"
+                                            height={300}
+                                         />
+                                      </motion.div>
+                                   </Col>
+                                )
+                             )}
+                          </Row>
+                       ))
                      : Array.from({
                           length: Math.ceil(
                              filteredProducts.length / itemsPerRow
