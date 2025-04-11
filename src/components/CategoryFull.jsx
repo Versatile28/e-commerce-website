@@ -35,6 +35,7 @@ export default function CategoryFull({ products, loading }) {
    const [selectedBrands, setSelectedBrands] = useState({});
    const [productNumber, setProductNumber] = useState(12);
    const [category, setCategory] = useState('');
+   const [filterLoading, setFilterLoading] = useState(true);
 
    // useEffect(() => {
    //    let filtered = products;
@@ -76,6 +77,7 @@ export default function CategoryFull({ products, loading }) {
       const fetchFilteredProducts = async () => {
          try {
             const params = new URLSearchParams();
+            setFilterLoading(true);
 
             if (Object.values(selectedBrands).some((val) => val)) {
                const activeBrands = Object.keys(selectedBrands).filter(
@@ -91,11 +93,15 @@ export default function CategoryFull({ products, loading }) {
             if (selected) params.append('selected', selected);
             console.log(params.toString());
 
-            const res = await fetch(`${baseUrl}/api/filter?${params.toString()}`);
+            const res = await fetch(`${baseUrl}/api/filter?${params.toString()}`, {
+               headers: { "Content-Type": "application/json" },
+           });
             const data = await res.json();
             setFilteredProducts(data);
          } catch (err) {
             console.error('Error fetching filtered products', err);
+         } finally {
+            setFilterLoading(false);
          }
       };
 
@@ -605,7 +611,7 @@ export default function CategoryFull({ products, loading }) {
                   </div>
                </div>
                <div className="category-card-container">
-                  {loading
+                  {filterLoading
                      ? Array.from({
                           length: Math.ceil(productNumber / itemsPerRow),
                        }).map((_, rowIndex) => (
