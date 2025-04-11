@@ -20,7 +20,7 @@ export default function ProductDetails({ products, loading, menu, menuLoading })
                <div className="product-mynavbar">
                   <MyNavbar menu={menu}/>
                </div>
-               <CategoryFull products={products} loading={loading} />
+               <CategoryFull products={products}/>
                <FeatureSection />
                <Footer />
             </div>

@@ -25,7 +25,7 @@ const colors = [
    { id: 'value_sidebar_Red', name: 'Red', color: 'rgb(221, 98, 101)' },
 ];
 
-export default function CategoryFull({ products, loading }) {
+export default function CategoryFull({ products }) {
    const [selected, setSelected] = useState('Default');
    const [selectedSize, setSelectedSize] = useState('');
    const [selectedColors, setSelectedColors] = useState([]);
