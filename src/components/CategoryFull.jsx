@@ -110,6 +110,15 @@ export default function CategoryFull({ products }) {
 
    console.log(filteredProducts);
 
+   const clearFilters = () => {
+      setSelectedBrands({});
+      setCategory('');
+      setSelectedSize('');
+      setMinValue(40);
+      setMaxValue(110);
+      setSelected('Default');
+    };
+
    const handleSelect = (option) => {
       setSelected(option);
    };
@@ -500,7 +509,7 @@ export default function CategoryFull({ products }) {
                      </div>
                   </form>
                </div>
-               <div>
+               <div className='category-color pb-5'>
                   <h5 className="fw-bold ls-1 pt-4 mb-3">Color</h5>
                   <ul className="list-inline mb-0 colours-wrapper mt-4 mt-lg-0">
                      {colors.map(({ id, color }) => (
@@ -519,6 +528,9 @@ export default function CategoryFull({ products }) {
                         </li>
                      ))}
                   </ul>
+               </div>
+               <div className='m-3 d-flex justify-content-center'>
+                  <button className='clear-filter-btn py-1 px-3' onClick={clearFilters}>Clear Filters</button>
                </div>
             </div>
             <div className="col-lg-9 col-12 order-1 order-lg-2">

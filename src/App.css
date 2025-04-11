@@ -1942,7 +1942,8 @@ svg:not(:root).svg-inline--fa {
 
 .category-brand,
 .category-size,
-.category-price{
+.category-price,
+.category-color{
    border-bottom: 1px solid #e6e6e6;
 }
 
@@ -2049,6 +2050,17 @@ svg:not(:root).svg-inline--fa {
 .noUi-handle::after{
    content: none;
 }
+
+.clear-filter-btn{
+   color: white;
+   background-color: black;
+   border: #000;
+}
+
+.clear-filter-btn:hover{
+   background-color: #212121;
+}
+
 
 /* Cart */
 
