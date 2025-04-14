@@ -190,7 +190,6 @@ export default function CategoryFull({ products }) {
                   <Accordion.Item eventKey="0">
                      <Accordion.Header className="category-menu-head">
                         <GiTrousers
-                           alt="Trousers"
                            className="category-menu-icons"
                         />
                         <span className="category-menu-title">Trousers</span>
@@ -240,7 +239,6 @@ export default function CategoryFull({ products }) {
                   <Accordion.Item eventKey="0">
                      <Accordion.Header className="category-menu-head">
                         <TbJacket
-                           alt="Jackets"
                            className="category-menu-icons"
                         />
                         <span className="category-menu-title">Jackets</span>
@@ -290,7 +288,6 @@ export default function CategoryFull({ products }) {
                   <Accordion.Item eventKey="0">
                      <Accordion.Header className="category-menu-head">
                         <PiTShirtLight
-                           alt="T-Shirts"
                            className="category-menu-icons"
                         />
                         <span className="category-menu-title">T-Shirts</span>

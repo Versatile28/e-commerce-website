@@ -53,7 +53,7 @@ export default function AdditionalInformation({ product }) {
                   <img
                      className="col-5 image-styles"
                      src={product.image}
-                     alt=""
+                     alt={product.name}
                   />
                </div>
             </Tab>

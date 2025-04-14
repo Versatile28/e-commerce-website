@@ -94,7 +94,7 @@ export default function ProductContainer({ product }) {
                      <div>
                         <img
                            className="product-img-grey"
-                           alt=""
+                           alt={product.name}
                            src={product.image}
                         />
                      </div>
@@ -105,7 +105,7 @@ export default function ProductContainer({ product }) {
                      <div>
                         <img
                            className="product-img-grey"
-                           alt=""
+                           alt={product.name}
                            src="/images/detail-2-gray.jpg"
                         />
                      </div>
@@ -116,7 +116,7 @@ export default function ProductContainer({ product }) {
                      <div>
                         <img
                            className="product-img-grey"
-                           alt=""
+                           alt={product.name}
                            src="/images/detail-3-gray.jpg"
                         />
                      </div>
@@ -127,7 +127,7 @@ export default function ProductContainer({ product }) {
                      <div>
                         <img
                            className="product-img-grey"
-                           alt=""
+                           alt={product.name}
                            src="/images/detail-4-gray.jpg"
                         />
                      </div>
@@ -138,7 +138,7 @@ export default function ProductContainer({ product }) {
                      <div>
                         <img
                            className="product-img-grey"
-                           alt=""
+                           alt={product.name}
                            src="/images/detail-5-gray.jpg"
                         />
                      </div>
@@ -149,7 +149,7 @@ export default function ProductContainer({ product }) {
                      <div>
                         <img
                            className="product-img-grey"
-                           alt=""
+                           alt={product.name}
                            src="/images/detail-6-gray.jpg"
                         />
                      </div>
