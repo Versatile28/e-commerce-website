@@ -12,7 +12,7 @@ export default function CategorySection() {
          <Link to='/category-full'>
            <img
              src="images/category-women.webp"
-             alt="Women"
+             alt="Women Category"
              className="img-fluid"
            />
            <div className="overlay-text">Women</div>
@@ -25,7 +25,7 @@ export default function CategorySection() {
          <Link to='/category-full'>
            <img
              src="images/category-men.webp"
-             alt="Men"
+             alt="Men Category"
              className="img-fluid"
            />
            <div className="overlay-text">Men</div>
