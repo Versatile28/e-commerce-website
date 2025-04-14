@@ -30,7 +30,7 @@ const Footer = () => {
                         placeholder="Your Email Address"
                      />
 
-                     <button>
+                     <button aria-label='email'>
                         <GrMailOption className="email-icon" />
                      </button>
                   </InputGroup>

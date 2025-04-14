@@ -178,6 +178,7 @@ export default function MyNavbar({ menu }) {
             <Button
                className="d-none d-lg-block bg-transparent border-0"
                onClick={handleShow}
+               aria-label='extra menu'
             >
                <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +204,7 @@ export default function MyNavbar({ menu }) {
                name="end"
             >
                <div className="w-100 px-5">
-                  <Offcanvas.Header closeButton></Offcanvas.Header>
+                  <Offcanvas.Header closeButton aria-label='close'></Offcanvas.Header>
                   <Offcanvas.Title className="fw-bold pb-5">
                      Varkala
                   </Offcanvas.Title>

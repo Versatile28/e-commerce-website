@@ -18,7 +18,7 @@ export default function Cart({ showCart, setShowCart, handleCartClose }) {
             name="end"
          >
             <div className="w-100">
-               <Offcanvas.Header closeButton className='mb-4 px-3 py-4'></Offcanvas.Header>
+               <Offcanvas.Header closeButton className='mb-4 px-3 py-4' aria-label='Cart item button'></Offcanvas.Header>
                <div className="cart-items-container mx-1 px-5">
                   {
                      cartItems.map((item, idx) => {

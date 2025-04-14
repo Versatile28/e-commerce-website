@@ -69,6 +69,7 @@ export default function ProductContainer({ product }) {
                onClick={() => {
                   handleClose();
                }}
+               aria-label='close'
             >
                <RxCross2 className="icon-close" />
             </button>

@@ -93,9 +93,12 @@ export default function CategoryFull({ products }) {
             if (selected) params.append('selected', selected);
             console.log(params.toString());
 
-            const res = await fetch(`${baseUrl}/api/filter?${params.toString()}`, {
-               headers: { "Content-Type": "application/json" },
-           });
+            const res = await fetch(
+               `${baseUrl}/api/filter?${params.toString()}`,
+               {
+                  headers: { 'Content-Type': 'application/json' },
+               }
+            );
             const data = await res.json();
             setFilteredProducts(data);
          } catch (err) {
@@ -117,7 +120,7 @@ export default function CategoryFull({ products }) {
       setMinValue(40);
       setMaxValue(110);
       setSelected('Default');
-    };
+   };
 
    const handleSelect = (option) => {
       setSelected(option);
@@ -509,7 +512,7 @@ export default function CategoryFull({ products }) {
                      </div>
                   </form>
                </div>
-               <div className='category-color pb-5'>
+               <div className="category-color pb-5">
                   <h5 className="fw-bold ls-1 pt-4 mb-3">Color</h5>
                   <ul className="list-inline mb-0 colours-wrapper mt-4 mt-lg-0">
                      {colors.map(({ id, color }) => (
@@ -529,8 +532,13 @@ export default function CategoryFull({ products }) {
                      ))}
                   </ul>
                </div>
-               <div className='m-3 d-flex justify-content-center'>
-                  <button className='clear-filter-btn py-1 px-3' onClick={clearFilters}>Clear Filters</button>
+               <div className="m-3 d-flex justify-content-center">
+                  <button
+                     className="clear-filter-btn py-1 px-3"
+                     onClick={clearFilters}
+                  >
+                     Clear Filters
+                  </button>
                </div>
             </div>
             <div className="col-lg-9 col-12 order-1 order-lg-2">
