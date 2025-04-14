@@ -12,7 +12,6 @@ import { FaTwitter } from 'react-icons/fa';
 import { FaRegHeart } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../store/cartSlice';
-import { CgOverflow } from 'react-icons/cg';
 
 export default function ProductContainer({ product }) {
    const dispatch = useDispatch();

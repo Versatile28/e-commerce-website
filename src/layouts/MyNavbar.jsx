@@ -85,13 +85,13 @@ export default function MyNavbar({ menu }) {
                         <Navbar.Brand className="mx-2">Varkala</Navbar.Brand>
                      </Link>
                      <div className="d-flex">
-                        <Nav.Link className="px-2 collapse-icons">
+                        <Nav.Link className="px-2 collapse-icons" aria-label='user'>
                            <SlUser className="mynavbar-icon" />
                         </Nav.Link>
-                        <Nav.Link className="px-2 collapse-icons">
+                        <Nav.Link className="px-2 collapse-icons" aria-label='wishlist'>
                            <GoHeart className="mynavbar-icon-h" />
                         </Nav.Link>
-                        <Nav.Link className="px-2 collapse-icons">
+                        <Nav.Link className="px-2 collapse-icons" aria-label='cart'>
                            <PiShoppingBagOpen
                               className="mynavbar-icon-h"
                               onClick={handleCartShow}

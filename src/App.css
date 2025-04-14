@@ -318,6 +318,7 @@ h6 {
 .headerbar-container .ph-no {
    font-family: var(--bs-body-font-family) !important;
    color: #343a40;
+   padding-top: 1rem;
 }
 
 .title-head {
