@@ -9,7 +9,7 @@ export default function Cart({ showCart, setShowCart, handleCartClose }) {
    const cartTotal = useSelector(selectCartTotal);
 
    return (
-      <div>
+      <>
          <Offcanvas
             className="d-flex align-items-center justify-content-start cart-offcanvas overflow-auto"
             show={showCart}
@@ -49,6 +49,6 @@ export default function Cart({ showCart, setShowCart, handleCartClose }) {
                </div>
             </div>
          </Offcanvas>
-      </div>
+      </>
    );
 }
