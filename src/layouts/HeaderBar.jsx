@@ -9,10 +9,10 @@ export default function HeaderBar() {
         <Navbar expand="lg">
             <Container className="headerbar-container">
                 <Navbar className="d-none d-md-flex headerbar-box">
-                    <Nav.Link href="/" className="mar-r-5 ms-2" aria-label="facebook">
+                    <Nav.Link href="/" className="px-2" aria-label="facebook">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 224 432"><path fill="currentColor" d="M145 429H66V235H0v-76h66v-56q0-48 27-74t72-26q36 0 59 3v67l-41 1q-22 0-30 9t-8 27v49h76l-10 76h-66v194z"/></svg>
                     </Nav.Link>
-                    <Nav.Link href="/" className="mar-r-5" aria-label="twitter">
+                    <Nav.Link href="/" className="px-2" aria-label="twitter">
                     <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 432 384"><path fill="currentColor" d="M383 105v11q0 45-16.5 88.5t-47 79.5t-79 58.5T134 365q-73 0-134-39q10 1 21 1q61 0 109-37q-29-1-51.5-18T48 229q8 2 16 2q12 0 23-4q-30-6-50-30t-20-55v-1q19 10 40 11q-39-27-39-73q0-24 12-44q33 40 79.5 64T210 126q-2-10-2-20q0-36 25.5-61.5T295 19q38 0 64 27q30-6 56-21q-10 31-39 48q27-3 51-13q-18 26-44 45z"/></svg>
                     </Nav.Link>
                     <Navbar href="#home" className="ph-no ms-2">

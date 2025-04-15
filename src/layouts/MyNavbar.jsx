@@ -59,13 +59,13 @@ export default function MyNavbar({ menu }) {
                </Link>
                <Nav className={delayedClass}>
                   <div className="d-flex align-items-start">
-                     <Nav.Link className="px-2 pt-2 collapse-icons">
+                     <Nav.Link className="px-2 pt-2 collapse-icons" aria-label='user'>
                         <SlUser className="mynavbar-icon" />
                      </Nav.Link>
-                     <Nav.Link className="px-2 pt-2 collapse-icons">
+                     <Nav.Link className="px-2 pt-2 collapse-icons" aria-label='wishlist'>
                         <GoHeart className="mynavbar-icon-h" />
                      </Nav.Link>
-                     <Nav.Link className="px-2 pt-2 collapse-icons">
+                     <Nav.Link className="px-2 pt-2 collapse-icons" aria-label='cart'>
                         <PiShoppingBagOpen
                            className="mynavbar-icon-h"
                            onClick={handleCartShow}
@@ -156,13 +156,13 @@ export default function MyNavbar({ menu }) {
                </Link>
                {width > 992 && <NavbarMenu menu={menu}/>}
                <Nav className="d-none d-lg-flex justify-content-end align-items-center flex-row">
-                  <NavLink className="px-2 collapse-icons">
+                  <NavLink className="px-2 collapse-icons" aria-label='user'>
                      <SlUser className="mynavbar-icon" />
                   </NavLink>
-                  <NavLink className="px-2 collapse-icons">
+                  <NavLink className="px-2 collapse-icons" aria-label='wishlist'>
                      <GoHeart className="mynavbar-icon-h" />
                   </NavLink>
-                  <NavLink className="px-2 collapse-icons">
+                  <NavLink className="px-2 collapse-icons" aria-label='cart'>
                      <PiShoppingBagOpen
                         className="mynavbar-icon-h"
                         onClick={handleCartShow}
