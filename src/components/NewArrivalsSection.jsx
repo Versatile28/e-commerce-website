@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 export default function NewArrivalsSection () {
   return (
-    <section className="new-arrivals-section text-center">
+    <section className="new-arrivals-section text-center" aria-label="New Arrivals">
       <Container className="newarrivals-container">
         <Row className="justify-content-center">
           <Col sm={12} md={12} xl={8} xxl={12}>
