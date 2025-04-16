@@ -3,13 +3,15 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 export default function FeatureSection() {
    return (
-      <section className="features-section py-5 bg-light">
+      <section className="features-section py-5 bg-light" data-testid="feature-section">
          <Container>
             <Row className="g-4">
                {/* 1. Free shipping & return */}
-               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block">
+               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block" data-testid="feature-block">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
+                     data-testid="feature-icon"
+                     role="img"
                      viewBox="0 0 24 24"
                      width="30"
                      height="30"
@@ -48,9 +50,11 @@ export default function FeatureSection() {
                </Col>
 
                {/* 2. Money back guarantee */}
-               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block">
+               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block" data-testid="feature-block">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
+                     data-testid="feature-icon"
+                     role="img"
                      viewBox="0 0 24 24"
                      width="30"
                      height="30"
@@ -84,9 +88,11 @@ export default function FeatureSection() {
                </Col>
 
                {/* 3. Best prices */}
-               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block">
+               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block" data-testid="feature-block">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
+                     data-testid="feature-icon"
+                     role="img"
                      viewBox="0 0 24 24"
                      width="30"
                      height="30"
@@ -120,9 +126,11 @@ export default function FeatureSection() {
                </Col>
 
                {/* 4. Phone support */}
-               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block">
+               <Col lg={3} md={6} sm={6} xs={12} className="text-center feature-block" data-testid="feature-block">
                   <svg
                      xmlns="http://www.w3.org/2000/svg"
+                     data-testid="feature-icon"
+                     role="img"
                      viewBox="0 0 24 24"
                      width="30"
                      height="30"

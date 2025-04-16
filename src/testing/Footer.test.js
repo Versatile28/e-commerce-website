@@ -5,32 +5,34 @@ import userEvent from '@testing-library/user-event';
 import Footer from '../layouts/Footer';
 
 describe('Footer Component', () => {
-  test('renders footer contact section', () => {
+  test('renders footer contact section and legal info', () => {
     render(<Footer />);
 
     expect(screen.getByText(/Be in touch/i)).toBeInTheDocument();
-    expect(screen.getByText(/Lorem ipsum dolor sit amet/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Lorem ipsum dolor sit amet, consectetur adipiscing elit\. At itaque temporibus\./i)
+    ).toBeInTheDocument();
     expect(screen.getByPlaceholderText(/Your Email Address/i)).toBeInTheDocument();
-    expect(screen.getByText(/© 2025 Your company/i)).toBeInTheDocument();
+
+    expect(screen.getByText(/© 2025 Your company\. All rights reserved\./i)).toBeInTheDocument();
+
+    ['Terms & Conditions', 'Privacy & cookies', 'Accessibility', 'Customer Data Promise'].forEach((text) => {
+      expect(screen.getByText(new RegExp(text, "i"))).toBeInTheDocument();
+    });
   });
 
   test('renders accordion headings on small screens', () => {
     render(<Footer />);
     const accordionRegion = screen.getByTestId('small-screen-accordion');
 
-    const shopHeading = within(accordionRegion).getByRole('button', { name: /^Shop$/i });
-    const companyHeading = within(accordionRegion).getByRole('button', { name: /^Company$/i });
-    const accountHeading = within(accordionRegion).getByRole('button', { name: /^Your Account$/i });
-
-    expect(shopHeading).toBeInTheDocument();
-    expect(companyHeading).toBeInTheDocument();
-    expect(accountHeading).toBeInTheDocument();
+    expect(within(accordionRegion).getByRole('button', { name: /^Shop$/i })).toBeInTheDocument();
+    expect(within(accordionRegion).getByRole('button', { name: /^Company$/i })).toBeInTheDocument();
+    expect(within(accordionRegion).getByRole('button', { name: /^Your Account$/i })).toBeInTheDocument();
   });
 
   test('accordion expands and reveals content when clicked', async () => {
     render(<Footer />);
     const accordionRegion = screen.getByTestId('small-screen-accordion');
-
     const user = userEvent.setup();
 
     const shopButton = within(accordionRegion).getByRole('button', { name: /^Shop$/i });
@@ -39,12 +41,19 @@ describe('Footer Component', () => {
 
     const companyButton = within(accordionRegion).getByRole('button', { name: /^Company$/i });
     await user.click(companyButton);
-    const companySection = screen.getAllByText(/Our Products/i);
-    expect(companySection[0]).toBeInTheDocument();
-
+    expect(within(accordionRegion).getAllByText(/Our Products/i).length).toBeGreaterThanOrEqual(1);
     const accountButton = within(accordionRegion).getByRole('button', { name: /^Your Account$/i });
     await user.click(accountButton);
-    const wishlistItems = within(accordionRegion).getAllByText(/Wishlist/i);
-    expect(wishlistItems.length).toBeGreaterThanOrEqual(1);
+    expect(within(accordionRegion).getAllByText(/Wishlist/i).length).toBeGreaterThanOrEqual(1);
+  });
+
+  test('renders standard large screen layout content', () => {
+    render(<Footer />);
+    const lists = screen.getAllByRole('list', { hidden: false });
+    const shopList = lists.find((list) => within(list).queryByText(/For Women/i));
+    expect(shopList).toBeInTheDocument();
+    
+    const companyList = lists.find((list) => within(list).queryByText(/Login/i));
+    expect(companyList).toBeInTheDocument();
   });
 });

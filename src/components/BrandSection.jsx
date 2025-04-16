@@ -15,7 +15,7 @@ const brandLogos = [
 ];
 const BrandSection = () => {
    return (
-      <div className="product-carousel-container container pb-5 mb-4">
+      <div className="product-carousel-container container pb-5 mb-4" data-testid="brand-carousel">
          <Swiper
          className='pb-5'
             modules={[Navigation, Pagination, A11y]}
