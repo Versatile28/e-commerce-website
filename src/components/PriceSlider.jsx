@@ -29,7 +29,7 @@ const PriceSlider = ({ min = 0, max = 250, minValue, maxValue, setMinValue, setM
    return (
      <div className="range-slider-container">
        <div className="nouislider-wrapper">
-         <div ref={sliderRef} className="nouislider"></div>
+         <div ref={sliderRef} className="nouislider" data-testid="nouislider"></div>
        </div>
        <div className="slider-values">
          <span>From: ${minValue}</span>

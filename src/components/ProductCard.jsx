@@ -31,6 +31,7 @@ export default function ProductCard({
 
    return (
       <div
+         data-testid="product-card-root"
          onMouseEnter={() => setHovered(true)}
          onMouseLeave={() => setHovered(false)}
       >
@@ -50,6 +51,7 @@ export default function ProductCard({
             <Link
                className="product-link"
                to={`/category-full/product/${item._id}`}
+               data-testid="image-link"
             >
                <Card.Img
                   variant="top"
@@ -58,18 +60,25 @@ export default function ProductCard({
                   className="product-image"
                />
             </Link>
-            <div className={`hover-overlay ${hovered ? 'show' : ''}`}>
-               <AddToCartBar handleAddToCart={handleAddToCart}/>
+            <div
+               data-testid="hover-overlay"
+               className={`hover-overlay ${hovered ? 'show' : ''}`}
+            >
+               <AddToCartBar handleAddToCart={handleAddToCart} testId="hover-add-btn" />
             </div>
          </Card>
 
          <div>
-            <div className={`premanent-overlay ${width <= 768 ? 'show1' : ''}`}>
-               <AddToCartBar handleAddToCart={handleAddToCart}/>
+            <div
+               data-testid="permanent-overlay"
+               className={`premanent-overlay ${width <= 768 ? 'show1' : ''}`}
+            >
+               <AddToCartBar handleAddToCart={handleAddToCart} testId="permanent-add-btn" />
             </div>
             <Link
                to={`/category-full/product/${item._id}`}
                className="card-title mt-3"
+               data-testid="title-link"
             >
                {item.name}
             </Link>
@@ -77,7 +86,11 @@ export default function ProductCard({
                <p className="text-mute product-price">
                   ${item.price.toFixed(2)}
                </p>
-               <div className={`star-rating ${hovered || width <= 768 ? 'show' : ''}`}>
+               <div
+                  className={`star-rating ${
+                     hovered || width <= 768 ? 'show' : ''
+                  }`}
+               >
                   {<StarRating rating={item.rating} size={12.8} gap={2} />}
                </div>
             </div>
