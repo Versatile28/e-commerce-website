@@ -10,7 +10,7 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { GrMailOption } from 'react-icons/gr';
 
-const Footer = () => {
+export default function Footer() {
    return (
       <footer className="footer w-xs">
          <Container style={{ padding: '6rem 0' }}>
@@ -157,5 +157,3 @@ const Footer = () => {
       </footer>
    );
 };
-
-export default Footer;

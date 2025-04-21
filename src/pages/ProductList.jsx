@@ -6,10 +6,10 @@ import FeatureSection from '../components/FeatureSection';
 import CategoryFull from '../components/CategoryFull';
 import Loader from '../components/Loader';
 
-export default function ProductDetails({ products, loading, menu, menuLoading }) {
+export default function ProductList({ products, loading, menu, menuLoading }) {
 
    return (
-      <>
+      <div data-testid="product-list-wrapper">
          {menuLoading ? (
             <Loader />
          ) : (
@@ -25,6 +25,6 @@ export default function ProductDetails({ products, loading, menu, menuLoading })
                <Footer />
             </div>
          )}
-      </>
+      </div>
    );
 }
