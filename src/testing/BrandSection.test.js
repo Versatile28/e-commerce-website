@@ -4,13 +4,13 @@ import { render, screen, within } from '@testing-library/react';
 import BrandSection from '../components/BrandSection';
 
 describe('BrandSection Component', () => {
-  test('renders brand carousel container', () => {
+  test('renders brand carousel container', async () => {
     render(<BrandSection />);
-    const carouselContainer = screen.getByTestId('brand-carousel');
+    const carouselContainer = await screen.findByTestId('brand-carousel');
     expect(carouselContainer).toBeInTheDocument();
   });
 
-  test('renders all brand logos with correct alt texts', () => {
+  test('renders all brand logos with correct alt texts', async () => {
     render(<BrandSection />);
     const expectedAlts = [
       'Brand 1',
@@ -21,14 +21,14 @@ describe('BrandSection Component', () => {
       'Brand 6'
     ];
 
-    expectedAlts.forEach((altText) => {
-      expect(screen.getByAltText(altText)).toBeInTheDocument();
-    });
+    for (const altText of expectedAlts) {
+      expect(await screen.findByAltText(altText)).toBeInTheDocument();
+    }
   });
 
-  test('renders at least six image elements within the brand carousel container', () => {
+  test('renders at least six image elements within the brand carousel container', async () => {
     render(<BrandSection />);
-    const carouselContainer = screen.getByTestId('brand-carousel');
+    const carouselContainer = await screen.findByTestId('brand-carousel');
     const images = within(carouselContainer).getAllByRole('img');
     expect(images.length).toBeGreaterThanOrEqual(6);
   });

@@ -1,82 +1,101 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Cart from '../components/Cart';
 import { useSelector } from 'react-redux';
-import { selectCartItems, selectCartTotal } from '../store/cartSlice';
+import Cart from '../components/Cart';
 
-jest.mock('react-redux', () => ({
-  useSelector: jest.fn(),
-}));
-
+jest.mock('react-redux', () => ({ useSelector: jest.fn() }));
+const { selectCartItems, selectCartTotal } = require('../store/cartSlice');
 jest.mock('../components/CartItem', () => ({ item }) => (
-  <div data-testid="cart-item">{item.name}</div>
+  <div data-testid="cart-item">{item.name} x{item.quantity}</div>
 ));
-
-jest.mock('react-bootstrap', () => ({
-  Offcanvas: ({ show, onHide, children }) => (
-    <div role="dialog" aria-hidden={show ? 'false' : 'true'}>
-      {children}
-      <button aria-label="Close" onClick={onHide} />
+jest.mock('react-bootstrap', () => {
+  const Offcanvas = ({ show, onHide, placement, children }) => (
+    <div
+      role="dialog"
+      aria-hidden={!show}
+      data-placement={placement}
+    >
+      <button aria-label="Close" onClick={onHide}>X</button>
+      <div>{children}</div>
     </div>
-  ),
-}));
+  );
+  Offcanvas.Header = () => null;
+  return { Offcanvas };
+});
 
-describe('Cart component', () => {
+
+
+const setupSelectors = (items, total) => {
+  useSelector.mockImplementation((selector) => {
+    if (selector === selectCartItems) return items;
+    if (selector === selectCartTotal) return total;
+    return undefined;
+  });
+};
+
+describe('Cart Component', () => {
   const sampleItems = [
     { id: 1, name: 'Apple', price: 1.5, quantity: 2 },
     { id: 2, name: 'Banana', price: 0.75, quantity: 3 },
   ];
-  const sampleTotal = 1.5 * 2 + 0.75 * 3; // 5.25
+  const sampleTotal = sampleItems.reduce((sum, i) => sum + i.price * i.quantity, 0);
   const handleCartClose = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
-    useSelector.mockImplementation((selector) => {
-      if (selector === selectCartItems) return sampleItems;
-      if (selector === selectCartTotal) return sampleTotal;
-      return undefined;
-    });
+    setupSelectors(sampleItems, sampleTotal);
   });
 
-  test('renders correct number of CartItem components', () => {
+  it('renders Offcanvas with correct placement and visibility', () => {
+    const { rerender } = render(
+      <Cart showCart={false} handleCartClose={handleCartClose} />
+    );
+    const dialog = screen.getByRole('dialog', { hidden: true });
+    expect(dialog).toHaveAttribute('aria-hidden', 'true');
+    expect(dialog).toHaveAttribute('data-placement', 'end');
+
+    rerender(<Cart showCart={true} handleCartClose={handleCartClose} />);
+    expect(screen.getByRole('dialog')).toHaveAttribute('aria-hidden', 'false');
+  });
+
+  it('renders each CartItem with name and quantity', () => {
     render(<Cart showCart={true} handleCartClose={handleCartClose} />);
     const items = screen.getAllByTestId('cart-item');
     expect(items).toHaveLength(sampleItems.length);
-    sampleItems.forEach((item) => {
-      expect(screen.getByText(item.name)).toBeInTheDocument();
+    sampleItems.forEach(({ name, quantity }) => {
+      expect(screen.getByText(`${name} x${quantity}`)).toBeInTheDocument();
     });
   });
 
-  test('displays subtotal formatted to two decimals', () => {
+  it('displays subtotal formatted to two decimals', () => {
     render(<Cart showCart={true} handleCartClose={handleCartClose} />);
-    expect(screen.getByText(/Subtotal:/i)).toBeInTheDocument();
+    expect(screen.getByText('Subtotal:')).toBeInTheDocument();
     expect(screen.getByText(`$${sampleTotal.toFixed(2)}`)).toBeInTheDocument();
   });
 
-  test('renders VIEW CART and CHECKOUT buttons with correct hrefs and roles', () => {
+  it('renders VIEW CART and CHECKOUT buttons with correct attributes', () => {
     render(<Cart showCart={true} handleCartClose={handleCartClose} />);
-    const viewCartBtn = screen.getByRole('link', { name: /view cart/i });
-    const checkoutBtn = screen.getByRole('link', { name: /checkout/i });
+    const viewCartBtn = screen.getByRole('button', { name: /view cart/i });
+    const checkoutBtn = screen.getByRole('button', { name: /checkout/i });
     expect(viewCartBtn).toHaveAttribute('href', '/cart');
     expect(checkoutBtn).toHaveAttribute('href', '/checkout');
+    expect(viewCartBtn).toHaveClass('btn-outline-dark');
+    expect(checkoutBtn).toHaveClass('btn-dark');
   });
 
-  test('calls handleCartClose when close button is clicked', () => {
+  it('calls handleCartClose when close button is clicked', () => {
     render(<Cart showCart={true} handleCartClose={handleCartClose} />);
     const closeBtn = screen.getByLabelText(/Close/);
     fireEvent.click(closeBtn);
     expect(handleCartClose).toHaveBeenCalledTimes(1);
   });
 
-  test('passes show prop to Offcanvas (dialog visibility)', () => {
-    const { rerender } = render(
-      <Cart showCart={false} handleCartClose={handleCartClose} />
-    );
-    const dialog = screen.getByRole('dialog');
-    expect(dialog).toHaveAttribute('aria-hidden', 'true');
-
-    rerender(<Cart showCart={true} handleCartClose={handleCartClose} />);
-    expect(screen.getByRole('dialog')).toHaveAttribute('aria-hidden', 'false');
+  it('handles empty cart state', () => {
+    setupSelectors([], 0);
+    render(<Cart showCart={true} handleCartClose={handleCartClose} />);
+    expect(screen.queryByTestId('cart-item')).toBeNull();
+    expect(screen.getByText('Subtotal:')).toBeInTheDocument();
+    expect(screen.getByText('$0.00')).toBeInTheDocument();
   });
 });

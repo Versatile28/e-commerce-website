@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategorySection Component matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="category-section"
+  >
+    <div
+      class="w-xs category-container container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="mb-3 mb-sm-0 col-sm-6 col-12"
+        >
+          <div
+            class="image-container"
+          >
+            <a
+              data-testid="mock-link"
+              href="/category-full"
+            >
+              <img
+                alt="Women Category"
+                class="img-fluid"
+                src="images/category-women.webp"
+              />
+              <div
+                class="overlay-text"
+              >
+                Women
+              </div>
+            </a>
+          </div>
+        </div>
+        <div
+          class="col-sm-6 col-12"
+        >
+          <div
+            class="image-container"
+          >
+            <a
+              data-testid="mock-link"
+              href="/category-full"
+            >
+              <img
+                alt="Men Category"
+                class="img-fluid"
+                src="images/category-men.webp"
+              />
+              <div
+                class="overlay-text"
+              >
+                Men
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
