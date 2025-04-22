@@ -29,7 +29,7 @@ export default function AdditionalInformation({ product }) {
             className="mb-3 info-container"
          >
             <Tab eventKey="desc" title="Description">
-               <div className="d-flex flex-md-row flex-column row py-4 px-3">
+               <div data-testid="desc-panel" className="d-flex flex-md-row flex-column row py-4 px-3">
                   <div className="col-md-7 col-12">
                      <h5 className="fw-bold">About</h5>
                      <p className="text-mute">
@@ -58,7 +58,7 @@ export default function AdditionalInformation({ product }) {
                </div>
             </Tab>
             <Tab eventKey="info" title="Additional Information">
-               <div className="d-flex row py-4">
+               <div data-testid="info-panel" className="d-flex row py-4">
                   <div className="col-lg-2 col-6 d-flex flex-column">
                      <span className="p-2 fs-8">Product #</span>
                      <span className="p-2 fs-8">Available packaging</span>
@@ -98,7 +98,7 @@ export default function AdditionalInformation({ product }) {
                </div>
             </Tab>
             <Tab eventKey="reviews" title="Reviews">
-               <div className="d-flex row py-4 px-3">
+               <div data-testid="reviews-panel" className="d-flex row py-4 px-3">
                   <div className="d-flex p-3">
                      <div className="review d-flex">
                         <div className="text-center me-4 me-xl-5 d-flex flex-column">

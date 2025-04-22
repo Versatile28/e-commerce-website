@@ -48,13 +48,14 @@ export default function ProductContainer({ product }) {
       <section className="px-xl-7 product-container container-fluid pb-lg-6">
          <div
             ref={toastRef}
+            data-testid="add-cart-toast"
             className="add-cart-toast show-display flex-row justify-content-between align-items-center mb-5"
          >
             <div className="d-flex flex-row align-items-center">
                <CiCircleCheck className="icon-tick" />
                <div className="d-flex flex-wrap align-items-center">
                   <p className="m-0 ps-3 fw-semibold text-white fs-6">
-                     Black blouse have been added to your cart.
+                     {product.name} have been added to your cart.
                   </p>
                   <a
                      href="/e-commerce-website"
