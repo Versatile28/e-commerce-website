@@ -61,11 +61,11 @@ export default function ProductDetails({ products, loading, menu, menuLoading })
          {menuLoading || descLoading ? (
             <Loader />
          ) : (
-            <div className="position-relative">
-               <div className="product-headerbar">
+            <div data-testid="product-details-wrapper" className="position-relative">
+               <div data-testid="product-headerbar" className="product-headerbar">
                   <HeaderBar />
                </div>
-               <div className="product-mynavbar">
+               <div data-testid="product-mynavbar" className="product-mynavbar">
                   <MyNavbar menu={menu}/>
                </div>
                <ProductContainer product={product}/>

@@ -9,15 +9,15 @@ import Loader from '../components/Loader';
 export default function ProductList({ products, loading, menu, menuLoading }) {
 
    return (
-      <div data-testid="product-list-wrapper">
+      <div>
          {menuLoading ? (
             <Loader />
          ) : (
-            <div className="position-relative">
-               <div className="product-headerbar">
+            <div data-testid="product-list-wrapper" className="position-relative">
+               <div data-testid="product-headerbar" className="product-headerbar">
                   <HeaderBar />
                </div>
-               <div className="product-mynavbar">
+               <div data-testid="product-mynavbar" className="product-mynavbar">
                   <MyNavbar menu={menu}/>
                </div>
                <CategoryFull products={products}/>
