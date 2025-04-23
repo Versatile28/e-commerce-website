@@ -643,10 +643,10 @@ h6 {
 }
 
 .search-icon{
-   height: 2rem;
-   width: 2rem;
+   height: 1.9rem;
+   width: 1.9rem;
    position: relative;
-   top: 10px;
+   top: 7px;
    margin-right: 10px;
    cursor: pointer;
 }
